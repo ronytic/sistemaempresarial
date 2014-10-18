@@ -10,7 +10,7 @@ class seg_usuario extends bd{
 		"cod_rol"  =>array("Tipo"=>"varchar","Tamano"=>"5"),
 		"fecha_creacion"  =>array("Tipo"=>"date","Tamano"=>""),
 		"fecha_expira"  =>array("Tipo"=>"date","Tamano"=>""),
-		"pswd"  =>array("Tipo"=>"varchar","Tamano"=>"20"),
+		"pswd"  =>array("Tipo"=>"varchar","Tamano"=>"32"),
 	);	
 }
 ?>
