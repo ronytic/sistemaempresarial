@@ -11,13 +11,13 @@ foreach($archivosphp as $ap){
 	${$ap}=new $ap;
 	
 	$variablesClase=get_class_vars(get_class(${$ap}));
-	$campos=$variablesClase['campos'];
+	$campos=$variablesClase['campos_tabla'];
 	
 	$sqlTabla="CREATE TABLE IF NOT EXISTS $ap(";
 	$campostabla=array();
 	$camposprimarios=array();
 	foreach($campos as $vck=>$vcv){
-		array_push($campostabla,"`$vck` ".$vcv['Tipo']."(".$vcv['Tamano'].") ".($vcv['NoNulo']?'NOT NULL':'')." ".($vcv['AI']?'AUTO_INCREMENT':''));	
+		array_push($campostabla,"`$vck` ".$vcv['Tipo'].($vcv['Tamano']!=""?"(".$vcv['Tamano'].") ":" ") .($vcv['NoNulo']?'NOT NULL':'')." ".($vcv['AI']?'AUTO_INCREMENT':''));	
 		if($vcv['Primaria']==true){
 			array_push($camposprimarios,"`$vck`");	
 		}

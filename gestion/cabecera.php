@@ -329,6 +329,37 @@
 					<ul class="nav nav-list">
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="icon-home"></i><span> <?php echo 'Inicio'?></span></a>
                         </li>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-star"></i><span> <?php echo 'Administrar Tablas'?></span>
+                        	<b class="arrow icon-angle-down"></b>
+                        	</a>
+                        	
+                            <ul class="submenu">
+                            	<li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Empresa">Seg_Empresa
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Permiso">Seg_Permiso
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Rol">Seg_Rol
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Rol_Permiso">Seg_Rol_Permiso
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Sistema">Seg_Sistema
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Usuario">Seg_Usuario
+									</a>
+								</li>
+                            </ul>
+                        </li>
                         <?php /*
                         	foreach($menu->mostrar($Nivel,"Lateral") as $m){
 								$subm=$submenu->mostrar($Nivel,$m['CodMenu']);
@@ -412,7 +443,7 @@
     <div class="page-content">
         <div class="page-header">
             <h1>
-            	<?php echo $idioma[$titulo];?>
+            	<?php echo $titulo;?>
                 <?php //echo $textomenu!=""?$textomenu." >":''?>
                 <small>
                     <!--<i class="icon-double-angle-right"></i>-->
