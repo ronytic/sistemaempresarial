@@ -1,7 +1,9 @@
 <?php
 include_once("../../../estructurabd/seg_permiso.php");
 extract($_POST);
-$valores=array("cod_empresa"=>"'$cod_empresa'",
+$valores=array(
+				"cod_permiso"=>"'$cod_permiso'",
+				"cod_empresa"=>"'$cod_empresa'",
 				"descripcion"=>"'$descripcion'",
 				);
 $seg_permiso=new seg_permiso;
