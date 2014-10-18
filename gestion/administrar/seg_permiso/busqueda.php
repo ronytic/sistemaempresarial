@@ -2,7 +2,7 @@
 include_once("../../../estructurabd/seg_permiso.php");
 extract($_POST);
 $seg_permiso=new seg_permiso;
-$condicion="cod_permiso  LIKE '%$cod_permiso' and descripcion LIKE '%$descripcion%' ";
+$condicion="cod_empresa  LIKE '%$cod_empresa' and descripcion LIKE '%$descripcion%' ";
 
 $seg_p=$seg_permiso->mostrarTodoRegistro($condicion,0);
 ?>
