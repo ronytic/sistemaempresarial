@@ -30,6 +30,14 @@ function inicio(){
 		//$('html, body').animate({scrollTop:$("#respuestaformulario").position().top-200},300);
 		 
 	});
+	$(document).on("click",".cargarajax",function(e){
+		e.preventDefault();
+		var dir=$(this).attr("href");
+		//alert(dir);
+		$.post(dir,{},function(data){
+			$("#respuestaajax").html(data);
+		});
+	});
 	$(document).on("submit",".formularioconfirmacion",function(e){
 		if(!confirm($(this).attr("data-mensaje"))){
 			e.preventDefault();
