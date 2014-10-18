@@ -2,7 +2,7 @@
 $folder="../../";
 
 ?>
-<h2>Nuevo Registro</h2>
+<h2>Nuevo Registro de Seg_Empresa</h2>
 <form action="seg_empresa/guardar.php" method="post">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	<tr><td>Cod_Empresa</td><td><input type="text" name="cod_empresa" max="3" maxlength="3" autofocus required></td></tr>
