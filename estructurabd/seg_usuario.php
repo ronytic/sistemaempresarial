@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__).DIRECTORY_SEPARATOR."../class/bd.php");
 class seg_usuario extends bd{
 	var $campos_tabla=array(
-		"cod_usuario"=>array("Tipo"=>"int","Tamano"=>"3","NoNulo"=>true,"Primaria"=>false,"AI"=>true),
+		"cod_usuario"=>array("Tipo"=>"int","Tamano"=>"11","NoNulo"=>true,"Primaria"=>true,"AI"=>true),
 		"cod_empresa"=>array("Tipo"=>"varchar","Tamano"=>"3","NoNulo"=>true,"Primaria"=>false,"AI"=>false),
 		"cod_sistema"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		
