@@ -3,7 +3,7 @@ include_once("../../../estructurabd/seg_empresa.php");
 extract($_POST);
 $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"descripcion"=>"'$descripcion'",
-				"direccion"=>"'$direccion'",
+				//"direccion"=>"'$direccion'",
 				"telefono1"=>"'$telefono1'",
 				"telefono2"=>"'$telefono2'",
 

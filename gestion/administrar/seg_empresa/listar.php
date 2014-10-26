@@ -6,9 +6,18 @@ $folder="../../";
 <form action="seg_empresa/busqueda.php" method="post" class="formulario">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	<thead>
-    	<tr><th>Cod_Empresa</th><th>Descripción</th><th>Dirección</th></tr>
+    	<tr>
+        	<th>Cod_Empresa</th>
+            <th>Descripción</th>
+            <!--<th>Dirección</th>-->
+        </tr>
         </thead>
-        <tr><td><input type="text" name="cod_empresa" max="3" maxlength="3" autofocus></td><td><input type="text" name="descripcion" ></td><td><input type="text" name="direccion"></td><td><input type="submit" name="Guardar" value="Buscar" class="btn btn-success"></td></tr>
+        <tr>
+        	<td><input type="text" name="cod_empresa" max="3" maxlength="3" autofocus></td>
+            <td><input type="text" name="descripcion" ></td>
+            <!--<td><input type="text" name="direccion"></td>-->
+            <td><input type="submit" name="Guardar" value="Buscar" class="btn btn-success"></td>
+        </tr>
     </table>
 	
     
