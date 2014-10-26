@@ -346,6 +346,12 @@
                         	
                             <ul class="submenu">
                                 <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Tipo de Pruebas">Tipos de Pruebas
+									</a>
+								</li>
+                            </ul>
+                            <ul class="submenu">
+                                <li class="">
 									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Pruebas">Registrar Prueba
 									</a>
 								</li>
