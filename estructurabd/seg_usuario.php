@@ -15,5 +15,9 @@ class seg_usuario extends bd{
 		"fecha_expira"  =>array("Tipo"=>"date","Tamano"=>""),
 		"pswd"  =>array("Tipo"=>"varchar","Tamano"=>"40"),
 	);	
+	function loginUsuarios($Usuario,$Password){
+		$this->campos=array("count(*) as can,cod_sistema,cod_empresa,cod_usuario");	
+		return $this->getRecords("login='$Usuario' and pswd=MD5('$Password')");
+	}
 }
 ?>

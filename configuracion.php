@@ -1,5 +1,5 @@
 <?php
-$directory="colegio/";		//Sub Directorio, Ej: "sistemacolegio/" 
+$directory="sistemaempresarial/";		//Sub Directorio, Ej: "sistemaempresarial/" 
 							//si su sistema e encuentre directamente en el dominio sin ningun subdirectorio dejelo vacio Ej: ""
 $Internet=0; //¿Donde se Encuentra su Sistema? 
 			// 0 en Sistema Local
