@@ -2,9 +2,9 @@
 include_once("../../../estructurabd/seg_permiso.php");
 extract($_GET);
 
-include_once("../../../estructurabd/seg_empresa.php");
-$seg_empresa=new seg_empresa;
-$seg_e=$seg_empresa->mostrarTodoRegistro($condicion,0,"descripcion");
+include_once("../../../estructurabd/seg_sistema.php");
+$seg_sistema=new seg_sistema;
+$seg_s=$seg_sistema->mostrarTodoRegistro($condicion,0,"descripcion");
 
 $seg_permiso=new seg_permiso;
 $condicion="cod_permiso  LIKE '$cod_permiso'";
@@ -18,11 +18,11 @@ $sp=array_shift($seg_p);
     	<tr><td>Cod_Permiso</td><td><input type="text" name="cod_permiso" max="10" maxlength="10" autofocus required value="<?php echo $sp['cod_permiso']?>" readonly></td></tr>
     	<tr><td>Cod_Empresa</td>
         	
-        	<td><select name="cod_empresa" autofocus required>
+        	<td><select name="cod_sistema" autofocus required>
             	<option value="">Seleccionar</option>
-            	<?php foreach($seg_e as $se){
+            	<?php foreach($seg_s as $ss){
 				?>
-                <option value="<?php echo $se['cod_empresa']?>" <?php echo $sp['cod_empresa']==$se['cod_empresa']?'selected="selected"':''?>><?php echo $se['cod_empresa']?> - <?php echo $se['descripcion']?></option>
+                <option value="<?php echo $ss['cod_sistema']?>" <?php echo $sp['cod_sistema']==$ss['cod_sistema']?'selected="selected"':''?>><?php echo $ss['cod_sistema']?> - <?php echo $ss['descripcion']?></option>
                 <?php	
 				}?>
             </select>
