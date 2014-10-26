@@ -6,6 +6,10 @@ include_once("../../../estructurabd/seg_empresa.php");
 $seg_empresa=new seg_empresa;
 $seg_e=$seg_empresa->mostrarTodoRegistro($condicion,0,"descripcion");
 
+include_once("../../../estructurabd/seg_sistema.php");
+$seg_sistema=new seg_sistema;
+$seg_s=$seg_sistema->mostrarTodoRegistro($condicion,0,"descripcion");
+
 $seg_rol=new seg_rol;
 $condicion="cod_rol  LIKE '$cod_rol'";
 
@@ -23,6 +27,19 @@ $sr=array_shift($seg_r);
             	<?php foreach($seg_e as $se){
 				?>
                 <option value="<?php echo $se['cod_empresa']?>" <?php echo $sr['cod_empresa']==$se['cod_empresa']?'selected="selected"':''?>><?php echo $se['cod_empresa']?> - <?php echo $se['descripcion']?></option>
+                <?php	
+				}?>
+            </select>
+            
+            
+            </td></tr>
+        <tr><td>Cod_Sistema</td>
+        	
+        	<td><select name="cod_sistema"  required>
+            	<option value="">Seleccionar</option>
+            	<?php foreach($seg_s as $ss){
+				?>
+                <option value="<?php echo $ss['cod_sistema']?>" <?php echo $sr['cod_sistema']==$ss['cod_sistema']?'selected="selected"':''?>><?php echo $ss['cod_sistema']?> - <?php echo $ss['descripcion']?></option>
                 <?php	
 				}?>
             </select>

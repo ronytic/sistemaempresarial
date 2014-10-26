@@ -2,8 +2,9 @@
 include_once("../../../estructurabd/seg_rol.php");
 extract($_POST);
 $valores=array(	
-				"descripcion"=>"'$descripcion'",
 				"cod_empresa"=>"'$cod_empresa'",
+				"cod_sistema"=>"'$cod_sistema'",
+				"descripcion"=>"'$descripcion'",
 
 				);
 $seg_rol=new seg_rol;
