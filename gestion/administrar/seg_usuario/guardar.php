@@ -4,6 +4,7 @@ extract($_POST);
 $fecha_creacion=date("Y-m-d");
 $valores=array(
 				"cod_empresa"=>"'$cod_empresa'",
+				"cod_sistema"=>"'$cod_sistema'",
 				"login"=>"'$login'",
 				"nombre"=>"'$nombre'",
 				"paterno"=>"'$paterno'",
