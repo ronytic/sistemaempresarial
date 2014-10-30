@@ -11,5 +11,5 @@ $valores=array(
 $seg_empresa=new seg_empresa;
 $seg_empresa->actualizarRegistro($valores,"cod_empresa='$cod_empresa'");
 
-header("Location:../?c=Seg_empresa");
+header("Location:../?c=seg_empresa");
 ?>

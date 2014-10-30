@@ -335,11 +335,11 @@
                         	
                             <ul class="submenu">
                             	<li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Empresa">Seg_Empresa
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=seg_empresa">Seg_Empresa
 									</a>
 								</li>
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Permiso">Seg_Permiso
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=seg_permiso">Seg_Permiso
 									</a>
 								</li>
                                 <li class="">
@@ -347,15 +347,15 @@
 									</a>
 								</li>
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Rol_Permiso">Seg_Rol_Permiso
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=seg_rol_permiso">Seg_Rol_Permiso
 									</a>
 								</li>
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Sistema">Seg_Sistema
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=seg_sistema">Seg_Sistema
 									</a>
 								</li>
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Usuario">Seg_Usuario
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=seg_usuario">Seg_Usuario
 									</a>
 								</li>
                             </ul>

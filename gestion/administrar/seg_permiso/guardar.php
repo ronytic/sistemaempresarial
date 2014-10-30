@@ -9,5 +9,5 @@ $valores=array(
 $seg_permiso=new seg_permiso;
 $seg_permiso->insertarRegistro($valores,0);
 
-header("Location:../?c=Seg_permiso");
+header("Location:../?c=seg_permiso");
 ?>

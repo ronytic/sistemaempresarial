@@ -11,5 +11,5 @@ $valores=array(
 $seg_rol_permiso=new seg_rol_permiso;
 $seg_rol_permiso->insertarRegistro($valores,0);
 
-header("Location:../?c=Seg_rol_permiso");
+header("Location:../?c=seg_rol_permiso");
 ?>

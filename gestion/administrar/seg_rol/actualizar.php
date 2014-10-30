@@ -10,5 +10,5 @@ $valores=array(
 $seg_rol=new seg_rol;
 $seg_rol->actualizarRegistro($valores,"cod_rol='$cod_rol'");
 
-header("Location:../?c=Seg_rol");
+header("Location:../?c=seg_rol");
 ?>

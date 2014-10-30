@@ -11,5 +11,5 @@ $valores=array(
 $seg_rol_permiso=new seg_rol_permiso;
 $seg_rol_permiso->actualizarRegistro($valores,"cod_rp='$cod_rp'");
 
-header("Location:../?c=Seg_rol_permiso");
+header("Location:../?c=seg_rol_permiso");
 ?>

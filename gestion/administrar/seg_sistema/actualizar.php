@@ -24,5 +24,5 @@ if($_FILES['img_04']['name']!=""){
 $seg_sistema=new seg_sistema;
 $seg_sistema->actualizarRegistro($valores,"cod_sistema='$cod_sistema'");
 
-header("Location:../?c=Seg_sistema");
+header("Location:../?c=seg_sistema");
 ?>

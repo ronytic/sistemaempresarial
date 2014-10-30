@@ -27,5 +27,5 @@ if($_FILES['img_04']['name']!=""){
 }
 $seg_sistema->insertarRegistro($valores,0);
 
-header("Location:../?c=Seg_sistema");
+header("Location:../?c=seg_sistema");
 ?>

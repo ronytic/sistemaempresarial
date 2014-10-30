@@ -1,13 +1,13 @@
 <?php
-$host="localhost";
+/*$host="localhost";
 $user="root";
 $pass="";
-$database="sistemaempresarial";
+$database="sistemaempresarial";*/
 $tipobd="mysql";
 
-/*$user="redcampu_csb";
-$pass="83034888";
-$database="redcampu_csb1";*/
+$user="delta08d_sistema";
+$pass="sistema01";
+$database="delta08d_sistemaempresarial";
 
 /*Configuración de Idioma del Sistema*/
 date_default_timezone_set('America/La_Paz');

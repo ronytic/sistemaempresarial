@@ -17,5 +17,5 @@ $valores=array(
 $seg_usuario=new seg_usuario;
 $seg_usuario->insertarRegistro($valores,0);
 
-header("Location:../?c=Seg_usuario");
+header("Location:../?c=seg_usuario");
 ?>
