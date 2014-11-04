@@ -20,7 +20,7 @@ $su=array_shift($seg_u);
 ?>
 <h2>Modificar Usuario</h2>
 <form action="usuarios/actualizar.php" method="post">
-	<input name="cod_usuario" value="<?php echo $_SESSION['cod_usuario']?>">
+	<input type="hidden" name="cod_usuario" value="<?php echo $cod_usuario?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
         <tr><td>Sistema</td><td><select name="cod_sistema" autofocus required disabled>
             	<option value="">Seleccionar</option>
