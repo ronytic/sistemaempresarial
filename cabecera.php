@@ -1,6 +1,9 @@
 <?php
 
-	
+	//print_r($_SESSION);
+	$NombresSis=$_SESSION['nombre'];
+	$ApellidoPSis=$_SESSION['paterno'];
+	$FotoSis="usuario.jpg";
 ?>
 </head>
 
@@ -237,8 +240,8 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="<?php echo $folder?>imagenes/usuarios/<?php echo $FotoSis?>" title="<?php echo $NombresSis." ".$ApellidoPSis?>" alt="<?php echo $NombresSis." ".$ApellidoPSis?>" />
 								<span class="user-info">
-									<small><?php echo $idioma['Bienvenido']?>,</small>
-									<?php echo $NombresSis ?>
+									<small><?php echo 'Bienvenido'?>,</small>
+									<?php echo $NombresSis ?> <?php echo $ApellidoPSis ?>
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -265,7 +268,7 @@
 								<li>
 									<a href="<?php echo $folder?>login/logout.php">
 										<i class="icon-off"></i>
-										<?php echo $idioma['SalirSistema']?>
+										<?php echo 'Salir del Sistema'?>
 									</a>
 								</li>
 							</ul>
@@ -273,7 +276,7 @@
                         <li class="purple">
 							<a href="<?php echo $folder?>login/logout.php">
 								<i class="icon-off"></i>
-								<?php  echo $idioma['Salir']?>
+								<?php  echo 'Salir'?>
 							</a>
                        </li>
 					</ul><!-- /.ace-nav -->
@@ -329,13 +332,17 @@
 					<ul class="nav nav-list">
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="icon-home"></i><span> <?php echo 'Inicio'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-user"></i><span> <?php echo 'Usuarios'?></span>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-user"></i><span> <?php echo 'Admin. de Usuarios'?></span>
                         	<b class="arrow icon-angle-down"></b>
                         	</a>
                         	
                             <ul class="submenu">
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Seg_Usuario">Seg_Usuario
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarusuarios/?c=rolessistema">Roles del Sistema
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarusuarios/?c=usuarios">Usuarios
 									</a>
 								</li>
                             </ul>
@@ -349,8 +356,6 @@
 									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Tipo de Pruebas">Tipos de Pruebas
 									</a>
 								</li>
-                            </ul>
-                            <ul class="submenu">
                                 <li class="">
 									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Pruebas">Registrar Prueba
 									</a>

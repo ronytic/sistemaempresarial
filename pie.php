@@ -5,7 +5,7 @@
 
 		<hr>
 						<footer>
-							<p class="pull-left"><?php echo $idioma['TituloSistema']?> - <?php echo $Sigla;?> &copy; <?php echo 'Todos los Derechos Reservados';?> 2014 - <?php echo date("Y");?></p>
+							<p class="pull-left"><?php echo $Titulo?> - <?php echo $Sigla;?> &copy; <?php echo 'Todos los Derechos Reservados';?> 2014 - <?php echo date("Y");?></p>
 							<p class="pull-right"><?php echo $idioma['DesarrolladoPor'];?>: <a href="http://fb.com/ronaldnina" class="enlacepie" target="_blank" title="Cel: 73230568">Ronald Nina Layme</a> </p>
 						</footer>
 					</div><!-- /.page-content -->

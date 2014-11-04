@@ -1,5 +1,6 @@
 <?php
-$Titulo="Gestión de base de Datos";
+
+$Titulo="Gestión de Sistema Empresarial";
 ?>
 <!DOCTYPE html>
 <html lang="en">
