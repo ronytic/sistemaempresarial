@@ -29,6 +29,7 @@ if(!empty($_POST)){
 		
 		$usuario=($_POST['usuario']);
 		$pass=$_POST['contrasena'];
+		$cod_empresa=$_POST['cod_empresa'];
 		
 //		$usuario=str_replace("ñ","n",$usuario);
 		$usuarioAl=str_replace(array("ñ","Ñ"),array("n","N"),$usuario);
@@ -45,7 +46,7 @@ if(!empty($_POST)){
 		
 		if($usuario!=""){
 			//Administrador 1 2 3 4
-			$reg=$seg_usuario->loginUsuarios($usuario,$pass);
+			$reg=$seg_usuario->loginUsuarios($usuario,$pass,$cod_empresa);
 			$reg=array_shift($reg);
 			$sw=1;
 		}else{
@@ -79,6 +80,13 @@ if(!empty($_POST)){
 			$logusuario->insertarRegistro($valuesLog,0);
 			//mysql_query("INSERT INTO logusuarios VALUES(NULL,$codUsuario,$Nivel,'$url','$fecha','$hora','$agente','$ip','$referencia','$lenguaje')");
 			*/
+			$_SESSION['cod_usuario']=$reg['cod_usuario'];;
+			$_SESSION['cod_login']=$reg['cod_login'];
+			$_SESSION['nombre']=$reg['nombre'];
+			$_SESSION['paterno']=$reg['paterno'];
+			$_SESSION['materno']=$reg['materno'];
+			$_SESSION['cod_rol']=$reg['cod_rol'];
+			
 			$_SESSION['cod_sistema']=$cod_sistema;
 			$_SESSION['cod_empresa']=$cod_empresa;
 			$_SESSION['logueado']=1;
