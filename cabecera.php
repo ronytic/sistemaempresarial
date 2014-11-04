@@ -338,7 +338,7 @@
                         	
                             <ul class="submenu">
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarusuarios/?c=rolessistema">Roles del Sistema
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarusuarios/?c=rol sistema">Roles del Sistema
 									</a>
 								</li>
                                 <li class="">
@@ -347,19 +347,47 @@
 								</li>
                             </ul>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-star"></i><span> <?php echo 'Administrar Pruebas'?></span>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-star"></i><span> <?php echo 'Configuración'?></span>
                         	<b class="arrow icon-angle-down"></b>
                         	</a>
                         	
                             <ul class="submenu">
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Tipo de Pruebas">Tipos de Pruebas
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=bateria">Baterias
 									</a>
 								</li>
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Pruebas">Registrar Prueba
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=pruebas"> Pruebas
 									</a>
 								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=tipo de pruebas">Tipos de Pruebas
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=areas">Areas
+									</a>
+								</li>
+                            </ul>
+                        </li>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-star"></i><span> <?php echo 'Reclutamientos'?></span>
+                        	<b class="arrow icon-angle-down"></b>
+                        	</a>
+                        	
+                            <ul class="submenu">
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Tipo de Pruebas">Reclutamientos
+									</a>
+								</li>
+                                
+                            </ul>
+                        </li>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-star"></i><span> <?php echo 'Reportes'?></span>
+                        	<b class="arrow icon-angle-down"></b>
+                        	</a>
+                        	
+                            <ul class="submenu">
+                                
                             </ul>
                         </li>
                         <?php /*
