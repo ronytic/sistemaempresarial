@@ -11,7 +11,7 @@ $condicion="cedula  LIKE '$cedula'";
 $rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0);
 $rec_c=array_shift($rec_c);
 ?>
-<h2>Modificar Usuario</h2>
+<h2>Modificar Candidato</h2>
 <form action="candidato/actualizar.php" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="cod_usuario" value="<?php echo $cod_usuario?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
