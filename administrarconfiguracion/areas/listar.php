@@ -13,7 +13,7 @@ include_once("../../login/check.php");
         </tr>
         </thead>
         <tr>
-        	<td><input type="text" name="cod_prueba" max="3" maxlength="3" autofocus></td>
+        	<td><input type="text" name="cod_area" max="3" maxlength="3" autofocus></td>
             <td><input type="text" name="descripcion" ></td>
             <td><input type="submit" name="Guardar" value="Buscar" class="btn btn-success"></td>
         </tr>
