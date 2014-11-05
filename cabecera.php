@@ -347,7 +347,7 @@
 								</li>
                             </ul>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-star"></i><span> <?php echo 'Configuración'?></span>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-cog"></i><span> <?php echo 'Configuración'?></span>
                         	<b class="arrow icon-angle-down"></b>
                         	</a>
                         	
@@ -370,19 +370,23 @@
 								</li>
                             </ul>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-star"></i><span> <?php echo 'Reclutamientos'?></span>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-list"></i><span> <?php echo 'Reclutamientos'?></span>
                         	<b class="arrow icon-angle-down"></b>
                         	</a>
                         	
                             <ul class="submenu">
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrar/?c=Tipo de Pruebas">Reclutamientos
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarreclutamiento/?c=reclutamiento">Reclutamientos
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarreclutamiento/?c=candidato">Candidato
 									</a>
 								</li>
                                 
                             </ul>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-star"></i><span> <?php echo 'Reportes'?></span>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-print"></i><span> <?php echo 'Reportes'?></span>
                         	<b class="arrow icon-angle-down"></b>
                         	</a>
                         	
