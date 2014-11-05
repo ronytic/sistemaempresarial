@@ -14,7 +14,7 @@ class rec_reclutamiento extends bd{
 		"prioridad"=>array("Tipo"=>"varchar","Tamano"=>"1"),
 		"responsable"=>array("Tipo"=>"varchar","Tamano"=>"50"),
 		"estado"=>array("Tipo"=>"varchar","Tamano"=>"3"),
-		
+		"usuario"=>array("Tipo"=>"varchar","Tamano"=>"20"),
 	);	
 }
 ?>
