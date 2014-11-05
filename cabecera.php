@@ -383,6 +383,10 @@
 									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarreclutamiento/?c=candidato">Candidato
 									</a>
 								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarreclutamiento/?c=cargo">Cargo
+									</a>
+								</li>
                                 
                             </ul>
                         </li>
