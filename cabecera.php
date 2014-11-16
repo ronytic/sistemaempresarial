@@ -4,6 +4,16 @@
 	$NombresSis=$_SESSION['nombre'];
 	$ApellidoPSis=$_SESSION['paterno'];
 	$FotoSis="usuario.jpg";
+	include_once("estructurabd/seg_empresa.php");
+	
+	if(!isset($seg_empresa)){
+		$seg_empresa=new seg_empresa;
+		
+	}
+	
+	$segem=$seg_empresa->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0);
+	$segem=array_shift($segem);
+	$NombreEmpresa=$segem['descripcion'];
 ?>
 </head>
 
@@ -237,15 +247,7 @@
 						</li>
 						<?php */?>
 						<li class="gray">
-							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="<?php echo $folder?>imagenes/usuarios/<?php echo $FotoSis?>" title="<?php echo $NombresSis." ".$ApellidoPSis?>" alt="<?php echo $NombresSis." ".$ApellidoPSis?>" />
-								<span class="user-info">
-									<small><?php echo 'Bienvenido'?>,</small>
-									<?php echo $NombresSis ?> <?php echo $ApellidoPSis ?>
-								</span>
-
-								<i class="icon-caret-down"></i>
-							</a>
+							
 
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								<?php /*?>
@@ -301,21 +303,17 @@
 
 					<div class="sidebar-shortcuts" id="sidebar-shortcuts">
 						<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-							<button class="btn btn-success">
-								<i class="icon-signal"></i>
-							</button>
+							<a  href="#" >
+								<?php
+                                
+								?>
+								<span class="user-info">
+									<small><?php echo $NombreEmpresa?></small>
+									<?php echo $NombresSis ?> <?php echo $ApellidoPSis ?>
+								</span>
 
-							<button class="btn btn-info">
-								<i class="icon-pencil"></i>
-							</button>
-
-							<button class="btn btn-warning">
-								<i class="icon-group"></i>
-							</button>
-
-							<button class="btn btn-danger">
-								<i class="icon-cogs"></i>
-							</button>
+								
+							</a>
 						</div>
 
 						<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
@@ -331,44 +329,6 @@
 
 					<ul class="nav nav-list">
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="icon-home"></i><span> <?php echo 'Inicio'?></span></a>
-                        </li>
-                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-user"></i><span> <?php echo 'Admin. de Usuarios'?></span>
-                        	<b class="arrow icon-angle-down"></b>
-                        	</a>
-                        	
-                            <ul class="submenu">
-                                <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarusuarios/?c=rol sistema">Roles del Sistema
-									</a>
-								</li>
-                                <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarusuarios/?c=usuarios">Usuarios
-									</a>
-								</li>
-                            </ul>
-                        </li>
-                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-cog"></i><span> <?php echo 'Configuración'?></span>
-                        	<b class="arrow icon-angle-down"></b>
-                        	</a>
-                        	
-                            <ul class="submenu">
-                                <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=bateria">Baterias
-									</a>
-								</li>
-                                <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=pruebas"> Pruebas
-									</a>
-								</li>
-                                <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=tipo de pruebas">Tipos de Pruebas
-									</a>
-								</li>
-                                <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=areas">Areas
-									</a>
-								</li>
-                            </ul>
                         </li>
                         <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-list"></i><span> <?php echo 'Reclutamientos'?></span>
                         	<b class="arrow icon-angle-down"></b>
@@ -398,6 +358,47 @@
                                 
                             </ul>
                         </li>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-cog"></i><span> <?php echo 'Configuración'?></span>
+                        	<b class="arrow icon-angle-down"></b>
+                        	</a>
+                        	
+                            <ul class="submenu">
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=bateria">Baterias
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=pruebas"> Pruebas
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=tipo de pruebas">Tipos de Pruebas
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=areas">Areas
+									</a>
+								</li>
+                            </ul>
+                        </li>
+                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-user"></i><span> <?php echo 'Admin. de Usuarios'?></span>
+                        	<b class="arrow icon-angle-down"></b>
+                        	</a>
+                        	
+                            <ul class="submenu">
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarusuarios/?c=rol sistema">Roles del Sistema
+									</a>
+								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarusuarios/?c=usuarios">Usuarios
+									</a>
+								</li>
+                            </ul>
+                        </li>
+                        
+                        
+                        
                         <?php /*
                         	foreach($menu->mostrar($Nivel,"Lateral") as $m){
 								$subm=$submenu->mostrar($Nivel,$m['CodMenu']);
