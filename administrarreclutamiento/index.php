@@ -3,8 +3,14 @@ include_once("../login/check.php");
 $folder="../";
 $titulo="Reclutamientos";
 $c=$_GET['c'];
+if($c=="reclutamiento"){
+	header("Location:reclutamiento/listar.php");
+}else{
 include_once("../cabecerahtml.php");
 include_once("../cabecera.php");
+
+
+
 ?>
 
 <fieldset>
@@ -19,4 +25,5 @@ include_once("../cabecera.php");
 
 <?php
 include_once("../pie.php");
+}
 ?>
