@@ -12,6 +12,10 @@ include_once("../../estructurabd/seg_rol.php");
 $seg_rol=new seg_rol;
 $seg_r=$seg_rol->mostrarTodoRegistro($condicion,0,"descripcion");
 
+include_once("../../estructurabd/rec_area.php");
+$rec_area=new rec_area;
+$rec_a=$rec_area->mostrarTodoRegistro($condicion,0,"descripcion");
+
 $seg_usuario=new seg_usuario;
 $condicion="cod_usuario  LIKE '$cod_usuario'";
 
@@ -47,3 +51,47 @@ $su=array_shift($seg_u);
 	
     
 </form>
+
+<fieldset>
+	<legend>Area</legend>
+    	<form action="usuarios/guardar_area.php" method="post" class="formulario">
+        <input type="hidden" name="cod_usuario" required value="<?php echo $su['cod_usuario']?>">
+        <input type="hidden" name="login" required value="<?php echo $su['login']?>">
+        <table class="table table-bordered" style="background-color:#FFFFFF">
+            <thead>
+            <tr><th>Area</th></tr>
+            </thead>
+            <tr>
+                <td>
+               	<select name="cod_area">
+                	<?php foreach($rec_a as $ra){
+					?>
+                    
+                    <option value="<?php echo $ra['cod_area']?>"><?php echo $ra['cod_area']?> - <?php echo $ra['descripcion']?></option>
+                    <?php	
+					}?>
+                </select>
+                </td>
+                <td><input type="submit" name="Guardar" value="Agregar" class="btn btn-success"></td></tr>
+        </table>
+        
+        
+    </form>
+    <fieldset>
+    	<legend>Listado de Areas</legend>
+        <div id="respuestaformulario">
+	    </div>
+    </fieldset>
+    
+
+</fieldset>
+
+<script language="javascript" type="text/javascript">
+	//$(document).on("ready",function(){
+		
+		$.post("usuarios/listar_area.php",{'login':'<?php echo $su['login']?>'},function(data){
+			$("#respuestaformulario").html(data);
+		});
+		
+	//});
+</script>
