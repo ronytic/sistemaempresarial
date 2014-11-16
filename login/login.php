@@ -81,7 +81,7 @@ if(!empty($_POST)){
 			//mysql_query("INSERT INTO logusuarios VALUES(NULL,$codUsuario,$Nivel,'$url','$fecha','$hora','$agente','$ip','$referencia','$lenguaje')");
 			*/
 			$_SESSION['cod_usuario']=$reg['cod_usuario'];;
-			$_SESSION['cod_login']=$reg['cod_login'];
+			$_SESSION['login']=$reg['login'];
 			$_SESSION['nombre']=$reg['nombre'];
 			$_SESSION['paterno']=$reg['paterno'];
 			$_SESSION['materno']=$reg['materno'];
