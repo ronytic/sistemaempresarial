@@ -4,6 +4,7 @@ include_once("../../estructurabd/seg_usuario.php");
 extract($_POST);
 $fecha_creacion=date("Y-m-d");
 $cod_empresa=$_SESSION['cod_empresa'];
+$cod_sistema=$_SESSION['cod_sistema'];
 $valores=array(
 				"cod_empresa"=>"'$cod_empresa'",
 				"cod_sistema"=>"'$cod_sistema'",

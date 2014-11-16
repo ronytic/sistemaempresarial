@@ -7,23 +7,12 @@ $seg_s=$seg_sistema->mostrarTodoRegistro($condicion,0,"descripcion");
 
 include_once("../../estructurabd/seg_rol.php");
 $seg_rol=new seg_rol;
-$seg_r=$seg_rol->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
+$seg_r=$seg_rol->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."' and cod_sistema='".$_SESSION['cod_sistema']."'",0,"descripcion");
 //print_r($_SESSION);
 ?>
 <h2>Nuevo Registro de Usuario</h2>
 <form action="usuarios/guardar.php" method="post">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
-        <tr><td>Sistema</td><td><select name="cod_sistema"  required>
-            	<option value="">Seleccionar</option>
-            	<?php foreach($seg_s as $ss){
-				?>
-                <option value="<?php echo $ss['cod_sistema']?>"><?php echo $ss['cod_sistema']?> - <?php echo $ss['descripcion']?></option>
-                <?php	
-				}?>
-            </select>
-            
-            
-            </td></tr>
         <tr><td>Login</td><td><input type="text" name="login" required></td></tr>
         <tr><td>Nombre</td><td><input type="text" name="nombre" required></td></tr>
         

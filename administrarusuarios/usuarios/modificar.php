@@ -22,17 +22,6 @@ $su=array_shift($seg_u);
 <form action="usuarios/actualizar.php" method="post">
 	<input type="hidden" name="cod_usuario" value="<?php echo $cod_usuario?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
-        <tr><td>Sistema</td><td><select name="cod_sistema" autofocus required disabled>
-            	<option value="">Seleccionar</option>
-            	<?php foreach($seg_s as $ss){
-				?>
-                <option value="<?php echo $ss['cod_sistema']?>" <?php echo $ss['cod_sistema']==$su['cod_sistema']?'selected="selected"':''?>><?php echo $ss['cod_sistema']?> - <?php echo $ss['descripcion']?></option>
-                <?php	
-				}?>
-            </select>
-            
-            
-            </td></tr>
         <tr><td>Login</td><td><input type="text" name="login" required value="<?php echo $su['login']?>"></td></tr>
         <tr><td>Nombre</td><td><input type="text" name="nombre" required value="<?php echo $su['nombre']?>"></td></tr>
         

@@ -4,13 +4,14 @@ include_once("../../estructurabd/seg_usuario.php");
 extract($_POST);
 $seg_usuario=new seg_usuario;
 $cod_empresa=$_SESSION['cod_empresa'];
-$condicion="cod_empresa  LIKE '%$cod_empresa' and cod_sistema  LIKE '%$cod_sistema' ";
+$cod_sistema=$_SESSION['cod_sistema'];
+$condicion="cod_empresa  LIKE '%$cod_empresa' and cod_sistema  LIKE '%$cod_sistema' and nombre LIKE '%$nombre' and paterno LIKE '%$paterno' ";
 
 $seg_u=$seg_usuario->mostrarTodoRegistro($condicion,0);
 ?>
 <table class="table table-bordered table-hover">
 <thead>
-<tr><th>Nº</th><th>Empresa</th><th>Sistema</th><th>Login</th><th>Nombre</th><th>Paterno</th><th>Materno</th><th>Fecha de Creación</th><th>Fecha Expiración</th><th></th></tr>
+<tr><th>Nº</th><th>Login</th><th>Nombre</th><th>Paterno</th><th>Materno</th><th>Fecha de Creación</th><th>Fecha Expiración</th><th></th></tr>
 </thead>
 <?php
 $i=0;
@@ -18,8 +19,7 @@ foreach($seg_u as $su){$i++;
 ?>
 <tr>
 	<td><?php echo $i?></td>
-    <td><?php echo $su['cod_empresa']?></td>
-    <td><?php echo $su['cod_sistema']?></td>
+
     <td><?php echo $su['login']?></td>
     <td><?php echo $su['nombre']?></td>
     <td><?php echo $su['paterno']?></td>

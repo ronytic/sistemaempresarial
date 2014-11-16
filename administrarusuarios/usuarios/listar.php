@@ -13,20 +13,14 @@ $seg_s=$seg_sistema->mostrarTodoRegistro($condicion,0,"descripcion");
 <form action="usuarios/busqueda.php" method="post" class="formulario">
 	<table class="table table-bordered" style="background-color:#FFFFFF">
     	<thead>
-    	<tr><th>Sistema</th></tr>
+    	<tr><th>Nombre</th><th>Paterno</th></tr>
         </thead>
         <tr>
-            <td><select name="cod_sistema">
-            	<option value="">Seleccionar</option>
-            	<?php foreach($seg_s as $ss){
-				?>
-                <option value="<?php echo $ss['cod_sistema']?>"><?php echo $ss['cod_sistema']?> - <?php echo $ss['descripcion']?></option>
-                <?php	
-				}?>
-            </select>
-            
-            
-            </td><td><input type="submit" name="Guardar" value="Buscar" class="btn btn-success"></td></tr>
+            <td>
+            <input type="text" name="nombre">
+            </td>
+            <td><input type="text" name="paterno"></td>
+            <td><input type="submit" name="Guardar" value="Buscar" class="btn btn-success"></td></tr>
     </table>
 	
     
