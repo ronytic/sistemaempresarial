@@ -14,9 +14,16 @@ $rec_a=$rec_area->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."
 include_once("../../estructurabd/rec_bateria.php");
 $rec_bateria=new rec_bateria;
 $rec_b=$rec_bateria->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
+$titulo="Nuevo Reclutamiento";
+include_once("../../cabecerahtml.php");
+?>
+
+<?php
+//print_r($_SESSION);
+include_once("../../cabecera.php");
 ?>
 <h2>Nuevo Reclutamiento</h2>
-<form action="reclutamiento/guardar.php" method="post">
+<form action="guardar.php" method="post">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	
         <tr><td>Cargo</td><td><select name="cod_cargo" autofocus required>
@@ -60,7 +67,6 @@ $rec_b=$rec_bateria->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa'
         							<option value="A">Activo</option>
         							<option value="C">Cerrado</option>
                                     </select></td></tr>
-        <tr><td>Usuario</td><td><input type="text" name="usuario" required></td></tr>
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>
     </table>
 	

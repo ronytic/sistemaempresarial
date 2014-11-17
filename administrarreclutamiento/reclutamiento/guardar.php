@@ -3,6 +3,7 @@ include_once("../../login/check.php");
 include_once("../../estructurabd/rec_reclutamiento.php");
 extract($_POST);
 $cod_empresa=$_SESSION['cod_empresa'];
+$usuario=$_SESSION['login'];
 $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"cod_cargo"=>"'$cod_cargo'",
 				"cod_area"=>"'$cod_area'",
