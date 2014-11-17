@@ -68,7 +68,9 @@ include_once("../../cabecera.php");
 
 <fieldset>
 	<legend>Candidatos</legend>
-    <a href="" class="btn btn-danger btn-xs">Nuevo Candidato</a>
+    <a href="nuevo_candidato.php?cod_recluta=<?php echo $cod_recluta?>" class="btn btn-danger btn-xs">Nuevo Candidato</a>
+    <a href="listar_candidato.php?cod_recluta=<?php echo $cod_recluta?>" class="btn btn-success btn-xs">Agregar Candidato ya Existente</a>
+    
     <table class="table table-bordered table-hover table-striped">
     	<thead>
         	<th>N</th><th>Cedula</th><th>Paterno</th><th>Materno</th><th>Nombres</th><th></th>
