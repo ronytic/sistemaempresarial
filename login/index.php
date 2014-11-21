@@ -5,99 +5,55 @@ $folder="../";
 include_once("../estructurabd/seg_empresa.php");
 $seg_empresa=new seg_empresa;
 $seg_e=$seg_empresa->mostrarTodoRegistro("",0,"descripcion");
-include_once("../cabecerahtml.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-		<meta charset="utf-8" />
-		<title>.::<?php echo $idioma['AccesoSistema']?> | <?php echo $title;?> | <?php echo $idioma['TituloSistema']?>::.</title>
+<html dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Raul</title>
+   
 
-		<meta name="description" content="Sistema Desarrollado por Ronald Nina Layme">
-		<meta name="author" content="Sistema Desarrollado por Ronald Nina Layme">
+    <link href="css/estilo.css" rel="stylesheet" type="text/css">
+   <style type="text/css">
+   	select{
+		padding:7px;
+		margin-right:26px;
+		border:0px solid #FFFFFF;
+		background:none;
+		width:250px;
+		outline:none;
+	}
+   </style>
+</head>
+<body><div id="preload_images"></div>
+
+<img class="background-image" src="imagenes/fondo.png">
+
+<div id="login-wrapper" style="opacity: 1; visibility: visible;">
+    <div id="notify">
         
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- basic styles -->
+        <div id="login-status" class="error-notice" style="visibility: hidden">
+            <span class="login-status-icon"></span>
+            
+        </div>
+    </div>
 
-		<link href="<?php echo $folder?>css/core/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="<?php echo $folder?>css/core/font-awesome.min.css" />
-		<link rel="shortcut icon" href="../imagenes/logos/<?php echo $LogoIcono?>" />
-		<!--[if IE 7]>
-		  <link rel="stylesheet" href="<?php echo $folder?>css/core/font-awesome-ie7.min.css" />
-		<![endif]-->
+    
 
-		<!-- page specific plugin styles -->
-
-		<!-- fonts -->
-
-		<link rel="stylesheet" href="<?php echo $folder?>css/core/ace-fonts.css" />
-
-		<!-- ace styles -->
-
-		<link rel="stylesheet" href="<?php echo $folder?>css/core/ace.min.css" />
-		<link rel="stylesheet" href="<?php echo $folder?>css/core/ace-rtl.min.css" />
-
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='<?php echo $folder?>js/core/framework/jquery-2.0.3.min.js'>"+"<"+"/script>");
-		</script>
-        
-		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="<?php echo $folder?>css/core/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-		<!--[if lt IE 9]>
-		<script src="<?php echo $folder?>js/core/adicionales/html5shiv.js"></script>
-		<script src="<?php echo $folder?>js/core/adicionales/respond.min.js"></script>
-		<![endif]-->
-        <script type="text/javascript" language="javascript" src="js/login.js"></script>
-        <script language="javascript" type="text/javascript">
-			RedirigirLogin=1;
-			var AyudaTitulo="<?php echo $idioma['AyudaTitulo']?>";
-		</script>
-	</head>
-
-<body>
-	<div class="main-content">
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-1">
-				<div class="login-container">
-                	<div class="center">
-                        <h1>
-                            <span class="red">Sistema de Reclutamiento</span>
-
-                        </h1>
-                        <h4 class="blue"></h4>
-                    </div>
-                    <br><br>
-					<fieldset style="border:#CBCBCB 1px solid;padding:25px;">
-						<legend style="border:#CBCBCB 1px solid;padding:10px;text-align:center">Datos de Acceso</legend>
-					<?php
-                        if(isset($_GET['incompleto'])){
-                        ?>
-                        <div class="alert alert-error">
-                            <!--<button type="button" class="close" data-dismiss="alert">&times;</button>-->
-                            Los datos estan incompleto
-                        </div>
-                        <?php
-                        }
-                        if(isset($_GET['error'])){
-                        ?>
-                        <div class="alert alert-info">
-                            <!--<button type="button" class="close" data-dismiss="alert">&times;</button>-->
-                            Los datos introducidos son erroneos, intentelo nuevamente
-                        </div>
-                        <?php
-                        }
-                    ?>
-                    <form action="login.php" method="post">
-                        <input type="hidden" name="u" value="<?php echo $_GET['u'];?>">
-                        <table>
-                            <tr><td>Empresa</td><td><select name="cod_empresa" autofocus required>
+    <div id="content-container">
+        <div id="login-container">
+            <div id="login-sub-container">
+                <div id="login-sub-header">
+<div class="titulo"><img src="imagenes/titulo.png" border="0"></div>
+                </div>
+                <div id="login-sub">
+                    <div id="forms">
+             
+                        <form id="login_form" action="#" method="post" target="_top">
+                        	<div class="input-req-login"><label for="empresa">Empresa</label></div>
+                            <div class="input-field-login icon username-container">
+                                <select name="cod_empresa" autofocus required>
                                     <option value="">Seleccionar</option>
                                     <?php foreach($seg_e as $se){
                                     ?>
@@ -105,18 +61,49 @@ include_once("../cabecerahtml.php");
                                     <?php	
                                     }?>
                                 </select>
-                                
-                                
-                                </td></tr>
-                            <tr><td>Usuario</td><td><input type="text" name="usuario"></td></tr>
-                            <tr><td>Contraseña</td><td><input type="password" name="contrasena"></td></tr>
-                            <tr><td></td><td><input type="submit" name="" value="Ingresar" class="btn btn-success"></td></tr>
-                        </table>
-                    </form>
-                    </fieldset>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+                            </div>
+                            
+                            
+                            <div class="input-req-login"><label for="user">Nombre de Usuario</label></div>
+                            <div class="input-field-login icon username-container">
+                                <input name="usuario" id="user" autofocus value="" placeholder="Introduzca su nombre de usuario." class="std_textbox" type="text" tabindex="1" required>
+                            </div>
+                            <div style="margin-top:30px;" class="input-req-login"><label for="pass">Contraseña</label></div>
+                            <div class="input-field-login icon password-container">
+                                <input name="contrasena" id="pass" placeholder="Ingrese su contraseña de la cuenta." class="std_textbox" type="password" tabindex="2" required>
+                            </div>
+                            <div class="controls">
+                                <div class="login-btn">
+                                    <button name="login" type="submit" id="login_submit" tabindex="3">Acceder</button>
+                                  <p>&nbsp;</p>
+                                </div>
+                                          
+                                   
+                                                            </div>
+                            <div class="clear" id="push"></div>
+                        </form>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="locale-footer" style="display: block;">
+            <div class="locale-container">
+                <noscript>
+                    
+                </noscript>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <div class="copyright"></div>
+
+</body></html>
