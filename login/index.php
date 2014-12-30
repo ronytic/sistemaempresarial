@@ -50,7 +50,7 @@ $seg_e=$seg_empresa->mostrarTodoRegistro("",0,"descripcion");
                 <div id="login-sub">
                     <div id="forms">
              
-                        <form id="login_form" action="#" method="post" target="_top">
+                        <form id="login_form" action="login.php" method="post" target="_top">
                         	<div class="input-req-login"><label for="empresa">Empresa</label></div>
                             <div class="input-field-login icon username-container">
                                 <select name="cod_empresa" autofocus required>
