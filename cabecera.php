@@ -379,6 +379,10 @@
 									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=areas">Areas
 									</a>
 								</li>
+                                <li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=plantas">Plantas
+									</a>
+								</li>
                             </ul>
                         </li>
                         <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>"><i class="icon-user"></i><span> <?php echo 'Admin. de Usuarios'?></span>
