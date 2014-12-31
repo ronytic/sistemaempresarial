@@ -7,12 +7,13 @@ $usuario=$_SESSION['login'];
 $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"cod_cargo"=>"'$cod_cargo'",
 				"cod_area"=>"'$cod_area'",
+				"cod_planta"=>"'$cod_planta'",
 				"cod_bateria"=>"'$cod_bateria'",
 				"fecha_inicio"=>"'$fecha_inicio'",
 				"fecha_limite"=>"'$fecha_limite'",
 				"prioridad"=>"'$prioridad'",
 				"responsable"=>"'$responsable'",
-				"estado"=>"'$estado'",
+				"estado"=>"'A'",
 				"usuario"=>"'$usuario'",
 
 				);

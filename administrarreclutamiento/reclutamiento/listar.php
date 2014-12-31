@@ -5,9 +5,9 @@ $titulo="Reclutamientos";
 
 include_once("../../estructurabd/rec_area_usuario.php");
 
-include_once("../../estructurabd/rec_area.php");
+include_once("../../estructurabd/rec_planta.php");
 
-$rec_area=new rec_area;
+$rec_planta=new rec_planta;
 
 if(!isset($rec_area_usuario)){
 	$rec_area_usuario=new rec_area_usuario;	

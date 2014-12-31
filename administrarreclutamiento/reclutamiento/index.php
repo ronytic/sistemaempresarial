@@ -11,6 +11,10 @@ include_once("../../estructurabd/rec_area.php");
 $rec_area=new rec_area;
 $rec_a=$rec_area->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
 
+include_once("../../estructurabd/rec_planta.php");
+$rec_planta=new rec_planta;
+$rec_p=$rec_planta->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
+
 include_once("../../estructurabd/rec_bateria.php");
 $rec_bateria=new rec_bateria;
 $rec_b=$rec_bateria->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
@@ -44,6 +48,15 @@ include_once("../../cabecera.php");
 				}?>
             </select>
             </td></tr>
+        <tr><td>Planta</td><td><select name="cod_planta" autofocus required>
+            	<option value="">Seleccionar</option>
+            	<?php foreach($rec_p as $rp){
+				?>
+                <option value="<?php echo $rp['cod_planta']?>"><?php echo $rp['cod_planta']?> - <?php echo $rp['descripcion']?></option>
+                <?php	
+				}?>
+            </select>
+            </td></tr>
         <tr><td>Bateria</td><td><select name="cod_bateria" autofocus required>
             	<option value="">Seleccionar</option>
             	<?php foreach($rec_b as $rb){
@@ -63,10 +76,10 @@ include_once("../../cabecera.php");
                                     <option value="B">Baja</option>
                                     </select></td></tr>
         <tr><td>Responsable</td><td><input type="text" name="responsable" required></td></tr>
-        <tr><td>Estado</td><td><select name="estado">
+        <?php /*<tr><td>Estado</td><td><select name="estado">
         							<option value="A">Activo</option>
         							<option value="C">Cerrado</option>
-                                    </select></td></tr>
+                                    </select></td></tr>*/?>
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>
     </table>
 	
