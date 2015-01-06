@@ -12,9 +12,9 @@ include_once("../../estructurabd/seg_rol.php");
 $seg_rol=new seg_rol;
 $seg_r=$seg_rol->mostrarTodoRegistro($condicion,0,"descripcion");
 
-include_once("../../estructurabd/rec_area.php");
-$rec_area=new rec_area;
-$rec_a=$rec_area->mostrarTodoRegistro($condicion,0,"descripcion");
+include_once("../../estructurabd/rec_planta.php");
+$rec_planta=new rec_planta;
+$rec_p=$rec_planta->mostrarTodoRegistro($condicion,0,"descripcion");
 
 $seg_usuario=new seg_usuario;
 $condicion="cod_usuario  LIKE '$cod_usuario'";
@@ -53,21 +53,21 @@ $su=array_shift($seg_u);
 </form>
 
 <fieldset>
-	<legend>Area</legend>
-    	<form action="usuarios/guardar_area.php" method="post" class="formulario">
+	<legend>Planta</legend>
+    	<form action="usuarios/guardar_planta.php" method="post" class="formulario">
         <input type="hidden" name="cod_usuario" required value="<?php echo $su['cod_usuario']?>">
         <input type="hidden" name="login" required value="<?php echo $su['login']?>">
         <table class="table table-bordered" style="background-color:#FFFFFF">
             <thead>
-            <tr><th>Area</th></tr>
+            <tr><th>Planta</th></tr>
             </thead>
             <tr>
                 <td>
-               	<select name="cod_area">
-                	<?php foreach($rec_a as $ra){
+               	<select name="cod_planta">
+                	<?php foreach($rec_p as $rp){
 					?>
                     
-                    <option value="<?php echo $ra['cod_area']?>"><?php echo $ra['cod_area']?> - <?php echo $ra['descripcion']?></option>
+                    <option value="<?php echo $rp['cod_planta']?>"><?php echo $rp['cod_planta']?> - <?php echo $rp['descripcion']?></option>
                     <?php	
 					}?>
                 </select>
@@ -89,7 +89,7 @@ $su=array_shift($seg_u);
 <script language="javascript" type="text/javascript">
 	//$(document).on("ready",function(){
 		
-		$.post("usuarios/listar_area.php",{'login':'<?php echo $su['login']?>'},function(data){
+		$.post("usuarios/listar_planta.php",{'login':'<?php echo $su['login']?>'},function(data){
 			$("#respuestaformulario").html(data);
 		});
 		
