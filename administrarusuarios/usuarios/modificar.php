@@ -78,7 +78,7 @@ $su=array_shift($seg_u);
         
     </form>
     <fieldset>
-    	<legend>Listado de Areas</legend>
+    	<legend>Listado de Plantas</legend>
         <div id="respuestaformulario">
 	    </div>
     </fieldset>
