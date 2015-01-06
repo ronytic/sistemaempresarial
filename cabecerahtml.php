@@ -6,7 +6,7 @@ $Titulo="Sistema de Gestión de Reclutamiento";
 <html lang="en">
 <head>
 		<meta charset="utf-8" />
-		<title><?php echo $idioma['TituloSistema']?></title>
+		<title><?php echo $Titulo?></title>
 
 		<meta name="description" content="Sistema Desarrollado por Ronald Nina Layme">
 		<meta name="author" content="Sistema Desarrollado por Ronald Nina Layme">
