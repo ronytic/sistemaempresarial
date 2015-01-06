@@ -3,20 +3,20 @@ include_once("../../login/check.php");
 $folder="../../";
 $titulo="Reclutamientos";
 
-include_once("../../estructurabd/rec_area_usuario.php");
+include_once("../../estructurabd/rec_planta_usuario.php");
 
 include_once("../../estructurabd/rec_planta.php");
 
 $rec_planta=new rec_planta;
 
-if(!isset($rec_area_usuario)){
-	$rec_area_usuario=new rec_area_usuario;	
+if(!isset($rec_planta_usuario)){
+	$rec_planta_usuario=new rec_planta_usuario;	
 }
 
 $login=$_SESSION['login'];
 $condicion="login  LIKE '%$login' ";
 
-$rec_a_u=$rec_area_usuario->mostrarTodoRegistro($condicion,0);
+$rec_p_u=$rec_planta_usuario->mostrarTodoRegistro($condicion,1);
 include_once("../../cabecerahtml.php");
 ?>
 
@@ -24,20 +24,22 @@ include_once("../../cabecerahtml.php");
 //print_r($_SESSION);
 include_once("../../cabecera.php");
 ?>
-<form action="busqueda.php" method="post" class="formulario">
+<form action="index.php" method="post">
 	<table class="" style="background-color:#FFFFFF">
     	<thead>
     	<tr>
-        	<th>Area</th>
+        	<th>Planta</th>
             <th>Estado</th>
             <!--<th>Dirección</th>-->
         </tr>
         </thead>
         <tr>
-        	<td><select name="cod_area">
-            	<?php foreach($rec_a_u as $rau){
+        	<td><select name="cod_planta">
+            	<?php foreach($rec_p_u as $rpu){
+					$rec_p=$rec_planta->mostrarTodoRegistro("cod_planta='".$rpu['cod_planta']."'",0);
+					$rec_p=array_shift($rec_p);
 				?>
-                <option value="<?php echo $rau['cod_area']?>"><?php echo $rau['cod_area']?></option>
+                <option value="<?php echo $rpu['cod_planta']?>"><?php echo $rpu['cod_planta']?> - <?php echo $rec_p['descripcion']?></option>
                 <?php	
 				}?>
             </select></td>
@@ -47,7 +49,7 @@ include_once("../../cabecera.php");
         							<option value="C">Cerrado</option>
                                     </select>
             </td>
-            <td><a class="btn btn-danger btn-xs" href="index.php">Adicionar</a></td>
+            <td><input type="submit" class="btn btn-danger btn-xs" value="Adicionar"></td>
         </tr>
     </table>
 	
@@ -59,9 +61,17 @@ include_once("../../cabecera.php");
 <?php include_once("../../pie.php");?>
 <script language="javascript">
 	$(document).on("ready",function(){
-		$(".formulario").submit();
+		buscar();
 	});
-	$("select[name=cod_area],select[name=estado]").change(function(e) {
-        $(".formulario").submit();
+	
+	$("select[name=cod_planta],select[name=estado]").change(function(e) {
+        buscar();
     });
+	function buscar(){
+		var cod_planta=$("select[name=cod_planta]").val();
+		var estado=$("select[name=estado]").val();
+		$.post("busqueda.php",{"cod_planta":cod_planta,"estado":estado},function(data){
+			$("#respuestaformulario").html(data)
+		});
+	}
 </script>

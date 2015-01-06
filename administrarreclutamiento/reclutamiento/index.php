@@ -2,7 +2,7 @@
 include_once("../../login/check.php");
 $folder="../../";
 
-
+$login=$_SESSION['login'];
 include_once("../../estructurabd/rec_cargo.php");
 $rec_cargo=new rec_cargo;
 $rec_c=$rec_cargo->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
@@ -13,7 +13,7 @@ $rec_a=$rec_area->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."
 
 include_once("../../estructurabd/rec_planta.php");
 $rec_planta=new rec_planta;
-$rec_p=$rec_planta->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
+$rec_p=$rec_planta->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."' and cod_planta IN (SELECT cod_planta FROM rec_planta_usuario WHERE login = '$login')",0,"descripcion");
 
 include_once("../../estructurabd/rec_bateria.php");
 $rec_bateria=new rec_bateria;
@@ -48,11 +48,11 @@ include_once("../../cabecera.php");
 				}?>
             </select>
             </td></tr>
-        <tr><td>Planta</td><td><select name="cod_planta" autofocus required>
+        <tr><td>Planta</td><td><select name="cod_planta" autofocus required >
             	<option value="">Seleccionar</option>
             	<?php foreach($rec_p as $rp){
 				?>
-                <option value="<?php echo $rp['cod_planta']?>"><?php echo $rp['cod_planta']?> - <?php echo $rp['descripcion']?></option>
+                <option value="<?php echo $rp['cod_planta']?>" <?php echo $rp['cod_planta']==$_POST['cod_planta']?'selected="selected"':'';?>><?php echo $rp['cod_planta']?> - <?php echo $rp['descripcion']?></option>
                 <?php	
 				}?>
             </select>

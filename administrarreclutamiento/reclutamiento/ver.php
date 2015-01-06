@@ -6,6 +6,9 @@ $titulo="Datos del Reclutamiento";
 include_once("../../estructurabd/rec_area_usuario.php");
 
 include_once("../../estructurabd/rec_area.php");
+include_once("../../estructurabd/rec_planta.php");
+include_once("../../estructurabd/rec_cargo.php");
+include_once("../../estructurabd/rec_bateria.php");
 
 include_once("../../estructurabd/rec_reclutamiento.php");
 include_once("../../estructurabd/rec_recluta_candidato.php");
@@ -14,7 +17,9 @@ $rec_recluta_candidato=new rec_recluta_candidato;
 $rec_candidato=new rec_candidato;
 $rec_reclutamiento=new rec_reclutamiento;
 $rec_area=new rec_area;
-
+$rec_planta=new rec_planta;
+$rec_cargo=new rec_cargo;
+$rec_bateria=new rec_bateria;
 if(!isset($rec_area_usuario)){
 	$rec_area_usuario=new rec_area_usuario;	
 }
@@ -42,6 +47,15 @@ $rec_r_c=$rec_recluta_candidato->mostrarTodoRegistro($condicion,0);
 
 $rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0);
 
+
+$rc=$rec_cargo->mostrarTodoRegistro("cod_cargo='".$rec_r['cod_cargo']."'",0);
+$rc=array_shift($rc);
+$ra=$rec_area->mostrarTodoRegistro("cod_area='".$rec_r['cod_area']."'",0);
+$ra=array_shift($ra);
+$rp=$rec_planta->mostrarTodoRegistro("cod_planta='".$rec_r['cod_planta']."'",0);
+$rp=array_shift($rp);
+$rb=$rec_bateria->mostrarTodoRegistro("cod_bateria='".$rec_r['cod_bateria']."'",0);
+$rb=array_shift($rb);
 include_once("../../cabecerahtml.php");
 ?>
 
@@ -55,9 +69,10 @@ include_once("../../cabecera.php");
 		<thead>
         	<th colspan="1" width="200">Datos</th>
         </thead>
-        <tr><td><strong>Cargo</strong></td><td><?php echo $rec_r['cod_cargo']?></td></tr>
-        <tr><td><strong>Area</strong></td><td><?php echo $rec_r['cod_area']?></td></tr>
-        <tr><td><strong>Bateria</strong></td><td><?php echo $rec_r['cod_bateria']?></td></tr>
+        <tr><td><strong>Cargo</strong></td><td><?php echo $rec_r['cod_cargo']?> - <?php echo $rc['descripcion']?></td></tr>
+        <tr><td><strong>Area</strong></td><td><?php echo $rec_r['cod_area']?> - <?php echo $ra['descripcion']?></td></tr>
+        <tr><td><strong>Planta</strong></td><td><?php echo $rec_r['cod_planta']?> - <?php echo $rp['descripcion']?></td></tr>
+        <tr><td><strong>Bateria</strong></td><td><?php echo $rec_r['cod_bateria']?> - <?php echo $rb['descripcion']?></td></tr>
         <tr><td><strong>Fecha de Inicio</strong></td><td><?php echo date("d-m-Y",strtotime($rec_r['fecha_inicio']))?></td></tr>
         <tr><td><strong>Fecha Límite</strong></td><td><?php echo  date("d-m-Y",strtotime($rec_r['fecha_limite']))?></td></tr>
         <tr><td><strong>Prioridad</strong></td><td><?php echo $prioridad?></td></tr>
