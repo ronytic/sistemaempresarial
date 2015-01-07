@@ -6,7 +6,7 @@ class rec_planta_usuario extends bd{
 		"cod_planta"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"cod_usuario"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"login"=>array("Tipo"=>"varchar","Tamano"=>"20"),
-		
+		"Activo"=>array("Tipo"=>"tinyint","Tamano"=>"1"),
 		
 	);	
 }
