@@ -13,6 +13,10 @@ include_once("../../estructurabd/rec_tipo_prueba.php");
 $rec_tipo_prueba=new rec_tipo_prueba;
 $rec_t_p=$rec_tipo_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
 
+include_once("../../estructurabd/rec_prueba.php");
+$rec_prueba=new rec_prueba;
+$rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
+
 ?>
 <h2>Modificar Bateria</h2>
 <form action="bateria/actualizar.php" method="post">
@@ -28,3 +32,46 @@ $rec_t_p=$rec_tipo_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_em
 	
     
 </form>
+<fieldset>
+	<legend>Pruebas</legend>
+    	<form action="bateria/guardar_prueba.php" method="post" class="formulario">
+        <input type="hidden" name="cod_bateria" required value="<?php echo $rec_b['cod_bateria']?>">
+        
+        <table class="table table-bordered" style="background-color:#FFFFFF">
+            <thead>
+            <tr><th>Pruebas</th></tr>
+            </thead>
+            <tr>
+                <td>
+               	<select name="cod_prueba">
+                	<?php foreach($rec_p as $rp){
+					?>
+                    
+                    <option value="<?php echo $rp['cod_prueba']?>"><?php echo $rp['cod_prueba']?> - <?php echo $rp['descripcion']?></option>
+                    <?php	
+					}?>
+                </select>
+                </td>
+                <td><input type="submit" name="Guardar" value="Agregar" class="btn btn-success"></td></tr>
+        </table>
+        
+        
+    </form>
+    <fieldset>
+    	<legend>Listado de Pruebas</legend>
+        <div id="respuestaformulario">
+	    </div>
+    </fieldset>
+    
+
+</fieldset>
+
+<script language="javascript" type="text/javascript">
+	//$(document).on("ready",function(){
+		
+		$.post("bateria/listar_pruebas.php",{'login':'<?php echo $su['login']?>'},function(data){
+			$("#respuestaformulario").html(data);
+		});
+		
+	//});
+</script>

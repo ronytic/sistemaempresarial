@@ -9,7 +9,7 @@ class rec_bateria_prueba extends bd{
 		"cod_empresa"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"cod_bateria"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"cod_prueba"=>array("Tipo"=>"varchar","Tamano"=>"3"),
-		
+		"Activo"=>array("Tipo"=>"tinyint","Tamano"=>"1"),
 		
 		
 	);	
