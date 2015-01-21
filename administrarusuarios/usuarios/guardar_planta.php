@@ -9,6 +9,7 @@ $valores=array(
 				"cod_usuario"=>"'$cod_usuario'",
 				"login"=>"'$login'",
 				"cod_planta"=>"'$cod_planta'",
+				"Activo"=>"1",
 				);
 $rec_planta_usuario=new rec_planta_usuario;
 $rec_planta_usuario->insertarRegistro($valores,0);
