@@ -363,6 +363,10 @@
                         	</a>
                         	
                             <ul class="submenu">
+                            	<li class="">
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=banco">Banco
+									</a>
+								</li>
                                 <li class="">
 									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=bateria">Baterias
 									</a>
