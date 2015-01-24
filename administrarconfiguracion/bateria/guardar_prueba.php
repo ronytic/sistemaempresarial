@@ -9,6 +9,7 @@ $valores=array(
 				"cod_empresa"=>"'$cod_empresa'",
 				"cod_bateria"=>"'$cod_bateria'",
 				"cod_prueba"=>"'$cod_prueba'",
+				"orden"=>"'$orden'",
 				"Activo"=>"1",
 				);
 $rec_bateria_prueba=new rec_bateria_prueba;

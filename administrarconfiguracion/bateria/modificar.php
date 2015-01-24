@@ -39,7 +39,7 @@ $rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']
         
         <table class="table table-bordered" style="background-color:#FFFFFF">
             <thead>
-            <tr><th>Pruebas</th></tr>
+            <tr><th>Pruebas</th><th>Orden</th></tr>
             </thead>
             <tr>
                 <td>
@@ -52,6 +52,7 @@ $rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']
 					}?>
                 </select>
                 </td>
+                <td><input type="number" name="orden" min="0" value="0" class="der"></td>
                 <td><input type="submit" name="Guardar" value="Agregar" class="btn btn-success"></td></tr>
         </table>
         

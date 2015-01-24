@@ -10,8 +10,8 @@ $rec_b=$rec_bateria->mostrarTodoRegistro($condicion,0);
 ?>
 <table class="table table-bordered  table-hover">
 <thead>
-<tr><th>Nº</th><th>Código</th><th>Descripción</th>
-<th></th></tr>
+<tr><th width="50">Nº</th><th width="100">Código</th><th>Descripción</th>
+<th width="50"></th></tr>
 </thead>
 <?php
 $i=0;
