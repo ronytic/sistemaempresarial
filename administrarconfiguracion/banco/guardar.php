@@ -4,7 +4,6 @@ include_once("../../estructurabd/rec_banco.php");
 extract($_POST);
 $cod_empresa=$_SESSION['cod_empresa'];
 $valores=array("cod_empresa"=>"'$cod_empresa'",
-				"cod_prueba"=>"'$cod_prueba'",
 				"cod_banco"=>"'$cod_banco'",
 				"nro"=>"'$nro'",
 				"pregunta"=>"'$pregunta'",

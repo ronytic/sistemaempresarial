@@ -4,7 +4,6 @@ class rec_banco extends bd{
 	var $campos_tabla=array(
 		
 		"cod_empresa"=>array("Tipo"=>"varchar","Tamano"=>"3"),
-		"cod_prueba"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"cod_banco"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"nro"=>array("Tipo"=>"int","Tamano"=>"11"),
 		"pregunta"=>array("Tipo"=>"varchar","Tamano"=>"100"),
