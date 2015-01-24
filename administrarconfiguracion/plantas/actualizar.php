@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-include_once("../../estructurabd/rec_area.php");
+include_once("../../estructurabd/rec_planta.php");
 extract($_POST);
 $cod_empresa=$_SESSION['cod_empresa'];
 $valores=array(
@@ -8,8 +8,8 @@ $valores=array(
 				"descripcion"=>"'$descripcion'",
 
 				);
-$rec_area=new rec_area;
-$rec_area->actualizarRegistro($valores,"codigo_planta='$codigo_planta'");
+$rec_planta=new rec_planta;
+$rec_planta->actualizarRegistro($valores,"codigo_planta='$codigo_planta'");
 
-header("Location:../?c=areas");
+header("Location:../?c=plantas");
 ?>
