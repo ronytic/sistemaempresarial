@@ -6,6 +6,11 @@ $folder="../../";
 include_once("../../estructurabd/rec_tipo_prueba.php");
 $rec_tipo_prueba=new rec_tipo_prueba;
 $rec_t_p=$rec_tipo_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
+
+include_once("../../estructurabd/rec_banco.php");
+$rec_banco=new rec_banco;
+$rec_banco->__set("campos",array("cod_banco,count(*) as Cantidad"));
+$rec_b=$rec_banco->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."' GROUP BY cod_banco",0,"");
 ?>
 <h2>Nueva Prueba</h2>
 <form action="pruebas/guardar.php" method="post">
@@ -22,6 +27,14 @@ $rec_t_p=$rec_tipo_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_em
             
             
             </td></tr>
+        <tr><td>Banco de Preguntas</td><td><select name="cod_banco">
+                	<?php foreach($rec_b as $rb){
+					?>
+                    
+                    <option value="<?php echo $rb['cod_banco']?>" <?php echo $rec_b['cod_banco']==$rb['cod_banco']?'selected="selected"':'';?>><?php echo $rb['cod_banco']?> - <?php echo $rb['Cantidad']?> Preguntas</option>
+                    <?php	
+					}?>
+                </select></td></tr>    
         <tr><td>Descripción</td><td><input type="text" name="descripcion" required></td></tr>
         
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>

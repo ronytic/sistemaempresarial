@@ -6,6 +6,7 @@ $cod_empresa=$_SESSION['cod_empresa'];
 $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"cod_prueba"=>"'$cod_prueba'",
 				"cod_tipo"=>"'$cod_tipo'",
+				"cod_banco"=>"'$cod_banco'",
 				"descripcion"=>"'$descripcion'",
 
 				);
