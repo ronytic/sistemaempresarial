@@ -2,7 +2,7 @@
 session_start();
 $dir=dirname(__FILE__).DIRECTORY_SEPARATOR."../../";
 define("RAIZ",$dir);
-include_once(RAIZ."configuracion.php");
+include_once(RAIZ."pruebas/configuracion.php");
 //include_once(RAIZ."rastreo/revisar.php");
 if((!isset($_SESSION["logueado"])) && ($_SESSION['cod_sistema']=="" && $_SESSION['cod_empresa']=="")){
 	/*print_r($_SESSION);

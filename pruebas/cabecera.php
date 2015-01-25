@@ -268,7 +268,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="<?php echo $folder?>login/logout.php">
+									<a href="<?php echo $folder?>pruebas/login/logout.php">
 										<i class="icon-off"></i>
 										<?php echo 'Salir del Sistema'?>
 									</a>
@@ -276,7 +276,7 @@
 							</ul>
 						</li>
                         <li class="purple">
-							<a href="<?php echo $folder?>login/logout.php">
+							<a href="<?php echo $folder?>pruebas/login/logout.php">
 								<i class="icon-off"></i>
 								<?php  echo 'Salir'?>
 							</a>

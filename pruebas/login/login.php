@@ -9,7 +9,7 @@ if(!empty($_POST)){
 	print_r($navegador);*/
 
 	include_once("../configuracion.php");
-	include_once("../estructurabd/seg_usuario.php");
+	include_once("../../estructurabd/seg_usuario.php");
 	
 	//include_once("../class/logusuario.php");
 	$seg_usuario=new seg_usuario;

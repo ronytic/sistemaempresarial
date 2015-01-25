@@ -2,7 +2,7 @@
 session_start();
 //print_r($_SESSION);
 $folder="../";
-include_once("../estructurabd/seg_empresa.php");
+include_once("../../estructurabd/seg_empresa.php");
 $seg_empresa=new seg_empresa;
 $seg_e=$seg_empresa->mostrarTodoRegistro("",0,"descripcion");
 ?>
