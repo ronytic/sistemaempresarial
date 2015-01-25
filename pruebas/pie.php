@@ -3,11 +3,13 @@
 
 						</div><!-- /.row -->
 
-		<hr>
-						<footer>
+		 <br><br>
+						<!--<footer>
+                       
+                        	<hr>
 							<p class="pull-left"><?php echo $Titulo?> - <?php echo $Sigla;?> &copy; <?php echo 'Todos los Derechos Reservados';?> 2014 - <?php echo date("Y");?></p>
 							<p class="pull-right"></p>
-						</footer>
+						</footer>-->
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
 				<?php /*
