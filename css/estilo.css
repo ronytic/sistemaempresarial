@@ -24,3 +24,12 @@
 table.borderless, .borderless tbody tr td, .borderless thead tr th {
     border: none !important;
 }
+footer{
+	display:block;
+	position:absolute !important;
+	height:70px;
+
+
+	bottom:2px;
+	
+}
