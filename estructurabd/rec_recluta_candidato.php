@@ -7,6 +7,7 @@ class rec_recluta_candidato extends bd{
 		"cod_recluta"=>array("Tipo"=>"varchar","Tamano"=>"3"),	
 		"cedula"=>array("Tipo"=>"varchar","Tamano"=>"10"),
 		"usuario"=>array("Tipo"=>"varchar","Tamano"=>"20"),
+		"activo"=>array("Tipo"=>"tiny","Tamano"=>"1"),
 	);	
 }
 ?>
