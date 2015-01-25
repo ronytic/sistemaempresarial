@@ -10,7 +10,7 @@ $rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0);
 $rc=array_shift($rec_c);
 $cantidad=count($rc);
 if($cantidad>0){
-	$Datos="Modificar Candidato";
+	$Datos="Modificar Datos del Candidato";
 	$Boton="Modificar Datos";
 	$Archivo="actualizar_candidato.php";
 }else{

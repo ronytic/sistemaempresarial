@@ -1,15 +1,23 @@
 <?php 
 $folder="../../../";
 include_once("../../login/check.php");
-include_once("../../../estructurabd/seg_sistema.php");
-$seg_sistema=new seg_sistema;
-$seg_s=$seg_sistema->mostrarTodoRegistro($condicion,0,"descripcion");
+include_once("../../../estructurabd/rec_bateria_prueba.php");
+$rec_bateria_prueba=new rec_bateria_prueba;
+$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro($condicion,1,"orden");
+$pruebas=array();
+foreach($rec_b_p as $rbp){
+	array_push($pruebas,array($rbp['orden']=>$rbp['cod_prueba']));
+}
 
 include_once("../../../estructurabd/seg_rol.php");
 $seg_rol=new seg_rol;
 $seg_r=$seg_rol->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
 //print_r($_SESSION);
-$titulo="Reclutamiento";
+if($_GET['r']){
+	$_SESSION['pruebas']=$pruebas;
+}
+
+$titulo="Pruebas de Reclutamiento";
 include_once("../../cabecerahtml.php");
 ?>
 

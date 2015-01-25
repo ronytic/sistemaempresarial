@@ -21,48 +21,58 @@ include_once("../../cabecerahtml.php");
 ?>
 
 <?php
-//print_r($_SESSION);
 include_once("../../cabecera.php");
 ?>
-<form action="ingresar.php" method="post">
-	<table class="" style="background-color:#FFFFFF">
-    	<thead>
+<div class="col-sm-offset-4 col-sm-4">
+	<div class="widget-box">
+    	<div class="widget-header widget-header-flat widget-header-small">
+        <h5>Selección de Reclutamiento</h5></div>
+        <div class="widget-body">
+        	<div class="widget-main">
+            	<form action="ingresar.php" method="post">
+                    <table class="" style="background-color:#FFFFFF">
+                        <thead>
+                
+                        </thead>
+                        <tr>
+                            <td>
+                                Planta<br>
+                            <select name="cod_planta">
+                                <?php foreach($rec_p_u as $rpu){
+                                    $rp=$rec_planta->mostrarTodoRegistro("cod_planta='".$rpu['cod_planta']."'",0);
+                                    print_r($rp);
+                                    $rp=array_shift($rp);
+                                    
+                                ?>
+                                <option value="<?php echo $rpu['cod_planta']?>"><?php echo $rp['descripcion']?></option>
+                                <?php	
+                                }?>
+                            </select></td>
+                            </tr>
+                            <tr>
+                            <td>
+                            Reclutamiento<br>
+                            <select name="cod_recluta" id="respuestaformulario">
+                                                    
+                                                    </select>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td>
+                                <input type="submit" value="Ingresar" class="btn btn-danger btn-xs">
+                           </td>
+                        </tr>
+                    </table>
+                    
+                    
+                </form>
+                
+                <div id=""></div>
 
-        </thead>
-        <tr>
-        	<td>
-            	Planta<br>
-            <select name="cod_planta">
-            	<?php foreach($rec_p_u as $rpu){
-					$rp=$rec_planta->mostrarTodoRegistro("cod_planta='".$rpu['cod_planta']."'",0);
-					print_r($rp);
-					$rp=array_shift($rp);
-					
-				?>
-                <option value="<?php echo $rpu['cod_planta']?>"><?php echo $rp['descripcion']?></option>
-                <?php	
-				}?>
-            </select></td>
-            </tr>
-            <tr>
-            <td>
-            Reclutamiento<br>
-            <select name="cod_recluta" id="respuestaformulario">
-        							
-                                    </select>
-            </td>
-            </tr>
-            <tr>
-            <td>
-            	<input type="submit" value="Ingresar" class="btn btn-danger btn-xs">
-           </td>
-        </tr>
-    </table>
-	
-    
-</form>
-
-<div id=""></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php include_once("../../pie.php");?>
 <script language="javascript">
