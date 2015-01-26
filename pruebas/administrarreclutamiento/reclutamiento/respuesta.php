@@ -26,14 +26,14 @@ include_once("../../cabecerahtml.php");
 include_once("../../cabecera.php");
 ?>
 <?php
-echo "<pre>";
+/*echo "<pre>";
 print_r($_SESSION);
 print_r($_POST);
-echo "</pre>";
+echo "</pre>";*/
 if($_GET['r']){
 	?>
     <h2>¿Desea comenzar la Prueba?</h2>
-    <a href="#" class="btn btn-success">Comenzar</a>
+    <a href="../../selectiva/" class="btn btn-success">Comenzar</a>
     <?php	
 }else{
 	?>
