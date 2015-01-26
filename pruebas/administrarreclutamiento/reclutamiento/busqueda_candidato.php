@@ -55,7 +55,7 @@ include_once("../../cabecera.php");
 <td>Materno</td><td><input type="text"  value="<?php echo $rc['materno']?>" name="materno"></td>
 </tr>
 <tr>
-<td>Fecha de Nacimiento</td><td><input type="date"  value="<?php echo fecha2Str($rc['fecha_nac'])?>" name="fecha_nac"></td>
+<td>Fecha de Nacimiento</td><td><input type="date"  value="<?php echo ($rc['fecha_nac'])?>" name="fecha_nac"></td>
 </tr>
 <tr>
 <td>Ciudad de Nacimiento</td><td><input type="text" name="ciudad_nac" required value="<?php echo $rc['ciudad_nac']?>"></td>
