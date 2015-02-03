@@ -24,6 +24,12 @@ include_once("../../cabecerahtml.php");
 //print_r($_SESSION);
 include_once("../../cabecera.php");
 ?>
+<?php if($_GET['e']==1){?>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+  <strong>El nuevo reclutamiento que registro ya se encontraba activo para el Cargo y la Planta Respectiva!</strong> 
+</div>
+<?php }?>
 <form action="index.php" method="post">
 	<table class="" style="background-color:#FFFFFF">
     	<thead>

@@ -28,6 +28,7 @@ include_once("../../cabecera.php");
 ?>
 <h2>Nuevo Reclutamiento</h2>
 <form action="guardar.php" method="post">
+<input type="hidden" name="cod_planta" value="<?php echo $_POST['cod_planta']?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	
         <tr><td>Cargo</td><td><select name="cod_cargo" autofocus required>
@@ -39,20 +40,21 @@ include_once("../../cabecera.php");
 				}?>
             </select>
             </td></tr>
+        
+        <tr><td>Planta</td><td><fieldset disabled><select name="cod_planta" autofocus required disabled>
+            	<option value="">Seleccionar</option>
+            	<?php foreach($rec_p as $rp){
+				?>
+                <option value="<?php echo $rp['cod_planta']?>" <?php echo $rp['cod_planta']==$_POST['cod_planta']?'selected="selected"':'';?>><?php echo $rp['cod_planta']?> - <?php echo $rp['descripcion']?></option>
+                <?php	
+				}?>
+            </select></fieldset>
+            </td></tr>
         <tr><td>Área</td><td><select name="cod_area" autofocus required>
             	<option value="">Seleccionar</option>
             	<?php foreach($rec_a as $ra){
 				?>
                 <option value="<?php echo $ra['cod_area']?>"><?php echo $ra['cod_area']?> - <?php echo $ra['descripcion']?></option>
-                <?php	
-				}?>
-            </select>
-            </td></tr>
-        <tr><td>Planta</td><td><select name="cod_planta" autofocus required >
-            	<option value="">Seleccionar</option>
-            	<?php foreach($rec_p as $rp){
-				?>
-                <option value="<?php echo $rp['cod_planta']?>" <?php echo $rp['cod_planta']==$_POST['cod_planta']?'selected="selected"':'';?>><?php echo $rp['cod_planta']?> - <?php echo $rp['descripcion']?></option>
                 <?php	
 				}?>
             </select>
@@ -66,9 +68,9 @@ include_once("../../cabecera.php");
 				}?>
             </select>
             </td></tr>
-        <tr><td>Fecha de Inicio</td><td><input type="date" name="fecha_inicio" required></td></tr>
+        <tr><td>Fecha de Inicio</td><td><input type="date" name="fecha_inicio" required value="<?php echo fecha2Str("",0)?>"></td></tr>
         
-        <tr><td>Fecha de Limite</td><td><input type="date" name="fecha_limite" required></td></tr>
+        <tr><td>Fecha de Limite</td><td><input type="date" name="fecha_limite" required value="<?php echo fecha2Str("",0)?>"></td></tr>
         
         <tr><td>Prioridad</td><td><select name="prioridad">
         							<option value="A">Alta</option>

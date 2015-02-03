@@ -18,7 +18,17 @@ $valores=array("cod_empresa"=>"'$cod_empresa'",
 
 				);
 $rec_reclutamiento=new rec_reclutamiento;
-$rec_reclutamiento->insertarRegistro($valores,0);
+$rec_r=$rec_reclutamiento->mostrarTodoRegistro("cod_empresa LIKE '$cod_empresa' and cod_cargo LIKE '$cod_cargo' and cod_planta LIKE '$cod_planta' and estado='A'",0);
+$cantidadRegistros=count($rec_r);
+if($cantidadRegistros>0){
+	header("Location:listar.php?e=1");	
+}else{
+	$rec_reclutamiento->insertarRegistro($valores,0);
+	header("Location:listar.php");
+}
+//$rec_reclutamiento->insertarRegistro($valores,0);
+/*echo "<pre>";
+print_r($_POST);
+echo "</pre>";*/
 
-header("Location:../?c=reclutamiento");
 ?>
