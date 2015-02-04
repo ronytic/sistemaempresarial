@@ -44,7 +44,7 @@ $rec_b=$rec_banco->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa'].
 					}?>
                 </select></td></tr>        
         <tr><td>Descripción</td><td><input type="text" name="descripcion" required value="<?php echo $rec_p['descripcion']?>"></td></tr>
-
+		<tr><td>Tiempo de la Prueba</td><td><input type="number" name="tiempo" required min="0" max="9999" value="<?php echo $rec_p['tiempo']?>">Minutos</td></tr>
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>
     </table>
 	

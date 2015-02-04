@@ -8,7 +8,7 @@ $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"cod_tipo"=>"'$cod_tipo'",
 				"cod_banco"=>"'$cod_banco'",
 				"descripcion"=>"'$descripcion'",
-
+				"tiempo"=>"'$tiempo'",
 				);
 $rec_prueba=new rec_prueba;
 $rec_prueba->insertarRegistro($valores,0);
