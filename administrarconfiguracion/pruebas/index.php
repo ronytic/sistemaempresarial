@@ -9,8 +9,10 @@ $rec_t_p=$rec_tipo_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_em
 
 include_once("../../estructurabd/rec_banco.php");
 $rec_banco=new rec_banco;
-$rec_banco->__set("campos",array("cod_banco,count(*) as Cantidad"));
-$rec_b=$rec_banco->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."' GROUP BY cod_banco",0,"");
+
+$rec_b=$rec_banco->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"cod_banco");
+include_once("../../estructurabd/rec_banco_preguntas.php");
+$rec_banco_preguntas=new rec_banco_preguntas;
 ?>
 <h2>Nueva Prueba</h2>
 <form action="pruebas/guardar.php" method="post">
@@ -29,9 +31,10 @@ $rec_b=$rec_banco->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa'].
             </td></tr>
         <tr><td>Banco de Preguntas</td><td><select name="cod_banco">
                 	<?php foreach($rec_b as $rb){
+						$rec_b_p=$rec_banco_preguntas->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."' and cod_banco='".$rb['cod_banco']."'",0,"nro");						
 					?>
                     
-                    <option value="<?php echo $rb['cod_banco']?>" <?php echo $rec_b['cod_banco']==$rb['cod_banco']?'selected="selected"':'';?>><?php echo $rb['cod_banco']?> - <?php echo $rb['Cantidad']?> Preguntas</option>
+                    <option value="<?php echo $rb['cod_banco']?>" <?php echo $rec_b['cod_banco']==$rb['cod_banco']?'selected="selected"':'';?>><?php echo $rb['cod_banco']?> - <?php echo $rb['descripcion']?> - <?php echo count($rec_b_p)?> Preguntas</option>
                     <?php	
 					}?>
                 </select></td></tr>    
