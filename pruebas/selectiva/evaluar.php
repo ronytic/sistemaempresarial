@@ -41,39 +41,45 @@ if(count($rec_b_c)>0){
 	$mensaje[]="Evaluación Registrada Correctamente";	
 	$sw=0;
 }
-
-foreach($r as $nro=>$respuesta){
-	$rec_b=$rec_banco_preguntas->mostrarTodoRegistro("cod_banco='".$cod_banco."' and nro='$nro'",0,"nro");	
-	$rec_b=array_shift($rec_b);
-	$correcta=$rec_b['correcta'];
-	if($correcta==$respuesta){
-		$escorrecta="S";
-	}else{
-		$escorrecta="N";
+if(count($r)>0){
+	foreach($r as $nro=>$respuesta){
+		$rec_b=$rec_banco_preguntas->mostrarTodoRegistro("cod_banco='".$cod_banco."' and nro='$nro'",0,"nro");	
+		$rec_b=array_shift($rec_b);
+		$correcta=$rec_b['correcta'];
+		if($correcta==$respuesta){
+			$escorrecta="S";
+		}else{
+			$escorrecta="N";
+		}
+		$valores=array("cod_empresa"=>"'$cod_empresa'",
+						"cod_recluta"=>"'$cod_recluta'",
+						"cod_prueba"=>"'$cod_prueba'",
+						"cod_banco"=>"'$cod_banco'",
+						"nro"=>"'$nro'",
+						"respuesta"=>"'$respuesta'",
+						"escorrecta"=>"'$escorrecta'",
+						"cedula"=>"'$cedula'",
+		
+		);
+		$rec_b_c=$rec_banco_candidato->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and cod_recluta='$cod_recluta' and cod_banco='$cod_banco'",0,"nro");	
+		$rec_b_c=array_shift($rec_b_c);
+		if($sw==0){
+			$rec_banco_candidato->insertarRegistro($valores,0);
+			
+		}
+		
+		//print_r($rec_b_c);
+		
+		//$rec_banco_candidato->insertarRegistro($valores,0);
+		/*echo "<pre>";
+		print_r($valores);
+		echo "</pre>";*/
 	}
-	$valores=array("cod_empresa"=>"'$cod_empresa'",
-					"cod_recluta"=>"'$cod_recluta'",
-					"cod_prueba"=>"'$cod_prueba'",
-					"cod_banco"=>"'$cod_banco'",
-					"nro"=>"'$nro'",
-					"respuesta"=>"'$respuesta'",
-					"escorrecta"=>"'$escorrecta'",
-					"cedula"=>"'$cedula'",
-	
-	);
-	$rec_b_c=$rec_banco_candidato->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and cod_recluta='$cod_recluta' and cod_banco='$cod_banco'",0,"nro");	
-	$rec_b_c=array_shift($rec_b_c);
 	if($sw==0){
-		$rec_banco_candidato->insertarRegistro($valores,0);
 		$_SESSION['pruebas']=$pruebas;
 	}
-	
-	//print_r($rec_b_c);
-	
-	//$rec_banco_candidato->insertarRegistro($valores,0);
-	/*echo "<pre>";
-	print_r($valores);
-	echo "</pre>";*/
+}else{
+		
 }
 
 if(count($_SESSION['pruebas'])>0){

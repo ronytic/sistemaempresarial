@@ -38,6 +38,9 @@ echo "</pre>";
 $titulo="Prueba de ".$rec_p['descripcion'];
 
 include_once("../cabecerahtml.php");
+?>
+<script language="javascript" type="text/javascript" src="../../js/core/plugins/jquery.countdowntimer.min.js"></script>
+<?php
 include_once("../cabecera.php");
 ?>
 <table class="table table-bordered">
@@ -49,7 +52,51 @@ include_once("../cabecera.php");
 <td><?php echo $rec_c['paterno']." ".$rec_c['materno']." ".$rec_c['nombre']?></td>
 </tr>
 </table>
-<form action="evaluar.php" method="post">
+<style type="text/css">
+.cuadrotiempo{
+	width:100px;
+	position:fixed;
+	top:50px;	
+	right:50px;
+	z-index:1500;
+}
+.cuadrotiempo:hover{
+	opacity:0.5;	
+}
+.cuadrotiempo .widget-main{
+	text-align:right;	
+}
+.cuadrotiempo h3{
+	margin:0px;	
+}
+</style>
+<script language="javascript" type="text/javascript">
+$(function(){
+	$("#tiempo").countdowntimer({
+		minutes : <?php echo $rec_p['tiempo']?>,
+		seconds:0,
+        size : "lg",
+		timeUp : evaluar
+	});
+	function evaluar(){
+		$("#formulario").submit();
+	}
+});
+</script>
+<div class="cuadrotiempo">
+
+        <div class="widget-box">
+        <div class="widget-header widget-header-flat widget-header-small">
+            <h5>Tiempo</h5></div>
+            <div class="widget-body">
+                <div class="widget-main resaltar">
+                <h3><strong><span id="tiempo"><?php echo $rec_p['tiempo']?></span> </strong> </h3>
+                </div>
+            </div>
+        </div>
+
+</div>
+<form action="evaluar.php" method="post" id="formulario">
 <input type="hidden" name="cod_prueba" value="<?php echo $cod_prueba?>">
 <input type="hidden" name="cod_banco" value="<?php echo $cod_banco?>">
 
