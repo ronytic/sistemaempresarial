@@ -61,7 +61,7 @@ include_once("../cabecera.php");
         	<div class="widget-main">
             		<h3><strong>Prueba realizada con Éxito, se le informará de los resultados posteriormente</strong></h3>
             
-					<a class="btn btn-success btn-xm" href="../index.php">Evaluar otra Prueba</a>
+					<a class="btn btn-danger btn-xm" href="../login/logout.php">Terminar</a>
 			
 			</div>
         </div>

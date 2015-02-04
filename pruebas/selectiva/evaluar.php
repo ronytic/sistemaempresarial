@@ -7,8 +7,8 @@ $rec_banco_candidato=new rec_banco_candidato;
 include_once("../../estructurabd/rec_candidato.php");
 $rec_candidato=new rec_candidato;
 
-include_once("../../estructurabd/rec_banco.php");
-$rec_banco=new rec_banco;
+include_once("../../estructurabd/rec_banco_preguntas.php");
+$rec_banco_preguntas=new rec_banco_preguntas;
 
 include_once("../../estructurabd/rec_prueba.php");
 $rec_prueba=new rec_prueba;
@@ -43,7 +43,7 @@ if(count($rec_b_c)>0){
 }
 
 foreach($r as $nro=>$respuesta){
-	$rec_b=$rec_banco->mostrarTodoRegistro("cod_banco='".$cod_banco."' and nro='$nro'",0,"nro");	
+	$rec_b=$rec_banco_preguntas->mostrarTodoRegistro("cod_banco='".$cod_banco."' and nro='$nro'",0,"nro");	
 	$rec_b=array_shift($rec_b);
 	$correcta=$rec_b['correcta'];
 	if($correcta==$respuesta){

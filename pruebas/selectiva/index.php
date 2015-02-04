@@ -7,8 +7,8 @@ $rec_prueba=new rec_prueba;
 include_once("../../estructurabd/rec_candidato.php");
 $rec_candidato=new rec_candidato;
 
-include_once("../../estructurabd/rec_banco.php");
-$rec_banco=new rec_banco;
+include_once("../../estructurabd/rec_banco_preguntas.php");
+$rec_banco_preguntas=new rec_banco_preguntas;
 
 $cedula=$_SESSION['cedula'];
 $cod_planta=$_SESSION['cod_planta'];
@@ -24,7 +24,7 @@ $rec_c=array_shift($rec_c);
 $rec_p=$rec_prueba->mostrarTodoRegistro("cod_prueba='$cod_prueba'",0);
 $rec_p=array_shift($rec_p);
 $cod_banco=$rec_p['cod_banco'];
-$rec_b=$rec_banco->mostrarTodoRegistro("cod_banco='".$cod_banco."'",0,"nro");
+$rec_b=$rec_banco_preguntas->mostrarTodoRegistro("cod_banco='".$cod_banco."'",0,"nro");
 /*
 echo "<pre>";
 print_r($_SESSION);
@@ -72,7 +72,7 @@ include_once("../cabecera.php");
 							echo $rb['opcion'.$i];
 							?>
                             <br>
-                            <input type="radio" name="r[<?php echo $rb['nro']?>]" value="<?php echo $i?>" required>
+                            <input type="radio" name="r[<?php echo $rb['nro']?>]" value="<?php echo $i?>" >
                             </label>
                             <?php
 						}
