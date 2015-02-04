@@ -46,11 +46,3 @@ include_once("../../cabecera.php");
 
 
 <?php include_once("../../pie.php");?>
-<script language="javascript">
-	$(document).on("ready",function(){
-		$(".formulario").submit();
-	});
-	$("select[name=cod_area],select[name=estado]").change(function(e) {
-        $(".formulario").submit();
-    });
-</script>
