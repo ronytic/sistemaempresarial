@@ -135,7 +135,7 @@ class bd{
 		else
 			$query ="INSERT INTO {$nombretabla} ($campos) VALUES ($datos)";
 			
-		//echo $query."<br>";
+		echo $query."<br>";
 		//echo "NO ESTA HABILITADO EL REGISTRO";
 		return mysql_query($query);
 	}
