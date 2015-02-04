@@ -492,10 +492,6 @@
             <h1>
             	<?php echo $titulo;?>
                 <?php //echo $textomenu!=""?$textomenu." >":''?>
-                <small>
-                    <!--<i class="icon-double-angle-right"></i>-->
-                    <?php// echo $idioma[$titulo];?>
-                </small>
             </h1>
         </div><!-- /.page-header -->
 
