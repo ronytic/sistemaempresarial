@@ -21,7 +21,7 @@ $rec_banco_candidato=new rec_banco_candidato;
 include_once("../../estructurabd/rec_banco_preguntas.php");
 $rec_banco_preguntas=new rec_banco_preguntas;
 
-$titulo="Ver Respuestas de las Pruebas";
+$titulo="Comparación de Respuestas de las Pruebas";
 foreach($cedulas as $cedula){
 	$condicion="cedula  LIKE '$cedula'";
 	$rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0);
@@ -48,7 +48,7 @@ include_once("../../cabecera.php");
 <table class="table table-bordered table-hover table-striped">
 
 		<thead>
-        	<th colspan="1" width="200">Datos del Candidato</th>
+        	<th colspan="1" width="200">Datos de los Candidatos</th>
         </thead>
         <tr><td><strong>Cédula</strong></td>
         	<?php foreach($cedulas as $cedula){?>
@@ -147,7 +147,7 @@ include_once("../../cabecera.php");
                 <td class="centrar" ><?php echo $datos[$cedula]['correctas']?></td>
                 <?php }?>
             </tr>
-            <tr>
+            <tr class="resaltar">
             	<td class="resaltar" colspan="1">Porcentaje Obtenido</td>
                 <?php foreach($cedulas as $cedula){?>
                 <td class="centrar" colspan="1"><?php echo $datos[$cedula]['porcentaje']?> %</td>
@@ -161,7 +161,7 @@ include_once("../../cabecera.php");
 			}
 		?>
 
-        <tr class="success">
+        <tr class="success resaltar">
         	<td class="resaltar" colspan="1">Promedio Total Obtenido</td>
             <?php foreach($cedulas as $cedula){?>
             <td class="centrar" colspan="1"><?php echo $datos[$cedula]['promedio']?> %</td>
