@@ -85,7 +85,7 @@ include_once("../../cabecera.php");
 			
 			
 			
-			$rec_b_c=$rec_banco_candidato->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."' and cod_prueba='$cod_prueba' and cod_recluta='$cod_recluta' and nro='".$rbp['nro']."'",0);
+			$rec_b_c=$rec_banco_candidato->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."' and cod_prueba='$cod_prueba' and cod_recluta='$cod_recluta' and nro='".$rbp['nro']."' and cedula='$cedula'",0);
 			$rec_b_c=array_shift($rec_b_c);
 			$seleccionada=$rec_b_c['respuesta'];
 			if($rec_b_c['escorrecta']=="S"){
