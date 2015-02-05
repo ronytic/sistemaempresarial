@@ -2,12 +2,13 @@
 							</div><!-- /.col -->
 
 						</div><!-- /.row -->
-
-		<hr>
+<?php /*
+						<hr>
 						<footer>
 							<p class="pull-left"><?php echo $Titulo?> - <?php echo $Sigla;?> &copy; <?php echo 'Todos los Derechos Reservados';?> 2014 - <?php echo date("Y");?></p>
 							<p class="pull-right"></p>
 						</footer>
+						<?php */?>
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
 				<?php /*
