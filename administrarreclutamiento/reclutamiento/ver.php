@@ -88,7 +88,7 @@ include_once("../../cabecera.php");
     
     <table class="table table-bordered table-hover table-striped">
     	<thead>
-        	<th>N</th><th>Cedula</th><th>Paterno</th><th>Materno</th><th>Nombres</th><th></th>
+        	<th width="50">N</th><th>Cedula</th><th>Paterno</th><th>Materno</th><th>Nombres</th><th></th><th width="90"><input type="submit" value="Comparar" class="btn btn-xs btn-warning"></th>
         </thead>
     <?php foreach($rec_r_c as $rrc){$i++;
 	$rec_c=$rec_candidato->mostrarTodoRegistro("cedula='".$rrc['cedula']."'",0);
@@ -100,7 +100,12 @@ include_once("../../cabecera.php");
             <td><?php echo $rec_c['paterno']?></td>
             <td><?php echo $rec_c['materno']?></td>
             <td><?php echo $rec_c['nombre']?></td>
-            <td><a href="ver_candidato.php?cedula=<?php echo $rec_c['cedula']?>" class="btn btn-info btn-xs">Ver</a></td>
+            <td><a href="ver_candidato.php?cedula=<?php echo $rec_c['cedula']?>" class="btn btn-info btn-xs">Ver Datos</a>
+            <a href="ver_respuesta.php?cedula=<?php echo $rec_c['cedula']?>&cod_recluta=<?php echo $cod_recluta?>" class="btn btn-success btn-xs">Ver Respuestas</a>
+            </td>
+            <td class="centrar">
+            <input type="checkbox">
+            </td>
         </tr>
     <?php	
 	}?>
