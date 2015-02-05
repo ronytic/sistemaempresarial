@@ -46,7 +46,7 @@ $rec_ca=array_shift($rec_ca);
     <td><?php echo $rc['fecha_limite']?></td>
     <td><?php echo $rc['responsable']?></td>
     <?php */?>
-	<td><?php echo $rc['prioridad']?></td>
+	<td class="centrar"><?php echo $rc['prioridad']?></td>
     <td><a href="ver.php?cod_recluta=<?php echo $rc['cod_recluta']?>" class="btn btn-info btn-xs">Ver</a></td>
     </tr>
 <?php
