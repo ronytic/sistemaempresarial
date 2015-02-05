@@ -40,7 +40,7 @@ include_once("../../cabecera.php");
 <table class="table table-bordered table-hover">
 
 <tr>
-<td width="250">Cédula</td><td><input type="text"  value="<?php echo $rc['cedula']?>" name="cedula"></td>
+<td width="250">Cédula</td><td><input type="text"  value="<?php echo $cedula?>" name="cedula"></td>
 </tr>
 <tr>
 <td>Expedido</td><td><input type="text" name="exp" required size="3" maxlength="3" value="<?php echo $rc['exp']?>"></td>
