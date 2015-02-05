@@ -85,7 +85,7 @@ include_once("../../cabecera.php");
 			
 			$rec_b_p=$rec_banco_preguntas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."'",0);
 			$cantidadTotal=count($rec_b_p);
-			$rec_b_c=$rec_banco_candidato->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."' and cod_prueba='$cod_prueba' and cod_recluta='$cod_recluta' and escorrecta='S'",0);
+			$rec_b_c=$rec_banco_candidato->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."' and cod_prueba='$cod_prueba' and cod_recluta='$cod_recluta' and escorrecta='S' and cedula='$cedula'",0);
 			$correctas=count($rec_b_c);
 			$porcentaje=number_format($correctas*100/$cantidadTotal,2);
 			$total+=$porcentaje;
