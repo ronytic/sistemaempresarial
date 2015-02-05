@@ -28,7 +28,7 @@
 				<div class="navbar-header pull-left">
 					<a href="<?php echo $folder?>" class="navbar-brand">
 						<small>
-							<i class="icon-fire"></i>
+							<img src="<?php echo $folder?>imagenes/logo/logoblanco.png" height="35">
 							<?php echo $Titulo?>
 						</small>
 					</a><!-- /.brand -->
@@ -275,7 +275,7 @@
 								</li>
 							</ul>
 						</li>
-                        <li class="purple">
+                        <li class="red">
 							<a href="<?php echo $folder?>pruebas/login/logout.php">
 								<i class="icon-off"></i>
 								<?php  echo 'Salir'?>
