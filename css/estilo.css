@@ -22,6 +22,9 @@
 tr.centrar td,tr.centrar th{
 	text-align:center;	
 }
+.resaltar{
+	font-weight:bold;	
+}
 /*Fin de Cargador*/
 table.borderless, .borderless tbody tr td, .borderless thead tr th {
     border: none !important;
