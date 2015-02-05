@@ -43,7 +43,7 @@ switch($rec_r['estado']){
 }
 
 $condicion="cod_recluta  LIKE '$cod_recluta' ";
-$rec_r_c=$rec_recluta_candidato->mostrarTodoRegistro($condicion,0);
+$rec_r_c=$rec_recluta_candidato->mostrarTodoRegistro($condicion,0,"cedula");
 
 $rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0);
 
@@ -85,6 +85,8 @@ include_once("../../cabecera.php");
 	<legend>Candidatos</legend>
     <a href="nuevo_candidato.php?cod_recluta=<?php echo $cod_recluta?>" class="btn btn-danger btn-xs">Nuevo Candidato</a>
     <a href="listar_candidato.php?cod_recluta=<?php echo $cod_recluta?>" class="btn btn-success btn-xs">Agregar Candidato ya Existente</a>
+    <form action="comparar.php" method="get">
+    	<input type="hidden" name="cod_recluta" value="<?php echo $cod_recluta?>">
     
     <table class="table table-bordered table-hover table-striped">
     	<thead>
@@ -104,12 +106,13 @@ include_once("../../cabecera.php");
             <a href="ver_respuesta.php?cedula=<?php echo $rec_c['cedula']?>&cod_recluta=<?php echo $cod_recluta?>" class="btn btn-success btn-xs">Ver Respuestas</a>
             </td>
             <td class="centrar">
-            <input type="checkbox">
+            <input type="checkbox" name="cedulas[]" value="<?php echo $rec_c['cedula']?>">
             </td>
         </tr>
     <?php	
 	}?>
     </table>
+    </form>
 </fieldset>
 <?php include_once("../../pie.php");?>
 <script language="javascript">
