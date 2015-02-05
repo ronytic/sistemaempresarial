@@ -96,7 +96,7 @@ include_once("../../cabecera.php");
                 <td class="centrar" width="100"><?php echo $cantidadTotal?></td>
                 <td class="centrar" width="100"><?php echo $correctas?></td>
                 <td class="der" width="150"><?php echo $porcentaje;?> %</td>
-                <td><a href="ver_respuesta_detalle.php?cedula=<?php echo $cedula?>&cod_recluta=<?php echo $cod_recluta?>&cod_prueba=<?php echo $cod_prueba?>" class="btn btn-xs btn-danger">Ver Respuestas</a></td>
+                <td><a href="ver_respuesta_detalle.php?cedula=<?php echo $cedula?>&cod_recluta=<?php echo $cod_recluta?>&cod_prueba=<?php echo $cod_prueba?>" class="btn btn-xs btn-danger">Ver Detalle de Respuestas</a></td>
             </tr>
             <?php
 		}
