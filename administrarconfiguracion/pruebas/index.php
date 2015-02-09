@@ -39,6 +39,7 @@ $rec_banco_preguntas=new rec_banco_preguntas;
 					}?>
                 </select></td></tr>    
         <tr><td>Descripción</td><td><input type="text" name="descripcion" required></td></tr>
+        <tr><td>Detalle</td><td><textarea name="detalle" required rows="5" cols="" class="col-sm-12"><?php echo $rec_p['detalle']?></textarea></td></tr>
         <tr><td>Tiempo de la Prueba</td><td><input type="number" name="tiempo" required min="0" max="9999">Minutos</td></tr>
         
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>

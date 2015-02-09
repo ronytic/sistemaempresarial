@@ -8,6 +8,7 @@ $valores=array(
 				"cod_tipo"=>"'$cod_tipo'",
 				"cod_banco"=>"'$cod_banco'",
 				"descripcion"=>"'$descripcion'",
+				"detalle"=>"'$detalle'",
 				"tiempo"=>"'$tiempo'",
 				);
 $rec_prueba=new rec_prueba;
