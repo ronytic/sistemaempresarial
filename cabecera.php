@@ -28,7 +28,7 @@
 				<div class="navbar-header pull-left">
 					<a href="<?php echo $folder?>" class="navbar-brand">
 						<small>
-							<img src="<?php echo $folder?>imagenes/logo/logoblanco.png" height="35">
+							<img src="<?php echo $folder?>imagenes/logo/logo1.png" height="35">
 							<?php echo $Titulo?>
 						</small>
 					</a><!-- /.brand -->
