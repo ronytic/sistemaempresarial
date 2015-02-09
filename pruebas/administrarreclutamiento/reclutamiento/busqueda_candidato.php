@@ -4,7 +4,7 @@ include_once("../../../estructurabd/rec_candidato.php");
 extract($_POST);
 $rec_candidato=new rec_candidato;
 $cod_empresa=$_SESSION['cod_empresa'];
-$condicion="cedula  LIKE '$cedula%' and nombre  LIKE '$nombre%' and paterno  LIKE '$paterno%' and materno  LIKE '$materno%'";
+$condicion="cedula  LIKE '$cedula'";
 
 $rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0);
 $rc=array_shift($rec_c);
