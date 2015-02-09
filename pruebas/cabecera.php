@@ -316,85 +316,10 @@
 							</a>
 						</div>
 
-						<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-							<span class="btn btn-success"></span>
-
-							<span class="btn btn-info"></span>
-
-							<span class="btn btn-warning"></span>
-
-							<span class="btn btn-danger"></span>
-						</div>
+						
 					</div><!-- #sidebar-shortcuts -->
 
-					<ul class="nav nav-list">
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>pruebas/index.php"><i class="icon-home"></i><span> <?php echo 'Inicio'?></span></a>
-                        </li>
-                        <li class="<?php echo $rmenu=="/"?'':''?>active  open"><a href="<?php echo $folder;?>pruebas/"><i class="icon-list"></i><span> <?php echo 'Reclutamientos'?></span>
-                        	<b class="arrow icon-angle-down"></b>
-                        	</a>
-                        	
-                            <ul class="submenu">
-                                <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>pruebas/administrarreclutamiento/?c=reclutamiento">Reclutamientos
-									</a>
-								</li>
-                                
-                                
-                            </ul>
-                        </li>
-                        
-                        
-                        
-                        
-                        
-                        <?php /*
-                        	foreach($menu->mostrar($Nivel,"Lateral") as $m){
-								$subm=$submenu->mostrar($Nivel,$m['CodMenu']);
-								?>
-                                <li class=" <?php if ($rmenu==$m['Url']){$textomenu=$idioma[$m['Nombre']];echo'active open';}?>">
-                                	<a href="#" class="<?php echo count($subm)?'dropdown-toggle':''?>">
-                                    	<i class="<?php echo $m['Imagen'];?> "></i>
-                                        <span class="menu-text"> <?php echo $idioma[$m['Nombre']];?></span>
-                                        <?php if(count($subm)){?>
-                                        <b class="arrow icon-angle-down"></b>
-                                        <?php }?>
-                                    </a>
-            					<?php 
-								
-								if(count($subm)){
-									?>
-									<ul class="submenu">
-									<?php
-									foreach($subm as $sm){
-										$UrlInternet="";
-										if($sm['Internet']=="1" && $Internet==0){
-											$UrlInternet="redirigir.php";	
-										}
-										//echo $m['Url'].$rsubmenu;
-										?>
-                                        
-                                        <li class="<?php if($rmenu.$rsubmenu==$m['Url'].$sm['Url']){$textosubmenu=$idioma[$sm['Nombre']];echo 'active';}?>"> 
-                                        	<a href="<?php echo $folder;?><?php echo $m['Url'];?><?php echo $sm['Url'];?><?php echo $UrlInternet?>">
-                                            
-                                            <i class="icon-double-angle-right"></i>
-                                            <?php echo $idioma[$sm['Nombre']];?>
-
-                                            </a>
-                                        </li>
-                                        <?php		
-									}
-									?>
-                                    </ul>
-                                    <?php
-								}
-								?>                    
-                        	</li>
-                            <?php
-							}*/
-						?>
-
-					</ul>
+					
 <div class="sidebar-collapse" id="sidebar-collapse">
 	<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
 </div>
