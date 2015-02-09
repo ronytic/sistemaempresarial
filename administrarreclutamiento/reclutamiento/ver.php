@@ -103,7 +103,7 @@ include_once("../../cabecera.php");
             <td><?php echo $rec_c['materno']?></td>
             <td><?php echo $rec_c['nombre']?></td>
             <td><a href="ver_candidato.php?cedula=<?php echo $rec_c['cedula']?>" class="btn btn-info btn-xs">Ver Datos</a>
-            <a href="ver_respuesta.php?cedula=<?php echo $rec_c['cedula']?>&cod_recluta=<?php echo $cod_recluta?>" class="btn btn-success btn-xs">Ver Respuestas</a>
+            <a href="ver_respuesta.php?cedula=<?php echo $rec_c['cedula']?>&cod_recluta=<?php echo $cod_recluta?>" class="btn btn-success btn-xs">Pruebas</a>
             </td>
             <td class="centrar">
             <input type="checkbox" name="cedulas[]" value="<?php echo $rec_c['cedula']?>">
