@@ -26,7 +26,7 @@
 
 			<div class="navbar-container" id="navbar-container">
 				<div class="navbar-header pull-left">
-					<a href="<?php echo $folder?>" class="navbar-brand">
+					<a href="<?php echo $folder?>pruebas/" class="navbar-brand">
 						<small>
 							<img src="<?php echo $folder?>imagenes/logo/logo1.png" height="35">
 							<?php echo $Titulo?>
