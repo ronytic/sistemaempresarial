@@ -63,7 +63,7 @@ include_once("../../cabecerahtml.php");
 //print_r($_SESSION);
 include_once("../../cabecera.php");
 ?>
-<a href="javascript:history.back()" class="btn btn-xs">Volver</a>
+<a href="javascript:history.back()" class="btn btn-xs btn-danger">Volver</a>
 <table class="table table-bordered table-hover table-striped">
 
 		<thead>
