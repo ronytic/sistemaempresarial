@@ -24,16 +24,24 @@ include_once("../../cabecerahtml.php");
 <?php
 //print_r($_SESSION);
 include_once("../../cabecera.php");
-?>
-<?php
 /*echo "<pre>";
 print_r($_SESSION);
 print_r($_POST);
 echo "</pre>";*/
+?>
+<div class="col-sm-offset-3 col-sm-6">
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat widget-header-small">
+                <h5>Mensaje</h5>
+            </div>
+            <div class="widget-body">
+    			<div class="widget-main">
+<?php
+
 if($_GET['r']){
 	?>
     <h2>¿Desea comenzar la Prueba?</h2>
-    <a href="../../selectiva/" class="btn btn-success">Comenzar</a>
+    <a href="../../selectiva/" class="btn btn-success">Iniciar</a>
     <?php	
 }else{
 	?>
@@ -42,4 +50,8 @@ if($_GET['r']){
     <?php	
 }
 ?>
+                </div>
+			</div>
+        </div>
+    </div>
 <?php include_once("../../pie.php");?>
