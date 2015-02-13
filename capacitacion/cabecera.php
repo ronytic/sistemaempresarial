@@ -26,7 +26,7 @@
 
 			<div class="navbar-container" id="navbar-container">
 				<div class="navbar-header pull-left">
-					<a href="<?php echo $folder?>evaluacionpersonal/" class="navbar-brand">
+					<a href="<?php echo $folder?>capacitacion/" class="navbar-brand">
 						<small>
 							<img src="<?php echo $folder?>imagenes/logo/logo1.png" height="35">
 							<?php echo $Titulo?>
@@ -268,7 +268,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="<?php echo $folder?>evaluacionpersonal/login/logout.php">
+									<a href="<?php echo $folder?>capacitacion/login/logout.php">
 										<i class="icon-off"></i>
 										<?php echo 'Salir del Sistema'?>
 									</a>
@@ -276,7 +276,7 @@
 							</ul>
 						</li>
                         <li class="red">
-							<a href="<?php echo $folder?>evaluacionpersonal/login/logout.php">
+							<a href="<?php echo $folder?>capacitacion/login/logout.php">
 								<i class="icon-off"></i>
 								<?php  echo 'Salir'?>
 							</a>
@@ -321,11 +321,11 @@
 					<ul class="nav nav-list">
                     	<li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="icon-home"></i><span> <?php echo 'Inicio'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Cargos'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Capacitadores'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Tablas de Evaluación'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Cursos'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Evaluación'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Resultados'?></span></a>
                         </li>
 					</ul>
 <div class="sidebar-collapse" id="sidebar-collapse">
