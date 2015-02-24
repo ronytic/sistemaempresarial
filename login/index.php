@@ -57,7 +57,7 @@ $seg_e=$seg_empresa->mostrarTodoRegistro("",0,"descripcion");
                                     <option value="">Seleccionar</option>
                                     <?php foreach($seg_e as $se){
                                     ?>
-                                    <option value="<?php echo $se['cod_empresa']?>"><?php echo $se['cod_empresa']?> - <?php echo $se['descripcion']?></option>
+                                    <option value="<?php echo $se['cod_empresa']?>"><?php echo $se['descripcion']?></option>
                                     <?php	
                                     }?>
                                 </select>
