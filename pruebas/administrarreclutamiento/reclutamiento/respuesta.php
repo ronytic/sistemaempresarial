@@ -41,7 +41,7 @@ echo "</pre>";*/
 if($_GET['r']){
 	?>
     <h2>¿Desea comenzar la Prueba?</h2>
-    <a href="../../selectiva/" class="btn btn-success">Iniciar</a>
+    <a href="../../prueba/" class="btn btn-success">Iniciar</a>
     <?php	
 }else{
 	?>
