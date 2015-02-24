@@ -48,9 +48,7 @@ include_once("../cabecera.php");
 </tr>
 </table>
 
-<form action="evaluar.php" method="post">
-<input type="hidden" name="cod_prueba" value="<?php echo $cod_prueba?>">
-<input type="hidden" name="cod_banco" value="<?php echo $cod_banco?>">
+
 <?php 
 ?>
 <div class="col-sm-12">
