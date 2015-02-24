@@ -14,6 +14,18 @@ $rec_b=$rec_banco->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa'].
 include_once("../../estructurabd/rec_banco_preguntas.php");
 $rec_banco_preguntas=new rec_banco_preguntas;
 ?>
+<script language="javascript">
+verificar();
+$("select[name=cod_tipo]").change(verificar);
+function verificar(){
+	var valor=$("select[name=cod_tipo]").val();
+	if(valor=="CLE"){
+		$("#banco").hide("slow");
+	}else{
+		$("#banco").show("slow");
+	}
+}
+</script>
 <h2>Nueva Prueba</h2>
 <form action="pruebas/guardar.php" method="post">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
@@ -29,7 +41,7 @@ $rec_banco_preguntas=new rec_banco_preguntas;
             
             
             </td></tr>
-        <tr><td>Banco de Preguntas</td><td><select name="cod_banco">
+        <tr id="banco"><td>Banco de Preguntas</td><td><select name="cod_banco">
                 	<?php foreach($rec_b as $rb){
 						$rec_b_p=$rec_banco_preguntas->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."' and cod_banco='".$rb['cod_banco']."'",0,"nro");						
 					?>
@@ -37,6 +49,7 @@ $rec_banco_preguntas=new rec_banco_preguntas;
                     <option value="<?php echo $rb['cod_banco']?>" <?php echo $rec_b['cod_banco']==$rb['cod_banco']?'selected="selected"':'';?>><?php echo $rb['cod_banco']?> - <?php echo $rb['descripcion']?> - <?php echo count($rec_b_p)?> Preguntas</option>
                     <?php	
 					}?>
+                    <option value="Clever">Clever - 95 Preguntas</option>
                 </select></td></tr>    
         <tr><td>Descripción</td><td><input type="text" name="descripcion" required></td></tr>
         <tr><td>Detalle</td><td><textarea name="detalle" required rows="5" cols="" class="col-sm-12"><?php echo $rec_p['detalle']?></textarea></td></tr>

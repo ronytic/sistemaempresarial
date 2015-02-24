@@ -3,6 +3,9 @@ include_once("../../login/check.php");
 include_once("../../estructurabd/rec_prueba.php");
 extract($_POST);
 $cod_empresa=$_SESSION['cod_empresa'];
+if($cod_tipo=="CLE"){
+	$cod_banco="CLE";
+}
 $valores=array(
 				"cod_empresa"=>"'$cod_empresa'",
 				"cod_tipo"=>"'$cod_tipo'",
