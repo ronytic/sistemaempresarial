@@ -21,6 +21,9 @@ $rec_banco_candidato=new rec_banco_candidato;
 include_once("../../estructurabd/rec_banco_preguntas.php");
 $rec_banco_preguntas=new rec_banco_preguntas;
 
+include_once("../../estructurabd/rec_banco_clever_respuestas.php");
+$rec_banco_clever_respuestas=new rec_banco_clever_respuestas;
+
 $titulo="Ver Respuestas de las Pruebas";
 $condicion="cedula  LIKE '$cedula'";
 
@@ -34,7 +37,7 @@ $rec_r=$rec_reclutamiento->mostrarTodoRegistro("cod_empresa='$cod_empresa' and c
 $rec_r=array_shift($rec_r);
 
 $cod_bateria=$rec_r['cod_bateria'];
-$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria'",0);
+$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE'",0);
 include_once("../../cabecerahtml.php");
 ?>
 
@@ -107,6 +110,80 @@ include_once("../../cabecera.php");
         	<td class="resaltar der" colspan="4">Total</td>
             <td class="resaltar der"><?php echo $promedio?> %</td>
         </tr>
+</table>
+
+
+<?php
+//DISC
+//D mas
+$rec_b_clever_r=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='CLE' and cod_recluta='$cod_recluta' and codigo_banco_clever IN (5,10,14,18,32,40,41,48,51,54,57,62,67,72,73,78,84,87,90,93) and cedula='$cedula' and mas='1'",0);
+$dmas=count($rec_b_clever_r);
+
+
+$rec_b_clever_r=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='CLE' and cod_recluta='$cod_recluta' and codigo_banco_clever IN (4,11,18,24,25,32,35,40,41,48,51,54,62,67,72,73,78,83,86,90,93) and cedula='$cedula' and menos='1'",0);
+$dmenos=count($rec_b_clever_r);
+$dtotal=$dmas-$dmenos;
+//I mas
+$rec_b_clever_r=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='CLE' and cod_recluta='$cod_recluta' and codigo_banco_clever IN (1,6,12,15,20,28,29,45,52,55,58,64,65,75,80,81,88,94) and cedula='$cedula' and mas='1'",0);
+$imas=count($rec_b_clever_r);
+
+
+$rec_b_clever_r=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='CLE' and cod_recluta='$cod_recluta' and codigo_banco_clever IN (6,12,15,20,28,36,39,42,52,55,64,65,70,75,80,81,88,91,94) and cedula='$cedula' and menos='1'",0);
+$imenos=count($rec_b_clever_r);
+$itotal=$imas-$imenos;
+//S mas
+$rec_b_clever_r=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='CLE' and cod_recluta='$cod_recluta' and codigo_banco_clever IN (2,7,16,19,21,26,33,38,43,46,49,56,66,70,76,77,82,92,95) and cedula='$cedula' and mas='1'",0);
+$smas=count($rec_b_clever_r);
+
+
+$rec_b_clever_r=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='CLE' and cod_recluta='$cod_recluta' and codigo_banco_clever IN (2,7,9,26,30,33,38,43,56,59,63,66,69,76,82,85,92,95) and cedula='$cedula' and menos='1'",0);
+$smenos=count($rec_b_clever_r);
+$stotal=$smas-$smenos;
+//C mas
+$rec_b_clever_r=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='CLE' and cod_recluta='$cod_recluta' and codigo_banco_clever IN (3,10,13,23,26,34,37,53,61,68,71,74,86,89,96) and cedula='$cedula' and mas='1'",0);
+$cmas=count($rec_b_clever_r);
+
+
+$rec_b_clever_r=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='CLE' and cod_recluta='$cod_recluta' and codigo_banco_clever IN (3,8,10,13,17,23,31,34,44,47,50,60,71,78,83,96) and cedula='$cedula' and menos='1'",0);
+$cmenos=count($rec_b_clever_r);
+$ctotal=$cmas-$cmenos;
+?>
+<table class="table table-bordered table-hover table-striped">
+
+    <thead>
+        <tr>
+            <th colspan="5" width="200">Resultado de la Prueba Clever</th>
+        </tr>
+        <tr class="centrar">
+        	<th width="50"></th>
+            <th colspan="1" width="50"  class="">D</th>
+            <th colspan="1" width="50"  class="">I</th>
+            <th colspan="1" width="50"  class="">S</th>
+            <th colspan="1" width="50"  class="">C</th>
+        </tr>
+        
+    </thead>
+    <tr>
+    	<td class="resaltar">Mas</td>
+        <td class="centrar"><?php echo $dmas;?></td>
+        <td class="centrar"><?php echo $imas;?></td>
+        <td class="centrar"><?php echo $smas;?></td>
+        <td class="centrar"><?php echo $cmas;?></td>
+    </tr>
+    <tr>
+    	<td class="resaltar">Menos</td>
+        <td class="centrar"><?php echo $dmenos;?></td>
+        <td class="centrar"><?php echo $imenos;?></td>
+        <td class="centrar"><?php echo $smenos;?></td>
+        <td class="centrar"><?php echo $cmenos;?></td>
+    </tr>
+    <tr class="success resaltar">
+    	<td class="">Total</td>
+        <td class="centrar"><?php echo $dtotal;?></td>
+        <td class="centrar"><?php echo $itotal;?></td>
+        <td class="centrar"><?php echo $stotal;?></td>
+        <td class="centrar"><?php echo $ctotal;?></td>
+    </tr>
 </table>
 <?php include_once("../../pie.php");?>
 <script language="javascript">
