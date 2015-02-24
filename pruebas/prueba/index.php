@@ -98,7 +98,13 @@ include_once("../cabecera.php");
     </div>
 </div>
 <br>
-            <a href="prueba.php" class="btn btn-success btn-xm">Iniciar</a>
+	<?php switch($rec_p['cod_tipo']){
+		case "EN3":{$archivo="selectiva.php";}break;
+		case "CLE":{$archivo="clever.php";}break;
+		case "SER":{$archivo="serie.php";}break;	
+	}
+	?>
+            <a href="<?php echo $archivo?>" class="btn btn-success btn-xm">Iniciar</a>
 <?php
 include_once("../pie.php");
 
