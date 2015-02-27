@@ -36,7 +36,7 @@ $rec_r=$rec_reclutamiento->mostrarTodoRegistro("cod_empresa='$cod_empresa' and c
 $rec_r=array_shift($rec_r);
 
 $cod_bateria=$rec_r['cod_bateria'];
-$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria'",0);
+$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE' and cod_prueba!='SER'",0);
 include_once("../../cabecerahtml.php");
 ?>
 
