@@ -122,10 +122,10 @@ $(function(){
                 <tr>
                 	<td><?php echo $rb['pregunta']?></td>
                 	<td class="centrar" width="250">
-						<input type="radio" name="r[<?php echo $rb['codigo_banco_clever']?>]" value="mas" >
+						<input type="checkbox" name="r[<?php echo $rb['codigo_banco_clever']?>]" value="mas" >
 					</td>
                     <td class="centrar" width="250">
-						<input type="radio" name="r[<?php echo $rb['codigo_banco_clever']?>]" value="menos" >
+						<input type="checkbox" name="r[<?php echo $rb['codigo_banco_clever']?>]" value="menos" >
 					</td>
                 </tr>
                 <?php }?>
