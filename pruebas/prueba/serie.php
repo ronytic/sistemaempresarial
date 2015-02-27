@@ -81,7 +81,7 @@ $(function(){
 		timeUp : evaluar
 	});
 	function evaluar(){
-		//$("#formulario").submit();
+		$("#formulario").submit();
 	}
 });
 </script>
