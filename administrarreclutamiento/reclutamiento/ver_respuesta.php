@@ -43,7 +43,7 @@ $rec_r=$rec_reclutamiento->mostrarTodoRegistro("cod_empresa='$cod_empresa' and c
 $rec_r=array_shift($rec_r);
 
 $cod_bateria=$rec_r['cod_bateria'];
-$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE' and cod_prueba!='SER'",0);
+$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE' and cod_prueba!='SER' and cod_prueba!='PER'",0);
 include_once("../../cabecerahtml.php");
 ?>
 
@@ -192,9 +192,9 @@ $ctotal=$cmas-$cmenos;
 </table>
 
 <?php
-$rec_b_s=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='$cod_empresa'",0);
+$rec_b_s=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='$cod_empresa' and tipo='SER'",0);
 $totalseries=count($rec_b_s);
-$rec_b_s_r=$rec_banco_serie_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cedula LIKE '$cedula' and escorrecta='S' and cod_recluta='$cod_recluta'",0);
+$rec_b_s_r=$rec_banco_serie_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cedula LIKE '$cedula' and escorrecta='S' and cod_recluta='$cod_recluta' and cod_prueba='SER'",0);
 $totalcorrectasseries=count($rec_b_s_r);
 $totalporcentajeseries=number_format($totalcorrectasseries*100/$totalseries,2);
  ?>
@@ -202,6 +202,35 @@ $totalporcentajeseries=number_format($totalcorrectasseries*100/$totalseries,2);
     <thead>
         <tr>
             <th colspan="2" width="200">Resultado de la Prueba de  Series</th>
+        </tr>
+
+        
+    </thead>
+    <tr>
+    	<td class="resaltar">Total de Preguntas</td>
+        <td class="centrar"><?php echo $totalseries;?></td>
+    </tr>
+    <tr>
+    	<td class="resaltar">Correctas</td>
+        <td class="centrar"><?php echo $totalcorrectasseries;?></td>
+    </tr>
+    <tr class="success resaltar">
+    	<td class="">Total</td>
+        <td class="centrar"><?php echo $totalporcentajeseries;?> %</td>
+    </tr>
+</table>
+
+<?php
+$rec_b_s=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='$cod_empresa' and tipo='PER'",0);
+$totalseries=count($rec_b_s);
+$rec_b_s_r=$rec_banco_serie_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cedula LIKE '$cedula' and escorrecta='S' and cod_recluta='$cod_recluta' and cod_prueba='PER'",0);
+$totalcorrectasseries=count($rec_b_s_r);
+$totalporcentajeseries=number_format($totalcorrectasseries*100/$totalseries,2);
+ ?>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th colspan="2" width="200">Resultado de la Prueba de  Percepción</th>
         </tr>
 
         
