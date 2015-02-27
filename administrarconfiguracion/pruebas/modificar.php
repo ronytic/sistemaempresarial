@@ -24,7 +24,7 @@ verificar();
 $("select[name=cod_tipo]").change(verificar);
 function verificar(){
 	var valor=$("select[name=cod_tipo]").val();
-	if(valor=="CLE"){
+	if(valor=="CLE" || valor=="SER"){
 		$("#banco").hide("slow");
 	}else{
 		$("#banco").show("slow");

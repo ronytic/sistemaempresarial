@@ -6,6 +6,9 @@ $cod_empresa=$_SESSION['cod_empresa'];
 if($cod_tipo=="CLE"){
 	$cod_banco="CLE";
 }
+if($cod_tipo=="SER"){
+	$cod_banco="SER";
+}
 $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"cod_prueba"=>"'$cod_prueba'",
 				"cod_tipo"=>"'$cod_tipo'",
