@@ -101,7 +101,8 @@ include_once("../cabecera.php");
 	<?php switch($rec_p['cod_tipo']){
 		case "EN3":{$archivo="selectiva.php";}break;
 		case "CLE":{$archivo="clever.php";}break;
-		case "SER":{$archivo="serie.php";}break;	
+		case "SER":{$archivo="serie.php";}break;
+		case "PER":{$archivo="percepcion.php";}break;	
 	}
 	?>
             <a href="<?php echo $archivo?>" class="btn btn-success btn-xm">Iniciar</a>

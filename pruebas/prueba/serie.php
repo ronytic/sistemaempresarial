@@ -112,7 +112,7 @@ $(function(){
             <table class="table table-bordered table-hover">
             <thead><tr class="centrar"><th width="350">Serie</th><th width="50">Respuesta</th></tr></thead>
             	<?php 
-				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'",0,"orden");
+				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and tipo='SER'",0,"orden");
 				foreach($rec_b as $rb){?>
                 <tr>
                 	<td><?php echo $rb['pregunta']?></td>
