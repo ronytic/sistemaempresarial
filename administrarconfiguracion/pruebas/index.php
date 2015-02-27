@@ -19,7 +19,7 @@ verificar();
 $("select[name=cod_tipo]").change(verificar);
 function verificar(){
 	var valor=$("select[name=cod_tipo]").val();
-	if(valor=="CLE" || valor=="SER"){
+	if(valor=="CLE" || valor=="SER" || valor=="PER"){
 		$("#banco").hide("slow");
 	}else{
 		$("#banco").show("slow");
