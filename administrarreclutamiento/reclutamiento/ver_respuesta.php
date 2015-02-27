@@ -24,6 +24,12 @@ $rec_banco_preguntas=new rec_banco_preguntas;
 include_once("../../estructurabd/rec_banco_clever_respuestas.php");
 $rec_banco_clever_respuestas=new rec_banco_clever_respuestas;
 
+include_once("../../estructurabd/rec_banco_serie.php");
+$rec_banco_serie=new rec_banco_serie;
+
+include_once("../../estructurabd/rec_banco_serie_respuestas.php");
+$rec_banco_serie_respuestas=new rec_banco_serie_respuestas;
+
 $titulo="Ver Respuestas de las Pruebas";
 $condicion="cedula  LIKE '$cedula'";
 
@@ -37,7 +43,7 @@ $rec_r=$rec_reclutamiento->mostrarTodoRegistro("cod_empresa='$cod_empresa' and c
 $rec_r=array_shift($rec_r);
 
 $cod_bateria=$rec_r['cod_bateria'];
-$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE'",0);
+$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE' and cod_prueba!='SER'",0);
 include_once("../../cabecerahtml.php");
 ?>
 
@@ -149,7 +155,6 @@ $cmenos=count($rec_b_clever_r);
 $ctotal=$cmas-$cmenos;
 ?>
 <table class="table table-bordered table-hover table-striped">
-
     <thead>
         <tr>
             <th colspan="5" width="200">Resultado de la Prueba Clever</th>
@@ -183,6 +188,35 @@ $ctotal=$cmas-$cmenos;
         <td class="centrar"><?php echo $itotal;?></td>
         <td class="centrar"><?php echo $stotal;?></td>
         <td class="centrar"><?php echo $ctotal;?></td>
+    </tr>
+</table>
+
+<?php
+$rec_b_s=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='$cod_empresa'",0);
+$totalseries=count($rec_b_s);
+$rec_b_s_r=$rec_banco_serie_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cedula LIKE '$cedula' and escorrecta='S' and cod_recluta='$cod_recluta'",0);
+$totalcorrectasseries=count($rec_b_s_r);
+$totalporcentajeseries=number_format($totalcorrectasseries*100/$totalseries,2);
+ ?>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th colspan="2" width="200">Resultado de la Prueba de  Series</th>
+        </tr>
+
+        
+    </thead>
+    <tr>
+    	<td class="resaltar">Total de Preguntas</td>
+        <td class="centrar"><?php echo $totalseries;?></td>
+    </tr>
+    <tr>
+    	<td class="resaltar">Correctas</td>
+        <td class="centrar"><?php echo $totalcorrectasseries;?></td>
+    </tr>
+    <tr class="success resaltar">
+    	<td class="">Total</td>
+        <td class="centrar"><?php echo $totalporcentajeseries;?> %</td>
     </tr>
 </table>
 <?php include_once("../../pie.php");?>
