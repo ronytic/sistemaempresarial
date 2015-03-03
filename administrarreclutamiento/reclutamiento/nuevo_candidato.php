@@ -21,12 +21,12 @@ include_once("../../cabecera.php");
 <form action="guardar_candidato.php" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="cod_recluta" value="<?php echo $_GET['cod_recluta']?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
-        <tr><td>Cédula</td><td><input type="text" name="cedula" required></td></tr>
+        <tr><td>Cédula de Identidad</td><td><input type="text" name="cedula" required></td></tr>
         <tr><td>Expedido</td><td><input type="text" name="exp" required size="3" maxlength="3"></td></tr>
         <tr><td>Nombre</td><td><input type="text" name="nombre" required></td></tr>
         
-        <tr><td>Paterno</td><td><input type="text" name="paterno" required></td></tr>
-        <tr><td>Materno</td><td><input type="text" name="materno" required></td></tr>
+        <tr><td>Apellido Paterno</td><td><input type="text" name="paterno" required></td></tr>
+        <tr><td>Apellido Materno</td><td><input type="text" name="materno" required></td></tr>
         <tr><td>Fecha de Nacimiento</td><td><input type="date" name="fecha_nac" required></td></tr>
         <tr><td>Ciudad de Nacimiento</td><td><input type="text" name="ciudad_nac" required></td></tr>
         <tr><td>Pais de Nacimiento</td><td><input type="text" name="pais_nac" required></td></tr>

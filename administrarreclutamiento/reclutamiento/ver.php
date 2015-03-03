@@ -90,7 +90,7 @@ include_once("../../cabecera.php");
     
     <table class="table table-bordered table-hover table-striped">
     	<thead>
-        	<th width="50">N</th><th>Cedula</th><th>Paterno</th><th>Materno</th><th>Nombres</th><th></th><th width="90"><input type="submit" value="Comparar" class="btn btn-xs btn-warning"></th>
+        	<th width="50">N</th><th>Cédula de Identidad</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>Nombres</th><th></th><th width="90"><input type="submit" value="Comparar" class="btn btn-xs btn-warning"></th>
         </thead>
     <?php foreach($rec_r_c as $rrc){$i++;
 	$rec_c=$rec_candidato->mostrarTodoRegistro("cedula='".$rrc['cedula']."'",0);

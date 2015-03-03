@@ -21,7 +21,7 @@ include_once("../../cabecera.php");
 	<input type="hidden" name="cod_recluta" value="<?php echo $_GET['cod_recluta']?>">
 	<table class="table table-bordered" style="background-color:#FFFFFF">
     	<thead>
-    	<tr><th>Cédula</th><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>
+    	<tr><th>Cédula de Identidad</th><th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th></tr>
         </thead>
         <tr>
         	<td><input type="text" name="cedula" autofocus></td>

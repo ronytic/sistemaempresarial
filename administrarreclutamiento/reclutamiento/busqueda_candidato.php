@@ -10,7 +10,7 @@ $rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0);
 ?>
 <table class="table table-bordered table-hover">
 <thead>
-<tr><th>Nº</th><th>Cédula</th><th>Nombre</th><th>Paterno</th><th>Materno</th><th>Fecha de Nac</th><th>Teléfono</th><th>Correo</th><th></th></tr>
+<tr><th>Nº</th><th>Cédula de Identidad</th><th>Nombre</th><th>Apellido Paterno</th><th>Apellido Materno</th><th>Fecha de Nac</th><th>Teléfono</th><th>Correo</th><th></th></tr>
 </thead>
 <?php
 $i=0;

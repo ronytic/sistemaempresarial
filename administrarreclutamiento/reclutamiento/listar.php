@@ -34,7 +34,7 @@ include_once("../../cabecera.php");
 	<table class="" style="background-color:#FFFFFF">
     	<thead>
     	<tr>
-        	<th>Planta</th>
+        	<th>Regional</th>
             <th>Estado</th>
             <!--<th>Dirección</th>-->
         </tr>
