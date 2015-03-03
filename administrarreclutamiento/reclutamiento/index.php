@@ -5,7 +5,7 @@ $folder="../../";
 $login=$_SESSION['login'];
 include_once("../../estructurabd/rec_cargo.php");
 $rec_cargo=new rec_cargo;
-$rec_c=$rec_cargo->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
+$rec_c=$rec_cargo->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."' and codigo_cargo IN(SELECT cod_cargo FROM rec_planta_cargo WHERE cod_empresa='".$_SESSION['cod_empresa']."' and cod_planta='".$_POST['cod_planta']."')",0,"descripcion");
 
 include_once("../../estructurabd/rec_area.php");
 $rec_area=new rec_area;
@@ -31,17 +31,9 @@ include_once("../../cabecera.php");
 <input type="hidden" name="cod_planta" value="<?php echo $_POST['cod_planta']?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	
-        <tr><td>Cargo</td><td><select name="cod_cargo" autofocus required>
-            	<option value="">Seleccionar</option>
-            	<?php foreach($rec_c as $rc){
-				?>
-                <option value="<?php echo $rc['cod_cargo']?>"><?php echo $rc['cod_cargo']?> - <?php echo $rc['descripcion']?></option>
-                <?php	
-				}?>
-            </select>
-            </td></tr>
         
-        <tr><td>Planta</td><td><fieldset disabled><select name="cod_planta" autofocus required disabled>
+        
+        <tr><td>Regional</td><td><fieldset disabled><select name="cod_planta" autofocus required disabled>
             	<option value="">Seleccionar</option>
             	<?php foreach($rec_p as $rp){
 				?>
@@ -55,6 +47,15 @@ include_once("../../cabecera.php");
             	<?php foreach($rec_a as $ra){
 				?>
                 <option value="<?php echo $ra['cod_area']?>"><?php echo $ra['cod_area']?> - <?php echo $ra['descripcion']?></option>
+                <?php	
+				}?>
+            </select>
+            </td></tr>
+        <tr><td>Cargo</td><td><select name="cod_cargo" autofocus required>
+            	<option value="">Seleccionar</option>
+            	<?php foreach($rec_c as $rc){
+				?>
+                <option value="<?php echo $rc['cod_cargo']?>"><?php echo $rc['cod_cargo']?> - <?php echo $rc['descripcion']?></option>
                 <?php	
 				}?>
             </select>
