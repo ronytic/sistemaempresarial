@@ -83,9 +83,11 @@ include_once("../cabecera.php");
             <hr>
             <?php
             if($rec_p['grafico']!=""){
-			?><a href="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" target="_blank"><img src="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" width="150" class="img-polaroid"></a><?php	
+			?><a href="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" target="_blank"><img src="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" width="100%" class="img-polaroid"></a><?php	
 			}
 			?>
+            <hr>
+            <a href="<?php echo $archivo?>" class="btn btn-success btn-xm">Iniciar</a>
 			</div>
         </div>
     </div>
@@ -110,7 +112,8 @@ include_once("../cabecera.php");
 		case "PER":{$archivo="percepcion.php";}break;	
 	}
 	?>
-            <a href="<?php echo $archivo?>" class="btn btn-success btn-xm">Iniciar</a>
+    <br>
+    
 <?php
 include_once("../pie.php");
 
