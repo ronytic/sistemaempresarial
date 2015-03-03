@@ -36,7 +36,7 @@ include_once("../../cabecera.php");
                         </thead>
                         <tr>
                             <td>
-                                Planta<br>
+                                Regional<br>
                             <select name="cod_planta">
                                 <?php foreach($rec_p_u as $rpu){
                                     $rp=$rec_planta->mostrarTodoRegistro("cod_planta='".$rpu['cod_planta']."'",0);
