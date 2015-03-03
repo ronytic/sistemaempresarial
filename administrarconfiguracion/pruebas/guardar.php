@@ -12,6 +12,7 @@ if($cod_tipo=="SER"){
 if($cod_tipo=="PER"){
 	$cod_banco="PER";
 }
+
 $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"cod_prueba"=>"'$cod_prueba'",
 				"cod_tipo"=>"'$cod_tipo'",
@@ -20,6 +21,10 @@ $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"detalle"=>"'$detalle'",
 				"tiempo"=>"'$tiempo'",
 				);
+if($_FILES['grafico']['name']!=""){
+	copy($_FILES['grafico']['tmp_name'],"../../imagenes/pruebas/".$_FILES['grafico']['name']);	
+	$valores['grafico']=$_FILES['grafico']['name'];
+}
 $rec_prueba=new rec_prueba;
 $rec_prueba->insertarRegistro($valores,0);
 

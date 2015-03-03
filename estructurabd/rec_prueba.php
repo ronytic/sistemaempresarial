@@ -10,6 +10,7 @@ class rec_prueba extends bd{
 		"cod_banco"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"descripcion"=>array("Tipo"=>"varchar","Tamano"=>"60"),
 		"detalle"=>array("Tipo"=>"text","Tamano"=>""),
+		"grafico"=>array("Tipo"=>"varchar","Tamano"=>"100"),
 		"tiempo"=>array("Tipo"=>"int","Tamano"=>"4"),
 	);	
 }

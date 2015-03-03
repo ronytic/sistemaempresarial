@@ -32,7 +32,7 @@ function verificar(){
 }
 </script>
 <h2>Modificar Prueba</h2>
-<form action="pruebas/actualizar.php" method="post">
+<form action="pruebas/actualizar.php" method="post" enctype="multipart/form-data">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	<tr><td>Código</td><td><input type="text" name="cod_prueba" max="3" maxlength="3" autofocus required value="<?php echo $rec_p['cod_prueba']?>" readonly></td></tr>
         
@@ -58,6 +58,14 @@ function verificar(){
                 </select></td></tr>        
         <tr><td>Descripción</td><td><input type="text" name="descripcion" required value="<?php echo $rec_p['descripcion']?>"></td></tr>
         <tr><td>Detalle</td><td><textarea name="detalle" required rows="5" cols="" class="col-sm-12"><?php echo $rec_p['detalle']?></textarea></td></tr>
+        <tr><td>Gráfico</td><td><input type="file" name="grafico" >
+        <br>
+        <?php
+        if($rec_p['grafico']!=""){
+			?><a href="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" target="_blank"><img src="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" width="150" class="img-polaroid"></a><?php	
+			}
+		?>
+        </td></tr>
 		<tr><td>Tiempo de la Prueba</td><td><input type="number" name="tiempo" required min="0" max="9999" value="<?php echo $rec_p['tiempo']?>">Minutos</td></tr>
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>
     </table>

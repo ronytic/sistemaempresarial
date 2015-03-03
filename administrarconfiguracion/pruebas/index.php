@@ -27,7 +27,7 @@ function verificar(){
 }
 </script>
 <h2>Nueva Prueba</h2>
-<form action="pruebas/guardar.php" method="post">
+<form action="pruebas/guardar.php" method="post" enctype="multipart/form-data">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	<tr><td>Código</td><td><input type="text" name="cod_prueba" max="3" maxlength="3" autofocus required></td></tr>
         <tr><td>Tipo de Prueba</td><td><select name="cod_tipo" autofocus required>
@@ -53,6 +53,7 @@ function verificar(){
                 </select></td></tr>    
         <tr><td>Descripción</td><td><input type="text" name="descripcion" required></td></tr>
         <tr><td>Detalle</td><td><textarea name="detalle" required rows="5" cols="" class="col-sm-12"><?php echo $rec_p['detalle']?></textarea></td></tr>
+        <tr><td>Gráfico</td><td><input type="file" name="grafico" ></td></tr>
         <tr><td>Tiempo de la Prueba</td><td><input type="number" name="tiempo" required min="0" max="9999">Minutos</td></tr>
         
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>

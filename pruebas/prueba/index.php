@@ -80,7 +80,12 @@ include_once("../cabecera.php");
         <div class="widget-body">
         	<div class="widget-main">
             <?php echo $rec_p['detalle']?>
-            
+            <hr>
+            <?php
+            if($rec_p['grafico']!=""){
+			?><a href="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" target="_blank"><img src="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" width="150" class="img-polaroid"></a><?php	
+			}
+			?>
 			</div>
         </div>
     </div>
