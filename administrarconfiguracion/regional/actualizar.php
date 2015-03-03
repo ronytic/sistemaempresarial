@@ -11,5 +11,5 @@ $valores=array(
 $rec_planta=new rec_planta;
 $rec_planta->actualizarRegistro($valores,"codigo_planta='$codigo_planta'");
 
-header("Location:../?c=plantas");
+header("Location:../?c=regional");
 ?>

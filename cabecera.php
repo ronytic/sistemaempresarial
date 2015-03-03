@@ -384,7 +384,7 @@
 									</a>
 								</li>
                                 <li class="">
-									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=plantas">Plantas
+									<a href="<?php echo $folder;?><?php echo $m['Url'];?>administrarconfiguracion/?c=regional">Regional
 									</a>
 								</li>
                             </ul>

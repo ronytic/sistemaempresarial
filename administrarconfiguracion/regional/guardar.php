@@ -11,5 +11,5 @@ $valores=array("cod_empresa"=>"'$cod_empresa'",
 $rec_planta=new rec_planta;
 $rec_planta->insertarRegistro($valores,0);
 
-header("Location:../?c=plantas");
+header("Location:../?c=regional");
 ?>

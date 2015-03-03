@@ -2,8 +2,8 @@
 $folder="../../";
 include_once("../../login/check.php");
 ?>
-<h2>Búsqueda de Plantas</h2>
-<form action="plantas/busqueda.php" method="post" class="formulario">
+<h2>Búsqueda de Regionales</h2>
+<form action="regional/busqueda.php" method="post" class="formulario">
 	<table class="table table-bordered" style="background-color:#FFFFFF">
     	<thead>
     	<tr>

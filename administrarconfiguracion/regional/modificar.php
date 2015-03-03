@@ -15,7 +15,7 @@ $rec_t_p=$rec_tipo_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_em
 
 ?>
 <h2>Modificar Planta</h2>
-<form action="plantas/actualizar.php" method="post">
+<form action="regional/actualizar.php" method="post">
 	<input type="hidden" name="codigo_planta" value="<?php echo $codigo_planta?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	<tr><td>Código</td><td><input type="text" name="cod_area" max="3" maxlength="3" autofocus required value="<?php echo $rec_p['cod_planta']?>" readonly></td></tr>
