@@ -116,9 +116,9 @@ $(function(){
 				foreach($rec_b as $rb){?>
                 <tr>
                 	<td>
-					<table>
+					<table class="table table-bordered">
                     
-                    	<tr>
+                    	<tr class="centrar">
                         <td><?php echo $rb['pregunta']?></td>
                         <td><?php echo $rb['pre2']?></td>
                         <td><?php echo $rb['pre3']?></td>
@@ -127,8 +127,8 @@ $(function(){
                         </tr>
                     </table>
                     </td>
-                	<td class="centrar" width="250">
-						<input type="text" name="r[<?php echo $rb['codigo_banco_serie']?>]" value="" class="form-control">
+                	<td class="centrar" width="40">
+						<input type="text" name="r[<?php echo $rb['codigo_banco_serie']?>]" value="" class="form-control col-sm-2" >
 					</td>
                     
                 </tr>
