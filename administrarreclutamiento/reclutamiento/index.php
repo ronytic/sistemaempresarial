@@ -55,7 +55,7 @@ include_once("../../cabecera.php");
             	<option value="">Seleccionar</option>
             	<?php foreach($rec_c as $rc){
 				?>
-                <option value="<?php echo $rc['cod_cargo']?>"><?php echo $rc['cod_cargo']?> - <?php echo $rc['descripcion']?></option>
+                <option value="<?php echo $rc['cod_cargo']?>"><?php echo $rc['descripcion']?></option>
                 <?php	
 				}?>
             </select>
