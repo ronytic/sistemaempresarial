@@ -35,6 +35,13 @@ echo $k;
 echo $v;
 echo "</pre>";
 */
+ switch($rec_p['cod_tipo']){
+		case "EN3":{$archivo="selectiva.php";}break;
+		case "CLE":{$archivo="clever.php";}break;
+		case "SER":{$archivo="serie.php";}break;
+		case "PER":{$archivo="percepcion.php";}break;	
+	}
+
 $titulo="Prueba de ".$rec_p['descripcion'];
 
 include_once("../cabecerahtml.php");
@@ -105,13 +112,7 @@ include_once("../cabecera.php");
     </div>
 </div>
 <br>
-	<?php switch($rec_p['cod_tipo']){
-		case "EN3":{$archivo="selectiva.php";}break;
-		case "CLE":{$archivo="clever.php";}break;
-		case "SER":{$archivo="serie.php";}break;
-		case "PER":{$archivo="percepcion.php";}break;	
-	}
-	?>
+	
     <br>
     
 <?php
