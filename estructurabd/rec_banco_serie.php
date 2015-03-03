@@ -6,6 +6,10 @@ class rec_banco_serie extends bd{
 		"cod_empresa"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"orden"=>array("Tipo"=>"int","Tamano"=>"11"),
 		"pregunta"=>array("Tipo"=>"varchar","Tamano"=>"180"),
+		"pre2"=>array("Tipo"=>"varchar","Tamano"=>"100"),
+		"pre3"=>array("Tipo"=>"varchar","Tamano"=>"20"),
+		"pre4"=>array("Tipo"=>"varchar","Tamano"=>"20"),
+		"pre5"=>array("Tipo"=>"varchar","Tamano"=>"20"),
 		"respuesta"=>array("Tipo"=>"varchar","Tamano"=>"20"),
 		"tipo"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 	);	

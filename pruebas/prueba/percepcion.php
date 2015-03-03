@@ -115,7 +115,10 @@ $(function(){
 				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'and tipo='PER'",0,"orden");
 				foreach($rec_b as $rb){?>
                 <tr>
-                	<td><?php echo $rb['pregunta']?></td>
+                	<td><?php echo $rb['pregunta']?>
+                    <br>
+                    <?php echo $rb['pre2']?>
+                    </td>
                 	<td class="centrar" width="250">
 						<input type="text" name="r[<?php echo $rb['codigo_banco_serie']?>]" value="" class="form-control">
 					</td>
