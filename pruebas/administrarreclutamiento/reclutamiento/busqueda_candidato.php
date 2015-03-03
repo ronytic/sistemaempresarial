@@ -40,7 +40,7 @@ include_once("../../cabecera.php");
 <table class="table table-bordered table-hover">
 
 <tr>
-<td width="250">Cédula</td><td><input type="text"  value="<?php echo $cedula?>" name="cedula"></td>
+<td width="250">Cédula de Identidad</td><td><input type="text"  value="<?php echo $cedula?>" name="cedula"></td>
 </tr>
 <tr>
 <td>Expedido</td><td><input type="text" name="exp" required size="3" maxlength="3" value="<?php echo $rc['exp']?>"></td>
@@ -49,10 +49,10 @@ include_once("../../cabecera.php");
 <td>Nombre</td><td><input type="text"  value="<?php echo $rc['nombre']?>" name="nombre"></td>
 </tr>
 <tr>
-<td>Paterno</td><td><input type="text"  value="<?php echo $rc['paterno']?>" name="paterno"></td>
+<td>Apellido Paterno</td><td><input type="text"  value="<?php echo $rc['paterno']?>" name="paterno"></td>
 </tr>
 <tr>
-<td>Materno</td><td><input type="text"  value="<?php echo $rc['materno']?>" name="materno"></td>
+<td>Apellido Materno</td><td><input type="text"  value="<?php echo $rc['materno']?>" name="materno"></td>
 </tr>
 <tr>
 <td>Fecha de Nacimiento</td><td><input type="date"  value="<?php echo ($rc['fecha_nac'])?>" name="fecha_nac"></td>
