@@ -22,7 +22,7 @@ foreach($rec_p as $rp){$i++;
     <td><?php echo $rp['cod_planta']?></td>
     <td><?php echo $rp['descripcion']?></td>
 
-    <td><a href="plantas/modificar.php?codigo_planta=<?php echo $rp['codigo_planta']?>" class="btn btn-xs btn-warning cargarajax">M</a>
+    <td><a href="regional/modificar.php?codigo_planta=<?php echo $rp['codigo_planta']?>" class="btn btn-xs btn-warning cargarajax">M</a>
 <!--<a href="eliminar.php?cod_empresa=<?php echo $se['cod_empresa']?>" class="btn btn-xs btn-primary">E</a>--></td></tr>
 <?php
 }

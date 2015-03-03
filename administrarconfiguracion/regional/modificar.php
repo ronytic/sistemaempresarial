@@ -14,7 +14,7 @@ $rec_tipo_prueba=new rec_tipo_prueba;
 $rec_t_p=$rec_tipo_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
 
 ?>
-<h2>Modificar Planta</h2>
+<h2>Modificar Regional</h2>
 <form action="regional/actualizar.php" method="post">
 	<input type="hidden" name="codigo_planta" value="<?php echo $codigo_planta?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
