@@ -108,25 +108,26 @@ $(function(){
         <div class="widget-body">
         	<div class="widget-main">
             <table class="table table-bordered">
+            	<?php for($i=1;$i<=5;$i++){?>
+                <?php if($rb['opcion'.$i]!=""){?>
             	<tr>
-                	<?php for($i=1;$i<=5;$i++){?>
-                	<td class="centrar" width="250">
-                    	<?php 
-						if($rb['opcion'.$i]!=""){
-							?>
-                            <label>
+                	<td width="20" class="centrar"><input type="radio" name="r[<?php echo $rb['nro']?>]" value="<?php echo $i?>" id="id_<?php echo $rb['nro']?>_<?php echo $i?>"></td>
+                	<td width="250">
+                    	
+                            <label for="id_<?php echo $rb['nro']?>_<?php echo $i?>">
                             <?php
 							echo $rb['opcion'.$i];
 							?>
                             <br>
-                            <input type="radio" name="r[<?php echo $rb['nro']?>]" value="<?php echo $i?>" >
+                            
                             </label>
-                            <?php
-						}
-							?>	
+                	
                     </td>
-                    <?php }?>
+                    
+                    
                 </tr>
+                <?php } ?>
+                <?php }?>
             </table>
             
 					
