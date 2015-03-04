@@ -33,13 +33,13 @@ $condicion="cod_recluta  LIKE '$cod_recluta' ";
 $rec_r=$rec_reclutamiento->mostrarTodoRegistro($condicion,0);
 $rec_r=array_shift($rec_r);
 switch($rec_r['prioridad']){
-	case "A":{$prioridad="Alta";}
-	case "M":{$prioridad="Media";}
-	case "B":{$prioridad="Baja";}
+	case "A":{$prioridad="Alta";}break;
+	case "M":{$prioridad="Media";}break;
+	case "B":{$prioridad="Baja";}break;
 }
 switch($rec_r['estado']){
-	case "A":{$estado="Activo";}
-	case "C":{$estado="Cerrado";}
+	case "A":{$estado="Activo";}break;
+	case "C":{$estado="Cerrado";}break;
 }
 
 $condicion="cod_recluta  LIKE '$cod_recluta' ";
@@ -69,9 +69,11 @@ include_once("../../cabecera.php");
 		<thead>
         	<th colspan="1" width="200">Datos</th>
         </thead>
-        <tr><td><strong>Cargo</strong></td><td><?php echo $rec_r['cod_cargo']?> - <?php echo $rc['descripcion']?></td></tr>
+        <tr><td><strong>Regional</strong></td><td><?php echo $rp['descripcion']?></td></tr>
         <tr><td><strong>Area</strong></td><td><?php echo $rec_r['cod_area']?> - <?php echo $ra['descripcion']?></td></tr>
-        <tr><td><strong>Planta</strong></td><td><?php echo $rec_r['cod_planta']?> - <?php echo $rp['descripcion']?></td></tr>
+        <tr><td><strong>Cargo</strong></td><td><?php echo $rec_r['cod_cargo']?> - <?php echo $rc['descripcion']?></td></tr>
+        
+        
         <tr><td><strong>Bateria</strong></td><td><?php echo $rec_r['cod_bateria']?> - <?php echo $rb['descripcion']?></td></tr>
         <tr><td><strong>Fecha de Inicio</strong></td><td><?php echo date("d-m-Y",strtotime($rec_r['fecha_inicio']))?></td></tr>
         <tr><td><strong>Fecha Límite</strong></td><td><?php echo  date("d-m-Y",strtotime($rec_r['fecha_limite']))?></td></tr>
