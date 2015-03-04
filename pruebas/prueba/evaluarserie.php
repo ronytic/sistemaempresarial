@@ -75,9 +75,9 @@ if(count($r)>0){
 		print_r($valores);
 		echo "</pre>";*/
 	}
-	if($sw==0){
+	//if($sw==0){
 		$_SESSION['pruebas']=$pruebas;
-	}
+	//}
 }else{
 		
 }
