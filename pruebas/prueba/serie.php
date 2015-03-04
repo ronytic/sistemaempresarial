@@ -47,7 +47,7 @@ include_once("../cabecera.php");
 ?>
 <table class="table table-bordered">
 <thead><tr>
-<th>Cédula</th><th>Datos Personales</th>
+<th>Cédula de Identidad</th><th>Datos Personales</th>
 </tr></thead>
 <tr>
 <td><?php echo $cedula?></td>
