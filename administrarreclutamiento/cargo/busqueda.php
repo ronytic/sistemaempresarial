@@ -6,7 +6,7 @@ $cod_empresa=$_SESSION['cod_empresa'];
 $rec_cargo=new rec_cargo;
 $condicion="cod_cargo  LIKE '%$cod_cargo' and cod_empresa  LIKE '%$cod_empresa' and descripcion LIKE '%$descripcion%' ";
 
-$rec_c=$rec_cargo->mostrarTodoRegistro($condicion,0);
+$rec_c=$rec_cargo->mostrarTodoRegistro($condicion,0,"descripcion");
 ?>
 <table class="table table-bordered  table-hover">
 <thead>
