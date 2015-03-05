@@ -40,6 +40,7 @@ echo "</pre>";
 		case "CLE":{$archivo="clever.php";}break;
 		case "SER":{$archivo="serie.php";}break;
 		case "PER":{$archivo="percepcion.php";}break;	
+		case "VAL":{$archivo="valanti.php";}break;
 	}
 
 $titulo="Prueba de ".$rec_p['descripcion'];
