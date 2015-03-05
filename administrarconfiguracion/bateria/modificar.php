@@ -25,7 +25,7 @@ $rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']
     	<tr><td>Código</td><td><input type="text" name="cod_bateria" max="3" maxlength="3" autofocus required value="<?php echo $rec_b['cod_bateria']?>" readonly></td></tr>
         
             
-        <tr><td>Descripción</td><td><input type="text" name="descripcion" required value="<?php echo $rec_b['descripcion']?>"></td></tr>
+        <tr><td>Descripción</td><td><input type="text" name="descripcion" required value="<?php echo $rec_b['descripcion']?>" class="col-xs-12"></td></tr>
 
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>
     </table>
