@@ -6,7 +6,7 @@ $rec_candidato=new rec_candidato;
 $cod_empresa=$_SESSION['cod_empresa'];
 $condicion="cedula  LIKE '%$cedula' and nombre  LIKE '%$nombre' and paterno  LIKE '%$paterno' and materno  LIKE '%$materno'";
 
-$rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0,"paterno,materno,nombres");
+$rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0,"paterno,materno,nombre");
 ?>
 <table class="table table-bordered table-hover">
 <thead>
