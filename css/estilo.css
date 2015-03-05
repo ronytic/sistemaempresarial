@@ -22,7 +22,7 @@
 tr.centrar td,tr.centrar th{
 	text-align:center;	
 }
-.resaltar{
+.resaltar,.r{
 	font-weight:bold;	
 }
 /*Fin de Cargador*/
@@ -37,6 +37,24 @@ footer{
 
 	bottom:2px;
 	
+}
+.sb{
+	margin:0px;
+}
+.rojo{
+	color:#d9534f;	
+}
+.verde{
+	color:#5cb85c;	
+}
+.azul{
+	color:#337ab7;	
+}
+.negro{
+	color:#000000;	
+}
+.bnegro{
+	border:1px solid #424242 !important;	
 }
 .page-content{
 	/*background:url(../imagenes/sistema/superior.jpg);
