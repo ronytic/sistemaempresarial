@@ -24,7 +24,7 @@ verificar();
 $("select[name=cod_tipo]").change(verificar);
 function verificar(){
 	var valor=$("select[name=cod_tipo]").val();
-	if(valor=="CLE" || valor=="SER" || valor=="PER"){
+	if(valor=="CLE" || valor=="SER" || valor=="PER" || valor=="VAL"){
 		$("#banco").hide("slow");
 	}else{
 		$("#banco").show("slow");
@@ -66,7 +66,7 @@ function verificar(){
 			}
 		?>
         </td></tr>
-		<tr><td>Tiempo de la Prueba</td><td><input type="number" name="tiempo" required min="0" max="9999" value="<?php echo $rec_p['tiempo']?>">Minutos</td></tr>
+		<tr><td>Tiempo de la Prueba</td><td><input type="number" name="tiempo" required min="0" max="9999" value="<?php echo $rec_p['tiempo']?>" class="der">Minutos</td></tr>
         <tr><td></td><td><input type="submit" name="Guardar" value="Guardar" class="btn btn-success"></td></tr>
     </table>
 	
