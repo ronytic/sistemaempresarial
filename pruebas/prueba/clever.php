@@ -108,27 +108,37 @@ $(function(){
 <input type="hidden" name="cod_banco" value="<?php echo $cod_banco?>">
 
 <?php foreach($nrogrupo as $grupo){?>
-<div class="col-sm-12">
+<div class="col-sm-offset-2 col-sm-8">
 	<div class="widget-box">
     	<div class="widget-header widget-header-flat widget-header-small">
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
             <table class="table table-bordered table-hover">
-            <thead><tr class="centrar"><th width="150"></th><th width="50">Mas</th><th width="50">Menos</th></tr></thead>
-            	<?php 
-				$rec_b=$rec_banco_clever->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and grupo='$grupo'",0,"grupo");
-				foreach($rec_b as $rb){?>
-                <tr>
-                	<td><?php echo $rb['pregunta']?></td>
-                	<td class="centrar" width="250">
-						<input type="checkbox" name="r[<?php echo $rb['codigo_banco_clever']?>]" value="mas" >
-					</td>
-                    <td class="centrar" width="250">
-						<input type="checkbox" name="r[<?php echo $rb['codigo_banco_clever']?>]" value="menos" >
-					</td>
+            <thead><tr class="centrar"><th width="50">Mas</th><th width="50">Menos</th></tr></thead>
+            	
+                <tr class="centrar">
+                	
+                    <td>
+                    <select name="r[<?php echo $grupo?>][mas]">
+                    	<?php 
+						$rec_b=$rec_banco_clever->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and grupo='$grupo'",0,"grupo");
+						foreach($rec_b as $rb){?>
+                    	<option value="<?php echo $rb['codigo_banco_clever']?>"><?php echo $rb['pregunta']?></option>
+                        <?php }?>
+                    </select>
+                    </td>
+                    <td>
+                    <select name="r[<?php echo $grupo?>][menos]">
+                    	<?php 
+						$rec_b=$rec_banco_clever->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and grupo='$grupo'",0,"grupo");
+						foreach($rec_b as $rb){?>
+                    	<option value="<?php echo $rb['codigo_banco_clever']?>"><?php echo $rb['pregunta']?></option>
+                        <?php }?>
+                    </select>
+                    </td>
                 </tr>
-                <?php }?>
+            	
             </table>
             
 					
@@ -138,7 +148,11 @@ $(function(){
     </div>
 </div>
 <?php }?>
+<div class="col-sm-12">
+	<center>
 	 <input type="submit" value="Grabar" class="btn btn-danger btn-xm">
+     </center>
+</div>
 </form>
 <?php
 include_once("../pie.php");

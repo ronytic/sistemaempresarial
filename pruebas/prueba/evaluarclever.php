@@ -43,42 +43,44 @@ if(count($rec_b_c)>0){
 	$sw=0;
 }
 if(count($r)>0){
-	foreach($r as $nro=>$respuesta){
-		$rec_b=$rec_banco_preguntas->mostrarTodoRegistro("cod_banco='".$cod_banco."' and nro='$nro'",0,"nro");	
-		$rec_b=array_shift($rec_b);
-		$correcta=$rec_b['correcta'];
-		if($correcta==$respuesta){
-			$escorrecta="S";
-		}else{
-			$escorrecta="N";
-		}
-		switch($respuesta){
-			case "mas":{$mas=1;$menos=0;}break;	
-			case "menos":{$mas=0;$menos=1;}break;	
-		}
-
-		$valores=array("cod_empresa"=>"'$cod_empresa'",
-						"cod_recluta"=>"'$cod_recluta'",
-						"cod_prueba"=>"'$cod_prueba'",
-						"codigo_banco_clever"=>"'$nro'",
-						"mas"=>"$mas",
-						"menos"=>"$menos",
-						"cedula"=>"'$cedula'",
-		
-		);
-		$rec_b_c=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and cod_recluta='$cod_recluta' and cod_prueba='$cod_prueba'",0,"");	
-		$rec_b_c=array_shift($rec_b_c);
-		if($sw==0){
-			$rec_banco_clever_respuestas->insertarRegistro($valores,0);
+	foreach($r as $grupo){
+		foreach($grupo as $respuesta=>$nro){
+			$rec_b=$rec_banco_preguntas->mostrarTodoRegistro("cod_banco='".$cod_banco."' and nro='$nro'",0,"nro");	
+			$rec_b=array_shift($rec_b);
+			$correcta=$rec_b['correcta'];
+			if($correcta==$respuesta){
+				$escorrecta="S";
+			}else{
+				$escorrecta="N";
+			}
+			switch($respuesta){
+				case "mas":{$mas=1;$menos=0;}break;	
+				case "menos":{$mas=0;$menos=1;}break;	
+			}
+	
+			$valores=array("cod_empresa"=>"'$cod_empresa'",
+							"cod_recluta"=>"'$cod_recluta'",
+							"cod_prueba"=>"'$cod_prueba'",
+							"codigo_banco_clever"=>"'$nro'",
+							"mas"=>"$mas",
+							"menos"=>"$menos",
+							"cedula"=>"'$cedula'",
 			
+			);
+			$rec_b_c=$rec_banco_clever_respuestas->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and cod_recluta='$cod_recluta' and cod_prueba='$cod_prueba'",0,"");	
+			$rec_b_c=array_shift($rec_b_c);
+			if($sw==0){
+				$rec_banco_clever_respuestas->insertarRegistro($valores,0);
+				
+			}
+			
+			//print_r($rec_b_c);
+			
+			//$rec_banco_candidato->insertarRegistro($valores,0);
+			/*echo "<pre>";
+			print_r($valores);
+			echo "</pre>";*/
 		}
-		
-		//print_r($rec_b_c);
-		
-		//$rec_banco_candidato->insertarRegistro($valores,0);
-		/*echo "<pre>";
-		print_r($valores);
-		echo "</pre>";*/
 	}
 	//if($sw==0){
 		$_SESSION['pruebas']=$pruebas;
