@@ -13,7 +13,7 @@ $seg_s=$seg_sistema->mostrarTodoRegistro($condicion,0,"descripcion");
 <form action="candidato/busqueda.php" method="post" class="formulario">
 	<table class="table table-bordered" style="background-color:#FFFFFF">
     	<thead>
-    	<tr><th>Cédula</th><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>
+    	<tr><th>Cédula de Identidad</th><th>Nombre</th><th>Paterno</th><th>Materno</th></tr>
         </thead>
         <tr>
         	<td><input type="text" name="cedula"></td>
