@@ -319,13 +319,13 @@
 						
 					</div><!-- #sidebar-shortcuts -->
 					<ul class="nav nav-list">
-                    	<li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="icon-home"></i><span> <?php echo 'Inicio'?></span></a>
+                    	<li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="icon-home"></i><span> <?php echo 'Inicio'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Cargos'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/administrar/index.php?c=cargo"><i class="arrow icon-angle-down"></i><span> <?php echo 'Cargos'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Tablas de Evaluación'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Tablas de Evaluación'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Evaluación'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Evaluación'?></span></a>
                         </li>
 					</ul>
 <div class="sidebar-collapse" id="sidebar-collapse">
