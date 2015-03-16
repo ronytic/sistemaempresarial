@@ -138,7 +138,9 @@ $(function(){
     </div>
 </div>
 <?php ?>
+	<center>
 	 <input type="submit" value="Grabar" class="btn btn-danger btn-xm">
+     </center>
 </form>
 <?php
 include_once("../pie.php");

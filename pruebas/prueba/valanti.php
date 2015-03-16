@@ -91,6 +91,7 @@ function cambiar(){
 	var valor=$(this).val();
 	var cod=$(this).data("rel");
 	switch(valor){
+		case '---':{izq="-";der="-";izqc="negro";derc="negro";}break;
 		case '3-0':{izq="3";der="0";izqc="rojo";derc="negro";}break;
 		case '0-3':{izq="0";der="3";izqc="negro";derc="rojo";}break;
 		case '2-1':{izq="2";der="1";izqc="verde";derc="azul";}break;
@@ -124,28 +125,43 @@ function cambiar(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
-            <table class="table  table-hover">
+            <table class="table ">
             <!--<thead><tr class="centrar"><th width="350"></th><th width="50"></th><th width="100"></th><th width="50"></th><th width="350"></th></tr></thead>-->
             	<tr class="centrar"><td width="350"></td><td width="50"></td><td width="100"></td><td width="50"></td><td width="350"></td></tr>
             	<?php 
 				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and tipo='SER'",0,"orden");
+				/*echo "<pre>";
+				print_r($rec_b);
+				echo "</pre>";*/
+				$rec_b=array(
+							0=>array("codigo_banco_serie"=>1,"oracion1"=>"Muestro Dedicación a las Personas que amo","oracion2"=>"Actuo con Perseverancia"),
+							1=>array("codigo_banco_serie"=>2,"oracion1"=>"Soy tolerante ","oracion2"=>"Prefiero actuar con etica"),
+							2=>array("codigo_banco_serie"=>3,"oracion1"=>"Al pensar utilizo mi intuición o sexto sentido","oracion2"=>"Me siento una persona digna"),
+							3=>array("codigo_banco_serie"=>4,"oracion1"=>"Logro buena concentación mental","oracion2"=>"Perdono las ofensas de cualquier persona"),
+							4=>array("codigo_banco_serie"=>5,"oracion1"=>"Normalmente razono mucho","oracion2"=>"Me destaco por el liderazgo en mis acciones"),
+							
+				
+							);
 				foreach($rec_b as $rb){?>
                 <tr>
-                	<td class="bnegro">
-					<?php echo "Muestro Dedicación a las Personas que amo"?>
+                	<td class="bnegro fceleste centrar" >
+					<?php echo $rb['oracion1']?>
                     </td>
-                    <td class="centrar "><h3 class="sb r rojo" id="i<?php echo $rb['codigo_banco_serie']?>">3</h3></td>
-                	<td class="centrar" width="40">
-						<select name="r[<?php echo $rb['codigo_banco_serie']?>]" class="form-control col-sm-2 cambiar" data-rel="<?php echo $rb['codigo_banco_serie']?>">
+                    <td class="centrar "><h3 class="sb r negro" id="i<?php echo $rb['codigo_banco_serie']?>">-</h3></td>
+                	<td class="centrar" width="30">
+                    	<center>
+						<select name="r[<?php echo $rb['codigo_banco_serie']?>]" class="form-control col-sm-2 cambiar" style="width:60px;text-align:center" data-rel="<?php echo $rb['codigo_banco_serie']?>">
+                        	<option value="---">---</option>
                         	<option value="3-0">3-0</option>
                             <option value="0-3">0-3</option>
                             <option value="2-1">2-1</option>
                             <option value="1-2">1-2</option>
                         </select>
+                        </center>
 					</td>
-                     <td class="centrar"><h3 class="sb r negro" id="d<?php echo $rb['codigo_banco_serie']?>">0</h3></td>
-                    <td class="bnegro">
-					<?php echo "Actuo con Perseverancia"?>
+                     <td class="centrar "><h3 class="sb r negro" id="d<?php echo $rb['codigo_banco_serie']?>">-</h3></td>
+                    <td class="bnegro fceleste centrar">
+					<?php echo $rb['oracion2']?>
                     </td>
                 </tr>
                 <?php }?>
@@ -158,7 +174,9 @@ function cambiar(){
     </div>
 </div>
 <?php ?>
+	<center>
 	 <input type="submit" value="Grabar" class="btn btn-danger btn-xm" disabled>
+     </center>
 </form>
 <?php
 include_once("../pie.php");

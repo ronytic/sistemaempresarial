@@ -121,6 +121,7 @@ $(function(){
                 	
                     <td>
                     <select name="r[<?php echo $grupo?>][mas]">
+                    	<option value="">---</option>
                     	<?php 
 						$rec_b=$rec_banco_clever->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and grupo='$grupo'",0,"grupo");
 						foreach($rec_b as $rb){?>
@@ -130,6 +131,7 @@ $(function(){
                     </td>
                     <td>
                     <select name="r[<?php echo $grupo?>][menos]">
+                    	<option value="">---</option>
                     	<?php 
 						$rec_b=$rec_banco_clever->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and grupo='$grupo'",0,"grupo");
 						foreach($rec_b as $rb){?>
