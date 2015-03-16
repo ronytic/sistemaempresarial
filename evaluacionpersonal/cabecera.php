@@ -323,9 +323,11 @@
                         </li>
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/administrar/index.php?c=cargo"><i class="arrow icon-angle-down"></i><span> <?php echo 'Cargos'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Tablas de Evaluación'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Relacion de cargos'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Evaluación'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Competencias'?></span></a>
+                        </li>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Reportes'?></span></a>
                         </li>
 					</ul>
 <div class="sidebar-collapse" id="sidebar-collapse">
