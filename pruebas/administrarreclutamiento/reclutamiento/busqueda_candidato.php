@@ -40,34 +40,34 @@ include_once("../../cabecera.php");
 <table class="table table-bordered table-hover">
 
 <tr>
-<td width="250">Cédula de Identidad</td><td><input type="text"  value="<?php echo $cedula?>" name="cedula"></td>
+<td width="250">Cédula de Identidad </td><td><input type="text"  value="<?php echo $cedula?>" name="cedula" required></td>
 </tr>
 <tr>
-<td>Expedido</td><td><input type="text" name="exp" required size="3" maxlength="3" value="<?php echo $rc['exp']?>"></td>
+<td>Expedido</td><td><input type="text" name="exp" required size="3" maxlength="3" value="<?php echo $rc['exp']?>" ></td>
 </tr>
 <tr>
-<td>Nombre</td><td><input type="text"  value="<?php echo $rc['nombre']?>" name="nombre"></td>
+<td>Nombre</td><td><input type="text"  value="<?php echo $rc['nombre']?>" name="nombre" required></td>
 </tr>
 <tr>
-<td>Apellido Paterno</td><td><input type="text"  value="<?php echo $rc['paterno']?>" name="paterno"></td>
+<td>Apellido Paterno</td><td><input type="text"  value="<?php echo $rc['paterno']?>" name="paterno" required></td>
 </tr>
 <tr>
-<td>Apellido Materno</td><td><input type="text"  value="<?php echo $rc['materno']?>" name="materno"></td>
+<td>Apellido Materno</td><td><input type="text"  value="<?php echo $rc['materno']?>" name="materno" required></td>
 </tr>
 <tr>
-<td>Fecha de Nacimiento</td><td><input type="date"  value="<?php echo ($rc['fecha_nac'])?>" name="fecha_nac"></td>
+<td>Fecha de Nacimiento</td><td><input type="date"  value="<?php echo ($rc['fecha_nac'])?>" name="fecha_nac" required></td>
 </tr>
 <tr>
-<td>Ciudad de Nacimiento</td><td><input type="text" name="ciudad_nac" required value="<?php echo $rc['ciudad_nac']?>"></td>
+<td>Ciudad de Nacimiento</td><td><input type="text" name="ciudad_nac" required value="<?php echo $rc['ciudad_nac']?>" ></td>
 </tr>
 <tr>
 <td>Pais de Nacimiento</td><td><input type="text" name="pais_nac" required value="<?php echo $rc['pais_nac']?>"></td>
 </tr>
 <tr>
-<td>Dirección</td><td><input type="text" name="direccion" required value="<?php echo $rc['direccion']?>"></td>
+<td>Dirección</td><td><input type="text" name="direccion"  value="<?php echo $rc['direccion']?>"></td>
 </tr>
 <tr>
-<td>Teléfono</td><td><input type="text"  value="<?php echo $rc['telefono']?>" name="telefono"></td>
+<td>Teléfono</td><td><input type="text"  value="<?php echo $rc['telefono']?>" name="telefono" required></td>
 </tr>
 <tr>
 <td>Correo Electronico</td><td><input type="text"  value="<?php echo $rc['mail']?>" name="mail"></td>
