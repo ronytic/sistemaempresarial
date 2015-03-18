@@ -1,7 +1,7 @@
 <?php
 include_once("../login/check.php");
 $folder="../../";
-$titulo="Evaluación al Personal";
+$titulo="";
 $c=$_GET['c'];
 if($c=="reclutamiento"){
 	header("Location:reclutamiento/listar.php");
