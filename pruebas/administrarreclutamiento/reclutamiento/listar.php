@@ -23,7 +23,7 @@ include_once("../../cabecerahtml.php");
 <?php
 include_once("../../cabecera.php");
 ?>
-<div class="col-sm-offset-4 col-sm-4">
+<div class="col-sm-offset-3 col-sm-5">
 	<div class="widget-box">
     	<div class="widget-header widget-header-flat widget-header-small">
         <h5>Selección de Reclutamiento</h5></div>
