@@ -323,6 +323,8 @@
                         </li>
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/administrar/index.php?c=cargo"><i class="arrow icon-angle-down"></i><span> <?php echo 'Cargos'?></span></a>
                         </li>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/empleado/index.php?c=empleado"><i class="arrow icon-angle-down"></i><span> <?php echo 'Empleado'?></span></a>
+                        </li>
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Grupos de Evaluación'?></span></a>
                         </li>
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Competencias'?></span></a>
