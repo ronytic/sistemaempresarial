@@ -1,6 +1,6 @@
 <?php
 
-$Titulo="Evaluación al Personal";
+$Titulo="Evaluación de Personal";
 ?>
 <!DOCTYPE html>
 <html lang="en">
