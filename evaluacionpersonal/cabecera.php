@@ -325,7 +325,7 @@
                         </li>
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/empleado/index.php?c=empleado"><i class="arrow icon-angle-down"></i><span> <?php echo 'Empleados'?></span></a>
                         </li>
-                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/index.php"><i class="arrow icon-angle-down"></i><span> <?php echo 'Grupos de Evaluación'?></span></a>
+                        <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/gruposevaluacion/index.php?c=grupos de evaluacion"><i class="arrow icon-angle-down"></i><span> <?php echo 'Grupos de Evaluación'?></span></a>
                         </li>
                         <li class="<?php echo $rmenu=="/"?'active':''?>"><a href="<?php echo $folder;?>evaluacionpersonal/competencias/index.php?c=competencia"><i class="arrow icon-angle-down"></i><span> <?php echo 'Competencias'?></span></a>
                         </li>
