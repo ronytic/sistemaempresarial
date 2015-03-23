@@ -15,6 +15,12 @@ if($cod_tipo=="PER"){
 if($cod_tipo=="VAL"){
 	$cod_banco="VAL";
 }
+if($cod_tipo=="CON"){
+	$cod_banco="CON";
+}
+if($cod_tipo=="INC"){
+	$cod_banco="INC";
+}
 $valores=array(
 				"cod_empresa"=>"'$cod_empresa'",
 				"cod_tipo"=>"'$cod_tipo'",
