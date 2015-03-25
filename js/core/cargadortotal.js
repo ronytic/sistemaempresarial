@@ -120,7 +120,7 @@ function inicio(){
         //$("input[type=date]").datepicker({changeMonth: true,changeYear: true,yearRange:"c-100:c+10"});
 		$('.fecha').datepicker({autoclose:true})
 		
-
+       // $("select").attr("data-placeholder","Seleccione...").chosen({keyboard:true,width: "100%",no_results_text: "Datos No encontrados"});
 		/*Gestionar Tabla*/
 		//$(window).trigger('resize.stickyTableHeaders');
 		//alert($("table:not(.inicio)").length);

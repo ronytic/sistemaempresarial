@@ -96,6 +96,8 @@
 <script src="<?php echo $folder;?>js/core/plugins/jquery.maskedinput.min.js" language="javascript"></script>
 <script src="<?php echo $folder;?>js/core/plugins/jquery.stickytableheaders.min.js" language="javascript"></script>	
 
+<script src="<?php echo $folder;?>js/core/plugins/jquery.chosen.min.js" language="javascript"></script>	
+
 <link rel="stylesheet" href="<?php echo $folder;?>css/core/datepicker.css" />
 <link rel="stylesheet" href="<?php echo $folder;?>css/core/bootstrap-timepicker.css" />
 <link rel="stylesheet" href="<?php echo $folder;?>css/core/daterangepicker.css" />
