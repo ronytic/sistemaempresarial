@@ -8,17 +8,17 @@ include_once("../../login/check.php");
     	<thead>
     	<tr>
         	<th>Cédula de Identidad</th>
-            <th>Nombre</th>
-            <th>Paterno</th>
+            <th>Nombres y Apellidos</th>
+            <?php /*<th>Paterno</th>
             <th>Materno</th>
-            <!--<th>Cargo</th>-->
+            <!--<th>Cargo</th>-->*/?>
         </tr>
         </thead>
         <tr>
         	<td><input type="text" name="cedula" max="3" maxlength="3" autofocus></td>
             <td><input type="text" name="nombre" ></td>
-            <td><input type="text" name="paterno" ></td>
-            <td><input type="text" name="materno" ></td>
+            <?php /*<td><input type="text" name="paterno" ></td>
+            <td><input type="text" name="materno" ></td>*/?>
             <td><input type="submit" name="Guardar" value="Buscar" class="btn btn-success"></td>
         </tr>
     </table>
