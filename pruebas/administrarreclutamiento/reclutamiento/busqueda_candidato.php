@@ -11,7 +11,7 @@ $rc=array_shift($rec_c);
 $cantidad=count($rc);
 if($cantidad>0){
 	$Datos="Modificar Datos del Candidato";
-	$Boton="Modificar Datos";
+	$Boton="Actualizar Datos";
 	$Archivo="actualizar_candidato.php";
 }else{
 	$Datos="Nuevo Candidato";
@@ -70,7 +70,7 @@ include_once("../../cabecera.php");
 <td>Teléfono</td><td><input type="text"  value="<?php echo $rc['telefono']?>" name="telefono" required></td>
 </tr>
 <tr>
-<td>Correo Electronico</td><td><input type="text"  value="<?php echo $rc['mail']?>" name="mail"></td>
+<td>Correo Electronico</td><td><input type="email"  value="<?php echo $rc['mail']?>" name="mail"></td>
 </tr>
 <tr><td>Foto</td><td><input type="file" name="foto" ><br><?php
         	if($rc['foto']!=""){

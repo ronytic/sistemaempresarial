@@ -29,15 +29,6 @@ print_r($_SESSION);
 print_r($_POST);
 echo "</pre>";*/
 ?>
-<?php
-if($_GET['r']){
-	?>
-    <center>
-    <img src="../../../imagenes/pruebasinicio/prueba01.jpg" class="img-polaroid">
-    </center>
-    <?php
-}
-?>
 <div class="col-sm-offset-3 col-sm-6">
         <div class="widget-box">
             <div class="widget-header widget-header-flat widget-header-small">
@@ -51,7 +42,7 @@ if($_GET['r']){
 	?>
     <h2>¿Desea comenzar la Prueba?</h2>
     <center>
-    <a href="../../prueba/" class="btn btn-success">Iniciar</a>
+    <a href="../../prueba/" class="btn btn-danger">Iniciar</a>
     </center>
     <?php	
 }else{
@@ -67,4 +58,14 @@ if($_GET['r']){
 			</div>
         </div>
     </div>
+<?php
+if($_GET['r']){
+	?>
+    <center>
+    <img src="../../../imagenes/pruebasinicio/prueba01.jpg" class="img-polaroid">
+    </center>
+    <?php
+}
+?>
+
 <?php include_once("../../pie.php");?>
