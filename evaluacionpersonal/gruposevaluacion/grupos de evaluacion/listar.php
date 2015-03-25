@@ -16,13 +16,14 @@ $rec_c=$rec_cargo->mostrarTodoRegistro("",0,"descripcion");
 	<table class="table table-bordered" style="background-color:#FFFFFF">
     	<thead>
     	<tr>
-        	<th>Cargo</th>
-            <th>Competencia</th>
-            <!--<th>Dirección</th>-->
+        	<th>Nombres y Apellidos del Evaluador</th>
+            <?php /*<th>Competencia</th>
+            <!--<th>Dirección</th>-->*/?>
         </tr>
         </thead>
         <tr>
-        	<td><select name="cod_competencia"  class="form-control">
+            <td><input type="text" name="nombre" class="form-control"></td>
+        	<?php /*<td><select name="cod_competencia"  class="form-control">
                 <option value="">Seleccionar</option>
                         <?php foreach($rh_c_m as $rcm){?>
                         <option value="<?php echo $rcm['cod_competencia']?>"><?php echo $rcm['descripcion']?></option>
@@ -33,7 +34,7 @@ $rec_c=$rec_cargo->mostrarTodoRegistro("",0,"descripcion");
                         <?php foreach($rec_c as $rc){?>
                         <option value="<?php echo $rc['cod_cargo']?>"><?php echo $rc['descripcion']?></option>
                         <?php }?>
-        </select></td>
+        </select></td>*/?>
             <td><input type="submit" name="Guardar" value="Buscar" class="btn btn-success"></td>
         </tr>
     </table>

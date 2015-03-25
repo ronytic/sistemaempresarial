@@ -28,7 +28,8 @@ function cambiarjefe(){
     <input type="hidden" name="cod_cargo">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	
-        <tr><td width="200">Jefe</td><td><select name="cedula_jefe" required class="form-control">
+        <tr><td width="200">Evaluador</td><td><select name="cedula_jefe" required class="form-control">
+            <option value="">---</option>
                         <?php foreach($rh_e as $re){
                             $r_c=$rec_cargo->mostrarTodoRegistro("cod_cargo='".$re['cod_cargo']."'",0,"descripcion");
                             $r_c=array_shift($r_c);
@@ -38,6 +39,7 @@ function cambiarjefe(){
         </select></td></tr>
         <tr><td>Cargo</td><td><input type="text" name="cargo" max="3" maxlength="3" autofocus required class="form-control" readonly></td></tr>
         <tr><td>Competencia</td><td><select name="cod_competencia" required class="form-control">
+        <option value="">---</option>
                         <?php foreach($rh_c_m as $rcm){?>
                         <option value="<?php echo $rcm['cod_competencia']?>"><?php echo $rcm['descripcion']?></option>
                         <?php }?>

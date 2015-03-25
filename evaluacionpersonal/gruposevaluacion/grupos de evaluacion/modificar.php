@@ -21,14 +21,14 @@ $rh_e=$rh_empleado->mostrarTodoRegistro("",0,"paterno,materno,nombre");
 include_once("../../../estructurabd/rh_competencia_mas.php");
 $rh_competencia_mas=new rh_competencia_mas;
 $rh_c_m=$rh_competencia_mas->mostrarTodoRegistro("cod_competencia='".$rh_g['cod_competencia']."'",0,"descripcion");
-
+$_SESSION['cedula_jefe']=$rh_g['cedula_jefe'];
 ?>
 <h2>Datos del Evaluador</h2>
 <form action="grupos de evaluacion/actualizar.php" method="post" >
 	<input type="hidden" name="codigo_competencia" value="<?php echo $cod_competencia?>">
 	<table class="table table-bordered table-hover" style="background-color:#FFFFFF">
     	
-        <tr><td width="200">Jefe</td><td><select name="cedula_jefe" required class="form-control" disabled>
+        <tr><td width="200">Nombre del Evaluador</td><td><select name="cedula_jefe" required class="form-control" disabled>
                         <?php foreach($rh_e as $re){
                             $r_c=$rec_cargo->mostrarTodoRegistro("cod_cargo='".$re['cod_cargo']."'",0,"descripcion");
                             $r_c=array_shift($r_c);
@@ -48,12 +48,51 @@ $rh_c_m=$rh_competencia_mas->mostrarTodoRegistro("cod_competencia='".$rh_g['cod_
         </select></td></tr>
         <tr><td>Tipo</td><td><input type="text" name="tipo" max="3" maxlength="3" autofocus required class="form-control" readonly value="<?php echo $rcm['tipo']?>"></td></tr>
     </table>
-    <h2>Personal asignado a evaluación</h2><div class="pull-right"><input type="submit" name="Guardar" value="Añadir Persona" class="btn btn-xs btn-danger"> | <input type="submit" name="Guardar" value="Añadir Persona de un Cargo" class="btn btn-xs btn-danger"></div>
-    <table class="table table-bordered table-hover" style="background-color:#FFFFFF">
-        <thead>
-            <tr>
-                <th width="50">Nº</th><th>Nombre</th><th>Cargo</th>
-            </tr>
-        </thead>
-    </table>
+    <h2>Personal asignado a evaluación</h2><div class="pull-right">
+            <table class="table table-bordered">
+                <tr>
+                    <td><select name="cedula" required class="form-control">
+        
+            <option value="">---</option>
+                        <?php foreach($rh_e as $re){
+                            $r_c=$rec_cargo->mostrarTodoRegistro("cod_cargo='".$re['cod_cargo']."'",0,"descripcion");
+                            $r_c=array_shift($r_c);
+                         ?>
+                        <option value="<?php echo $re['cedula']?>" rel="<?php echo $r_c['descripcion']?>" rel_cod="<?php echo $r_c['cod_cargo']?>"><?php echo $re['paterno']?> <?php echo $re['materno']?> <?php echo $re['nombre']?></option>
+                        <?php }?>
+                </select>
+                <br>
+                
+                <input type="button" name="Guardar" value="Añadir Persona" class="btn btn-xs btn-danger" id="anadirpersona">
+                </td>
+                <td><select></select><br><br><input type="submit" name="Guardar" value="Añadir Persona de un Cargo" class="btn btn-xs btn-danger"></td>
+                </tr>
+            </table>
+            
+
+    
+    
+
+     </div>
+    <div class="listadoempleados">
+    
+    </div>
 </form>
+<script language="javascript">
+$("#anadirpersona").click(function(){
+    alert("asd");
+    var cedula=$("select[name=cedula]").val();
+    var cedula_jefe=$("select[name=cedula_jefe]").val();
+    
+    $.post("grupos de evaluacion/guardarempleados.php",{"cedula":cedula,"cedula_jefe":cedula_jefe},function(data){
+        mostrar();    
+    })    
+});
+mostrar();
+function mostrar(){
+        var cedula_jefe=$("select[name=cedula_jefe]").val();
+    $.post("grupos de evaluacion/mostrarempleados.php",{"cedula_jefe":cedula_jefe},function(data){
+         $(".listadoempleados").html(data);
+    });
+}
+</script>
