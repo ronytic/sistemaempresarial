@@ -7,8 +7,8 @@ $rec_prueba=new rec_prueba;
 include_once("../../estructurabd/rec_candidato.php");
 $rec_candidato=new rec_candidato;
 
-include_once("../../estructurabd/rec_banco_serie.php");
-$rec_banco_serie=new rec_banco_serie;
+include_once("../../estructurabd/rec_banco_concentracion.php");
+$rec_banco_concentracion=new rec_banco_concentracion;
 
 $cedula=$_SESSION['cedula'];
 $cod_planta=$_SESSION['cod_planta'];
@@ -72,25 +72,28 @@ include_once("../cabecera.php");
 .cuadrotiempo h3{
 	margin:0px;	
 }
-</style>
-<style type="text/css">
-	table tr td{
-		border: 1px skyblue solid;
-		text-align: center;
-		padding: 15px;
-		cursor:pointer;
-		margin:5px;
-		display: inline-block;
-		width: 50px;
-		vertical-align: middle;
 
-	}
-	.celeste{
-		background-color: skyblue;
-	}
-	.ocultar{
-		display: none;
-	}
+table tr td{
+    border: 1px skyblue solid;
+    text-align: center;
+    padding: 2px;
+    cursor:pointer;
+    margin:2px;
+    display: inline-block;
+    width: 25px;
+    vertical-align: middle;
+
+}
+.celeste{
+    background-color: skyblue;
+}
+.l{
+    background-color: #BDD0EE;
+}
+
+.ocultar{
+    display: none;
+}
 	</style>
 <script language="javascript" type="text/javascript">
 $(function(){
@@ -152,16 +155,18 @@ $(function(){
         	<div class="widget-main">
             <table>
 <?php 
-$a=0;
-for($i=1;$i<=26;$i++){
+$a="A";
+$rec_b_c=$rec_banco_concentracion->mostrarTodoRegistro("",0);
+foreach($rec_b_c as $rbc){
 	?>
 	<tr>
+    <td class="l"><?php echo $a;$a++;?></td>
 	<?php
-	for($j=1;$j<=15;$j++){$a++;
+	for($j=1;$j<=31;$j++){
 		?>
 		<td for="n_<?php echo $i?>_<?php echo $j;?>" class="cuadro">
 		<input type="checkbox" name="" id="n_<?php echo $i?>_<?php echo $j;?>" class="ocultar">
-			<?php echo rand(1,390)?>	
+			<?php echo $rbc['campo'.$j]?>	
 		</td>
 		<?php
 	}
