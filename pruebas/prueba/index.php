@@ -41,6 +41,8 @@ echo "</pre>";
 		case "SER":{$archivo="serie.php";}break;
 		case "PER":{$archivo="percepcion.php";}break;	
 		case "VAL":{$archivo="valanti.php";}break;
+        case "CON":{$archivo="concentracion.php";}break;
+        case "INC":{$archivo="instruccionescomplejas.php";}break;
 	}
 
 $titulo="Prueba de ".$rec_p['descripcion'];

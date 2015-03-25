@@ -7,8 +7,8 @@ $rec_prueba=new rec_prueba;
 include_once("../../estructurabd/rec_candidato.php");
 $rec_candidato=new rec_candidato;
 
-include_once("../../estructurabd/rec_banco_serie.php");
-$rec_banco_serie=new rec_banco_serie;
+include_once("../../estructurabd/rec_banco_inst.php");
+$rec_banco_inst=new rec_banco_inst;
 
 $cedula=$_SESSION['cedula'];
 $cod_planta=$_SESSION['cod_planta'];
@@ -86,21 +86,8 @@ $(function(){
 	}
 });
 $(document).on("ready",function(){
-	$(".cambiar").change(cambiar);	
 });
-function cambiar(){
-	var valor=$(this).val();
-	var cod=$(this).data("rel");
-	switch(valor){
-		case '---':{izq="-";der="-";izqc="negro";derc="negro";}break;
-		case '3-0':{izq="3";der="0";izqc="rojo";derc="negro";}break;
-		case '0-3':{izq="0";der="3";izqc="negro";derc="rojo";}break;
-		case '2-1':{izq="2";der="1";izqc="verde";derc="azul";}break;
-		case '1-2':{izq="1";der="2";izqc="azul";derc="verde";}break;
-	}
-	$("#i"+cod).html(izq).attr("class","sb r "+izqc);
-	$("#d"+cod).html(der).attr("class","sb r "+derc);
-}
+
 </script>
 <div class="cuadrotiempo">
 
@@ -115,7 +102,7 @@ function cambiar(){
         </div>
 
 </div>
-<form action="evaluarvalanti.php" method="post" id="formulario">
+<form action="evaluarinstruccionescomplejas.php" method="post" id="formulario">
 <input type="hidden" name="cod_prueba" value="<?php echo $cod_prueba?>">
 <input type="hidden" name="cod_banco" value="<?php echo $cod_banco?>">
 
@@ -126,43 +113,29 @@ function cambiar(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
-            <table class="table ">
-            <!--<thead><tr class="centrar"><th width="350"></th><th width="50"></th><th width="100"></th><th width="50"></th><th width="350"></th></tr></thead>-->
-            	<tr class="centrar"><td width="350"></td><td width="50"></td><td width="100"></td><td width="50"></td><td width="350"></td></tr>
+            <table class="table table-bordered table-striped table-hover">
+                <thead><tr class="centrar"><th width="300">Cantidad Programada</th><th width="300">Clase de Operación</th><th width="150">Fecha de Programación</th><th width="50">1</th><th width="50">2</th><th width="50">3</th></tr></thead>
             	<?php 
-				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and tipo='SER'",0,"orden");
-				/*echo "<pre>";
-				print_r($rec_b);
-				echo "</pre>";*/
-				$rec_b=array(
-							0=>array("codigo_banco_serie"=>1,"oracion1"=>"Muestro Dedicación a las Personas que amo","oracion2"=>"Actuo con Perseverancia"),
-							1=>array("codigo_banco_serie"=>2,"oracion1"=>"Soy tolerante ","oracion2"=>"Prefiero actuar con etica"),
-							2=>array("codigo_banco_serie"=>3,"oracion1"=>"Al pensar utilizo mi intuición o sexto sentido","oracion2"=>"Me siento una persona digna"),
-							3=>array("codigo_banco_serie"=>4,"oracion1"=>"Logro buena concentación mental","oracion2"=>"Perdono las ofensas de cualquier persona"),
-							4=>array("codigo_banco_serie"=>5,"oracion1"=>"Normalmente razono mucho","oracion2"=>"Me destaco por el liderazgo en mis acciones"),
-							
-				
-							);
+				$rec_b=$rec_banco_inst->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'",0,"");
 				foreach($rec_b as $rb){?>
                 <tr>
-                	<td class="bnegro fceleste centrar" >
-					<?php echo $rb['oracion1']?>
+                	<td class="  centrar" >
+					<?php echo $rb['Pre1']?>
                     </td>
-                    <td class="centrar "><h3 class="sb r negro" id="i<?php echo $rb['codigo_banco_serie']?>">-</h3></td>
-                	<td class="centrar" width="30">
-                    	<center>
-						<select name="r[<?php echo $rb['codigo_banco_serie']?>]" class="form-control col-sm-2 cambiar" style="width:60px;text-align:center" data-rel="<?php echo $rb['codigo_banco_serie']?>">
-                        	<option value="---">---</option>
-                        	<option value="3-0">3-0</option>
-                            <option value="0-3">0-3</option>
-                            <option value="2-1">2-1</option>
-                            <option value="1-2">1-2</option>
-                        </select>
-                        </center>
-					</td>
-                     <td class="centrar "><h3 class="sb r negro" id="d<?php echo $rb['codigo_banco_serie']?>">-</h3></td>
-                    <td class="bnegro fceleste centrar">
-					<?php echo $rb['oracion2']?>
+                    <td class="  centrar" >
+					<?php echo $rb['Pre2']?>
+                    </td>
+                    <td class="  centrar" >
+					<?php echo $rb['Pre3']?>
+                    </td>
+                    <td class="centrar">
+                        <input type="radio" name="r<?php echo $rb['codigo_inst']?>">
+                    </td>
+                    <td class="centrar">
+                        <input type="radio" name="r<?php echo $rb['codigo_inst']?>">
+                    </td>
+                    <td class="centrar">
+                        <input type="radio" name="r<?php echo $rb['codigo_inst']?>">
                     </td>
                 </tr>
                 <?php }?>
