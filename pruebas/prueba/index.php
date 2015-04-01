@@ -85,11 +85,6 @@ include_once("../cabecera.php");
 </script>
 
 <div class=" col-sm-9">
-	<div class="widget-box">
-    	<div class="widget-header widget-header-flat widget-header-small">
-        <h5>Detalle de la Prueba</h5></div>
-        <div class="widget-body">
-        	<div class="widget-main">
             <?php echo $rec_p['detalle']?>
             <hr>
             <?php
@@ -99,9 +94,7 @@ include_once("../cabecera.php");
 			?>
             <hr>
             <center><a href="<?php echo $archivo?>" class="btn btn-success btn-xm">Iniciar</a></center>
-			</div>
-        </div>
-    </div>
+			
 </div>
 <div class=" col-sm-3">
 	<div class="widget-box">
