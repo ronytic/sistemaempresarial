@@ -88,7 +88,9 @@ table tr td{
     background-color: skyblue;
 }
 .l{
-    background-color: #BDD0EE;
+    background-color: #EEBDBD;
+    border:#FF9294 1px solid;
+    font-weight:bold;
 }
 
 .ocultar{
@@ -157,7 +159,8 @@ $(function(){
 <?php 
 $a="A";
 $rec_b_c=$rec_banco_concentracion->mostrarTodoRegistro("",0);
-foreach($rec_b_c as $rbc){
+$i=0;
+foreach($rec_b_c as $rbc){$i++;
 	?>
 	<tr>
     <td class="l"><?php echo $a;$a++;?></td>
