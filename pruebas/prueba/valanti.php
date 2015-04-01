@@ -7,8 +7,8 @@ $rec_prueba=new rec_prueba;
 include_once("../../estructurabd/rec_candidato.php");
 $rec_candidato=new rec_candidato;
 
-include_once("../../estructurabd/rec_banco_serie.php");
-$rec_banco_serie=new rec_banco_serie;
+include_once("../../estructurabd/rec_banco_valanti.php");
+$rec_banco_valanti=new rec_banco_valanti;
 
 $cedula=$_SESSION['cedula'];
 $cod_planta=$_SESSION['cod_planta'];
@@ -76,7 +76,7 @@ include_once("../cabecera.php");
 <script language="javascript" type="text/javascript">
 $(function(){
 	$("#tiempo").countdowntimer({
-		minutes : <?php echo $rec_p['tiempo']?>,
+		minutes : <?php echo $rec_p['tiempo']?>0,
 		seconds:0,
         size : "lg",
 		timeUp : evaluar
@@ -126,15 +126,17 @@ function cambiar(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
+            <strong>Marque 0,1,2 o3 en las casilla del centro según LA IMPORTANCIA que Ud. le da a cada frase en su vida personal
+            </strong>
             <table class="table ">
             <!--<thead><tr class="centrar"><th width="350"></th><th width="50"></th><th width="100"></th><th width="50"></th><th width="350"></th></tr></thead>-->
             	<tr class="centrar"><td width="350"></td><td width="50"></td><td width="100"></td><td width="50"></td><td width="350"></td></tr>
             	<?php 
-				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and tipo='SER'",0,"orden");
+				$rec_b=$rec_banco_valanti->mostrarTodoRegistro("",0,"nro");
 				/*echo "<pre>";
 				print_r($rec_b);
 				echo "</pre>";*/
-				$rec_b=array(
+				/*$rec_b=array(
 							0=>array("codigo_banco_serie"=>1,"oracion1"=>"Muestro Dedicación a las Personas que amo","oracion2"=>"Actuo con Perseverancia"),
 							1=>array("codigo_banco_serie"=>2,"oracion1"=>"Soy tolerante ","oracion2"=>"Prefiero actuar con etica"),
 							2=>array("codigo_banco_serie"=>3,"oracion1"=>"Al pensar utilizo mi intuición o sexto sentido","oracion2"=>"Me siento una persona digna"),
@@ -142,11 +144,21 @@ function cambiar(){
 							4=>array("codigo_banco_serie"=>5,"oracion1"=>"Normalmente razono mucho","oracion2"=>"Me destaco por el liderazgo en mis acciones"),
 							
 				
-							);
-				foreach($rec_b as $rb){?>
+							);*/
+                            $i=1;
+				foreach($rec_b as $rb){$i++;?>
                 <tr>
+                    <?php if($i==10){
+                    ?>
+                    <td colspan="5">
+                    <strong>Marque 0,1,2 o 3 en las casilla del centro para la frase mas INACEPTABLE, según su juicio, el puntaje mas alto sera para la frase que indique lo peor</strong>
+                    </td>
+                    <?php    
+                    }else{
+ 
+                    ?>
                 	<td class="bnegro fceleste centrar" >
-					<?php echo $rb['oracion1']?>
+					<?php echo $rb['texto1']?>
                     </td>
                     <td class="centrar "><h3 class="sb r negro" id="i<?php echo $rb['codigo_banco_serie']?>">-</h3></td>
                 	<td class="centrar" width="30">
@@ -162,8 +174,9 @@ function cambiar(){
 					</td>
                      <td class="centrar "><h3 class="sb r negro" id="d<?php echo $rb['codigo_banco_serie']?>">-</h3></td>
                     <td class="bnegro fceleste centrar">
-					<?php echo $rb['oracion2']?>
+					<?php echo $rb['texto2']?>
                     </td>
+                    <?php }?>
                 </tr>
                 <?php }?>
             </table>
