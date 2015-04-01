@@ -18,6 +18,7 @@ if($_GET['r']){
 }
 
 $titulo="Pruebas de Reclutamiento";
+$titulo="";
 include_once("../../cabecerahtml.php");
 ?>
 
@@ -29,42 +30,30 @@ print_r($_SESSION);
 print_r($_POST);
 echo "</pre>";*/
 ?>
-<div class="col-sm-offset-3 col-sm-6">
-        <div class="widget-box">
-            <div class="widget-header widget-header-flat widget-header-small">
-                <h5>Mensaje</h5>
-            </div>
-            <div class="widget-body">
-    			<div class="widget-main">
 <?php
-
 if($_GET['r']){
 	?>
-    <h2>¿Desea comenzar la Prueba?</h2>
     <center>
-    <a href="../../prueba/" class="btn btn-danger">Iniciar</a>
-    </center>
-    <?php	
-}else{
-	?>
-    <h2>Usted ya realizó la Prueba</h2>
-    <center>
-    <a href="listar.php" class="btn btn-danger">Buscar Nuevo Reclutamiento</a>
-    </center>
-    <?php	
-}
-?>
-                </div>
-			</div>
+        <div  style="background-color:#FFF">
+        <img src="../../../imagenes/pruebasinicio/prueba01.jpg" class="img-polaroid">
+        
         </div>
-    </div>
-<?php
-if($_GET['r']){
-	?>
-    <center>
-    <img src="../../../imagenes/pruebasinicio/prueba01.jpg" class="img-polaroid">
+        <div class="pull-right">
+        <a href="../../prueba/" class="btn btn-danger">Iniciar</a>
+        </div>
     </center>
+    
+    
     <?php
+}else{
+?>
+<h2>Usted ya realizó la Prueba</h2>
+    <center>
+    <div>
+    <a href="listar.php" class="btn btn-danger">Buscar Nuevo Reclutamiento</a>
+    </div>
+    </center>
+<?php    
 }
 ?>
 

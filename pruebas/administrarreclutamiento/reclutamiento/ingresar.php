@@ -23,7 +23,7 @@ include_once("../../cabecera.php");
         <input type="hidden" name="cod_recluta"  value="<?php echo $_POST['cod_recluta']?>">
         <table class="table borderless" style="background-color:#FFFFFF">
             
-            <tr><td>Carnet:</td><td><input type="text" name="cedula" placeholder="Introduce el Número de Carnet" size="30" class="col-sm-12"></td></tr>
+            <tr><td>Carnet:</td><td><input type="number" name="cedula" placeholder="Introduce el Número de Carnet" size="30" class="col-sm-12"></td></tr>
             
             <tr><td></td><td><input type="submit" name="Guardar" value="Buscar" class="btn btn-success"></td></tr>
         </table>
