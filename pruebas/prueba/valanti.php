@@ -72,6 +72,10 @@ include_once("../cabecera.php");
 .cuadrotiempo h3{
 	margin:0px;	
 }
+table tr td{
+    margin-bottom:10px !important;    
+    margin-top:10px !important;
+}
 </style>
 <script language="javascript" type="text/javascript">
 $(function(){
@@ -128,7 +132,7 @@ function cambiar(){
         	<div class="widget-main">
             <strong>Marque 0,1,2 o3 en las casilla del centro según LA IMPORTANCIA que Ud. le da a cada frase en su vida personal
             </strong>
-            <table class="table ">
+            <table class="table " cellspacing="20">
             <!--<thead><tr class="centrar"><th width="350"></th><th width="50"></th><th width="100"></th><th width="50"></th><th width="350"></th></tr></thead>-->
             	<tr class="centrar"><td width="350"></td><td width="50"></td><td width="100"></td><td width="50"></td><td width="350"></td></tr>
             	<?php 
@@ -148,7 +152,7 @@ function cambiar(){
                             $i=1;
 				foreach($rec_b as $rb){$i++;?>
                 <tr>
-                    <?php if($i==10){
+                    <?php if($i==11){
                     ?>
                     <td colspan="5">
                     <strong>Marque 0,1,2 o 3 en las casilla del centro para la frase mas INACEPTABLE, según su juicio, el puntaje mas alto sera para la frase que indique lo peor</strong>
@@ -160,10 +164,10 @@ function cambiar(){
                 	<td class="bnegro fceleste centrar" >
 					<?php echo $rb['texto1']?>
                     </td>
-                    <td class="centrar "><h3 class="sb r negro" id="i<?php echo $rb['codigo_banco_serie']?>">-</h3></td>
+                    <td class="centrar "><h3 class="sb r negro" id="i<?php echo $rb['codigo_valanti']?>">-</h3></td>
                 	<td class="centrar" width="30">
                     	<center>
-						<select name="r[<?php echo $rb['codigo_banco_serie']?>]" class="form-control col-sm-2 cambiar" style="width:60px;text-align:center" data-rel="<?php echo $rb['codigo_banco_serie']?>">
+						<select name="r[<?php echo $rb['codigo_valanti']?>]" class="form-control col-sm-2 cambiar" style="width:60px;text-align:center" data-rel="<?php echo $rb['codigo_valanti']?>">
                         	<option value="---">---</option>
                         	<option value="3-0">3-0</option>
                             <option value="0-3">0-3</option>
@@ -172,7 +176,7 @@ function cambiar(){
                         </select>
                         </center>
 					</td>
-                     <td class="centrar "><h3 class="sb r negro" id="d<?php echo $rb['codigo_banco_serie']?>">-</h3></td>
+                     <td class="centrar "><h3 class="sb r negro" id="d<?php echo $rb['codigo_valanti']?>">-</h3></td>
                     <td class="bnegro fceleste centrar">
 					<?php echo $rb['texto2']?>
                     </td>

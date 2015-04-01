@@ -113,6 +113,16 @@ $(document).on("ready",function(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
+            <strong>
+            <p>Seleccione en la columna 1 a la altura de cada operación de roscado o bobinado, desde 1500 a
+4500 unidades inclusive, programada entre el 15 de Marzo de 1946 y el 10 de Mayo de 1947.</p>
+<p>
+Seleccione la columna 2 a la altura de cada operación de moldeo y bobinado, hasta 3000 
+unidades inclusive programada entre el 15 de Octubre de 1946 y el 20 de Agosto de 1947.</p>
+<p>
+Seleccione la columna 3 a la altura de cada operación de roscado o moldeo desde 2000 a
+5000 unidades inclusive, programada entre el 10 e Febrero de 1946 y el 15 de Junio de 1947.</p>
+            </strong>
             <table class="table table-bordered table-striped table-hover">
                 <thead><tr class="centrar"><th width="300">Cantidad Programada</th><th width="300">Clase de Operación</th><th width="150">Fecha de Programación</th><th width="50">1</th><th width="50">2</th><th width="50">3</th></tr></thead>
             	<?php 
