@@ -4,7 +4,7 @@ session_start();
 $folder="../";
 include_once("../estructurabd/seg_empresa.php");
 $seg_empresa=new seg_empresa;
-$seg_e=$seg_empresa->mostrarTodoRegistro("",0,"descripcion");
+$seg_e=$seg_empresa->mostrarTodoRegistro("cod_empresa='BAL'",0,"descripcion");
 ?>
 <!DOCTYPE html>
 <html dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -54,7 +54,7 @@ $seg_e=$seg_empresa->mostrarTodoRegistro("",0,"descripcion");
                         	<div class="input-req-login"><label for="empresa">Empresa</label></div>
                             <div class="input-field-login icon username-container">
                                 <select name="cod_empresa" autofocus required>
-                                    <option value="">Seleccionar</option>
+                                    <!--<option value="">Seleccionar</option>-->
                                     <?php foreach($seg_e as $se){
                                     ?>
                                     <option value="<?php echo $se['cod_empresa']?>"><?php echo $se['descripcion']?></option>
