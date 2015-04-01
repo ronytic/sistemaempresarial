@@ -39,11 +39,12 @@ $rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']
         
         <table class="table table-bordered" style="background-color:#FFFFFF">
             <thead>
-            <tr><th>Pruebas</th><th>Orden</th></tr>
+            <tr><th>Pruebas</th></tr>
             </thead>
             <tr>
                 <td>
                	<select name="cod_prueba">
+                    <option value="">Seleccionar</option>
                 	<?php foreach($rec_p as $rp){
 					?>
                     
@@ -51,9 +52,10 @@ $rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']
                     <?php	
 					}?>
                 </select>
+                <br>Orden:<br><input type="number" name="orden" min="0" value="0" class="der">
+                <br><br><input type="submit" name="Guardar" value="Agregar" class="btn btn-success"> 
                 </td>
-                <td><input type="number" name="orden" min="0" value="0" class="der"></td>
-                <td><input type="submit" name="Guardar" value="Agregar" class="btn btn-success"></td></tr>
+                </tr>
         </table>
         
         
