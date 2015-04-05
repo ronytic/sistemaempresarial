@@ -354,6 +354,7 @@
     </div>
 
     <div class="page-content">
+        <?php if($titulo!=""){?>
         <div class="page-header">
             <h1>
             	<?php echo $titulo;?>
@@ -364,7 +365,7 @@
                 </small>
             </h1>
         </div><!-- /.page-header -->
-
+        <?php }?>
         <div class="row">
             <div class="col-xs-12">
                 <!-- PAGE CONTENT BEGINS -->
