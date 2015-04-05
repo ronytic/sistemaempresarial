@@ -76,6 +76,10 @@ table tr td{
     margin-bottom:10px !important;    
     margin-top:10px !important;
 }
+table{
+    border-spacing: 10px 15px !important;
+    border-collapse: separate
+}
 </style>
 <script language="javascript" type="text/javascript">
 $(function(){
