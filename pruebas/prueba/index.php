@@ -20,7 +20,7 @@ $cod_prueba=array_shift($pruebaactual);
 
 $rec_c=$rec_candidato->mostrarTodoRegistro("cedula='$cedula'",0);
 $rec_c=array_shift($rec_c);
-
+//$cod_prueba="P12";
 $rec_p=$rec_prueba->mostrarTodoRegistro("cod_prueba='$cod_prueba'",0);
 $rec_p=array_shift($rec_p);
 $cod_banco=$rec_p['cod_banco'];
@@ -46,7 +46,7 @@ echo "</pre>";
 	}
 
 $titulo="Prueba de ".$rec_p['descripcion'];
-
+$titulo="";
 include_once("../cabecerahtml.php");
 ?>
 <script language="javascript" type="text/javascript" src="../../js/core/plugins/jquery.countdowntimer.min.js"></script>
@@ -85,8 +85,13 @@ include_once("../cabecera.php");
 </script>
 
 <div class=" col-sm-9">
+            <?php
+            //$rec_p['detalle']="";
+             if($rec_p['detalle']!=""){?>
+            
             <?php echo $rec_p['detalle']?>
             <hr>
+            <?php }?>
             <?php
             if($rec_p['grafico']!=""){
 			?><a href="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" target="_blank"><img src="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" width="100%" class="img-polaroid"></a><?php	
