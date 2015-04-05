@@ -139,13 +139,13 @@ Seleccione la columna 3 a la altura de cada operación de roscado o moldeo desde
 					<?php echo $rb['Pre3']?>
                     </td>
                     <td class="centrar">
-                        <input type="radio" name="r<?php echo $rb['codigo_inst']?>">
+                        <input type="checkbox" name="r<?php echo $rb['codigo_inst']?>">
                     </td>
                     <td class="centrar">
-                        <input type="radio" name="r<?php echo $rb['codigo_inst']?>">
+                        <input type="checkbox" name="r<?php echo $rb['codigo_inst']?>">
                     </td>
                     <td class="centrar">
-                        <input type="radio" name="r<?php echo $rb['codigo_inst']?>">
+                        <input type="checkbox" name="r<?php echo $rb['codigo_inst']?>">
                     </td>
                 </tr>
                 <?php }?>
