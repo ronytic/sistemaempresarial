@@ -71,8 +71,8 @@ $rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']
 
 <script language="javascript" type="text/javascript">
 	//$(document).on("ready",function(){
-		
-		$.post("bateria/listar_pruebas.php",{'login':'<?php echo $su['login']?>'},function(data){
+		var cod_bateria="<?php echo $rec_b['cod_bateria']?>"
+		$.post("bateria/listar_pruebas.php",{'login':'<?php echo $su['login']?>',"cod_bateria":cod_bateria},function(data){
 			$("#respuestaformulario").html(data);
 		});
 		

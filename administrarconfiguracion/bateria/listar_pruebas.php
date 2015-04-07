@@ -15,8 +15,8 @@ extract($_POST);
 
 $cod_empresa=$_SESSION['cod_empresa'];
 $cod_sistema=$_SESSION['cod_sistema'];
-
-$condicion="cod_empresa='$cod_empresa'";
+$cod_bateria=$_POST['cod_bateria'];
+$condicion="cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria'";
 
 $rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro($condicion,1,"orden");
 ?>
