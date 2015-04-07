@@ -76,7 +76,7 @@ include_once("../cabecera.php");
 <script language="javascript" type="text/javascript">
 $(function(){
 	$("#tiempo").countdowntimer({
-		minutes : <?php echo $rec_p['tiempo']?>,
+		minutes : <?php echo $rec_p['tiempo']?>0,
 		seconds:0,
         size : "lg",
 		timeUp : evaluar
@@ -113,7 +113,7 @@ $(function(){
             <table class="table table-bordered table-hover">
             <thead><tr class="centrar"><th width="350"></th><th width="50" colspan="2">¿Son Iguales?</th></tr></thead>
             	<?php 
-				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'and tipo='PER'",0,"orden");
+				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'and tipo='PER'",0,"rand()");
 				foreach($rec_b as $rb){$i++?>
                 <tr>
                 	<td>
