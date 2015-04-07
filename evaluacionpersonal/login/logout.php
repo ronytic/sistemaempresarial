@@ -12,6 +12,6 @@ unset($_SESSION["logueado"]);
 unset($_SESSION["hora_ingreso"]);
 unset($_SESSION["fecha_ingreso"]);
 session_destroy();
-header("Location:".url_base().$directory);
+//header("Location:".url_base().$directory);
 header("Location:".url_base().$directory."../../embol/");
 ?>
