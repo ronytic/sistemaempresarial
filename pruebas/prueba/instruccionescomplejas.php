@@ -126,7 +126,7 @@ Seleccione la columna 3 a la altura de cada operación de roscado o moldeo desde
             <table class="table table-bordered table-striped table-hover">
                 <thead><tr class="centrar"><th width="300">Cantidad Programada</th><th width="300">Clase de Operación</th><th width="150">Fecha de Programación</th><th width="50">1</th><th width="50">2</th><th width="50">3</th></tr></thead>
             	<?php 
-				$rec_b=$rec_banco_inst->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'",0,"");
+				$rec_b=$rec_banco_inst->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'",0,"rand()");
 				foreach($rec_b as $rb){?>
                 <tr>
                 	<td class="  centrar" >

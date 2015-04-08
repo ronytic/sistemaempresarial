@@ -38,7 +38,7 @@ if($_GET['r']){
         <img src="../../../imagenes/pruebasinicio/prueba01.jpg" class="img-polaroid">
         
         </div>
-        <div class="pull-right">
+        <div class="">
         <a href="../../prueba/" class="btn btn-danger">Iniciar</a>
         </div>
     </center>

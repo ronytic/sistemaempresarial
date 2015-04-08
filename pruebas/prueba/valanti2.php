@@ -127,8 +127,6 @@ function cambiar(){
 <input type="hidden" name="cod_prueba" value="<?php echo $cod_prueba?>">
 <input type="hidden" name="cod_banco" value="<?php echo $cod_banco?>">
 
-
-<input type="hidden" name="archivo" value="1">
 <?php ?>
 <div class="col-sm-12">
 	<div class="widget-box">
@@ -136,13 +134,13 @@ function cambiar(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
-            <strong>Marque 0,1,2 o3 en las casilla del centro según LA IMPORTANCIA que Ud. le da a cada frase en su vida personal
+            <strong>Marque 0,1,2 o 3 en las casilla del centro para la frase mas INACEPTABLE, según su juicio, el puntaje mas alto sera para la frase que indique lo peor
             </strong>
             <table class="table " cellspacing="20">
             <!--<thead><tr class="centrar"><th width="350"></th><th width="50"></th><th width="100"></th><th width="50"></th><th width="350"></th></tr></thead>-->
             	<tr class="centrar"><td width="350"></td><td width="50"></td><td width="100"></td><td width="50"></td><td width="350"></td></tr>
             	<?php 
-				$rec_b=$rec_banco_valanti->getRecords("","nro","",9,0);
+				$rec_b=$rec_banco_valanti->getRecords("","nro","",31,10);
 				/*echo "<pre>";
 				print_r($rec_b);
 				echo "</pre>";*/
@@ -189,7 +187,7 @@ function cambiar(){
 </div>
 <?php ?>
 	<center>
-	 <input type="submit" value="Continuar" class="btn btn-danger btn-xm" >
+	 <input type="submit" value="Grabar" class="btn btn-danger btn-xm" >
      </center>
 </form>
 <?php

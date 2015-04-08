@@ -28,6 +28,7 @@ $orden_prueba=array_shift(array_keys($pruebaactual));
 $cod_prueba=$_POST['cod_prueba'];
 $cod_banco=$_POST['cod_banco'];
 $r=$_POST['r'];
+$archivo=$_POST['archivo'];
 $rec_c=$rec_candidato->mostrarTodoRegistro("cedula='$cedula'",0);
 $rec_c=array_shift($rec_c);
 
@@ -37,7 +38,9 @@ $rec_p=array_shift($rec_p);
 $rec_b_s=$rec_banco_serie_respuestas->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and cod_recluta='$cod_recluta' and cod_prueba='$cod_prueba' and cedula='$cedula'",0,"");	
 
 if(count($rec_b_s)>0){
-	$mensaje[]="Usted Ya se Realizó esta Prueba";	
+    
+	$mensaje[]="Usted Ya se Realizó esta Prueba";	//Ya realiza
+    $mensaje[]="Evaluación Registrada Correctamente";	
 	$sw=1;
 }else{
 	$mensaje[]="Evaluación Registrada Correctamente";	
@@ -76,7 +79,12 @@ if(count($r)>0){
 		echo "</pre>";*/
 	}
 	//if($sw==0){
+        if($archivo!="1"){
 		$_SESSION['pruebas']=$pruebas;
+        
+        }else{
+            header("Location:valanti2.php");    
+        }
 	//}
 }else{
 		
