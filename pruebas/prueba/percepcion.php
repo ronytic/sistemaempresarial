@@ -111,7 +111,7 @@ $(function(){
         <div class="widget-body">
         	<div class="widget-main">
             <table class="table table-bordered table-hover">
-            <thead><tr class="centrar"><th width="350"></th><th width="50" colspan="2">¿Son Iguales?</th></tr></thead>
+            <thead><tr class="centrar"><th width="350"></th><th width="50" colspan="2"></th></tr></thead>
             	<?php 
 				$rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'and tipo='PER'",0,"rand()");
 				foreach($rec_b as $rb){$i++?>
@@ -126,10 +126,10 @@ $(function(){
                     </table>
                     </td>
                 	<td class="centrar" width="50">
-						Si<input type="radio" name="r[<?php echo $rb['codigo_banco_serie']?>]" value="1" class="form-control">
+						I<input type="radio" name="r[<?php echo $rb['codigo_banco_serie']?>]" value="1" class="form-control">
                        
 					</td>
-                    <td class="centrar" width="50"> No<input type="radio" name="r[<?php echo $rb['codigo_banco_serie']?>]" value="0" class="form-control"></td>
+                    <td class="centrar" width="50"> D<input type="radio" name="r[<?php echo $rb['codigo_banco_serie']?>]" value="0" class="form-control"></td>
                 </tr>
                 <?php }?>
             </table>

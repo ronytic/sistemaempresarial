@@ -125,6 +125,8 @@ $(function(){
                         <td><?php echo $rb['pre3']?></td>
                         <td><?php echo $rb['pre4']?></td>
                         <td><?php echo $rb['pre5']?></td>
+                        <td><?php echo $rb['pre6']?></td>
+                        <td><?php echo $rb['pre7']?></td>
                         </tr>
                     </table>
                     </td>
