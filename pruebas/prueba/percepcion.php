@@ -76,7 +76,7 @@ include_once("../cabecera.php");
 <script language="javascript" type="text/javascript">
 $(function(){
 	$("#tiempo").countdowntimer({
-		minutes : <?php echo $rec_p['tiempo']?>0,
+		minutes : <?php echo $rec_p['tiempo']?>,
 		seconds:0,
         size : "lg",
 		timeUp : evaluar
