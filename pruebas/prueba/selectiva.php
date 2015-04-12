@@ -42,7 +42,7 @@ include_once("../cabecerahtml.php");
 <script language="javascript" type="text/javascript" src="../../js/core/plugins/jquery.countdowntimer.min.js"></script>
 <?php
 include_once("../cabecera.php");
-?>
+?><?php /*
 <table class="table table-bordered">
 <thead><tr>
 <th>Cédula de Identidad</th><th>Datos Personales</th>
@@ -51,7 +51,7 @@ include_once("../cabecera.php");
 <td><?php echo $cedula?></td>
 <td><?php echo $rec_c['paterno']." ".$rec_c['materno']." ".$rec_c['nombre']?></td>
 </tr>
-</table>
+</table>*/?>
 <style type="text/css">
 .cuadrotiempo{
 	width:100px;
