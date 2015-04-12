@@ -91,11 +91,11 @@ if(count($r)>0){
 
 if(count($_SESSION['pruebas'])>0){
 	$Archivo="index.php";	
-	$TextoBoton="Continuar con la Prueba";
+	$TextoBoton="Continuar";
 }
 else{
 	$Archivo="terminar.php";
-	$TextoBoton="Terminar la Prueba";
+	$TextoBoton="Terminar";
 }
 
 /*
@@ -115,6 +115,7 @@ $titulo="Prueba de ".$rec_p['descripcion'];
 include_once("../cabecerahtml.php");
 include_once("../cabecera.php");
 ?>
+<?php /*
 <table class="table table-bordered">
 <thead><tr>
 <th>Cédula de Identidad</th><th>Datos Personales</th>
@@ -124,13 +125,13 @@ include_once("../cabecera.php");
 <td><?php echo $rec_c['paterno']." ".$rec_c['materno']." ".$rec_c['nombre']?></td>
 </tr>
 </table>
-
+*/?>
 <?php /*echo "<pre>";
 print_r($_SESSION);
 print_r($_POST);
 echo "</pre>";*/
 ?>
-<div class="col-sm-12">
+<div class="col-sm-offset-3 col-sm-6">
 	<div class="widget-box">
     	<div class="widget-header widget-header-flat widget-header-small">
         <h5>Mensaje</h5></div>
