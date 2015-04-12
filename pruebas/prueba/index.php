@@ -87,11 +87,11 @@ include_once("../cabecera.php");
 <div class=" col-sm-9">
             <?php
             //$rec_p['detalle']="";
-             if($rec_p['detalle']!=""){?>
+             if($rec_p['detalle']!=""){/*?>
             
             <?php echo $rec_p['detalle']?>
             <hr>
-            <?php }?>
+            <?php */}?>
             <?php
             if($rec_p['grafico']!=""){
 			?><a href="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" target="_blank"><img src="../../imagenes/pruebas/<?php echo $rec_p['grafico']?>" width="100%" class="img-polaroid"></a><?php	
