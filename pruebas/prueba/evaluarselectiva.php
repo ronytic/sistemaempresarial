@@ -75,7 +75,7 @@ if(count($r)>0){
 		$rec_b_c=array_shift($rec_b_c);
 		if($sw==0){
             
-			//$rec_banco_candidato->insertarRegistro($valores,0);
+			$rec_banco_candidato->insertarRegistro($valores,0);
 			
 		}
 		
