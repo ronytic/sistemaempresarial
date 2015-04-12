@@ -99,7 +99,7 @@ $(function(){
         </div>
 
 </div>
-<form action="evaluarserie.php" method="post" id="formulario">
+<form action="evaluarpercepcion.php" method="post" id="formulario">
 <input type="hidden" name="cod_prueba" value="<?php echo $cod_prueba?>">
 <input type="hidden" name="cod_banco" value="<?php echo $cod_banco?>">
 
