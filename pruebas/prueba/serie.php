@@ -120,13 +120,13 @@ $(function(){
 					<table class="table table-bordered">
                     
                     	<tr class="centrar tf1">
-                        <td><?php echo $rb['pregunta']?></td>
-                        <td><?php echo $rb['pre2']?></td>
-                        <td><?php echo $rb['pre3']?></td>
-                        <td><?php echo $rb['pre4']?></td>
-                        <td><?php echo $rb['pre5']?></td>
-                        <td><?php echo $rb['pre6']?></td>
-                        <td><?php echo $rb['pre7']?></td>
+                        <td width="10%"><?php echo $rb['pregunta']?></td>
+                        <td width="10%"><?php echo $rb['pre2']?></td>
+                        <td width="10%"><?php echo $rb['pre3']?></td>
+                        <td width="10%"><?php echo $rb['pre4']?></td>
+                        <?php if($rb['pre5']!=""){?><td width="10%"><?php echo $rb['pre5']?></td><?php }?>
+                        <?php if($rb['pre6']!=""){?><td width="10%"><?php echo $rb['pre6']?></td><?php }?>
+                        <?php if($rb['pre7']!=""){?><td width="10%"><?php echo $rb['pre7']?></td><?php }?>
                         </tr>
                     </table>
                     </td>
