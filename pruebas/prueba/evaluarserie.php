@@ -88,7 +88,7 @@ if(count($r)>0){
     $rec_b=$rec_banco_serie->mostrarTodoRegistro("cod_empresa='".$cod_empresa."' and Tipo='SER'",0,"");	
     $total=count($rec_b);
     $incorrectos=$total-$correctos;
-    $porcentaje=number_format($correctos/$total,2,".",",")*100;
+    $porcentaje=number_format($correctos*100/$total,2,".",",");
     $valor=array("cod_empresa"=>"'$cod_empresa'",
 						"cod_recluta"=>"'$cod_recluta'",
 						"cod_prueba"=>"'$cod_prueba'",
