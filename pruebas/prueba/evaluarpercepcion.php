@@ -7,6 +7,9 @@ $rec_banco_serie_respuestas=new rec_banco_serie_respuestas;
 include_once("../../estructurabd/rec_candidato.php");
 $rec_candidato=new rec_candidato;
 
+include_once("../../estructurabd/rec_banco_resultados.php");
+$rec_banco_resultados=new rec_banco_resultados;
+
 include_once("../../estructurabd/rec_banco_serie.php");
 $rec_banco_serie=new rec_banco_serie;
 
