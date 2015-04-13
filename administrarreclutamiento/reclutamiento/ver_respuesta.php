@@ -18,8 +18,8 @@ include_once("../../estructurabd/rec_prueba.php");
 $rec_prueba=new rec_prueba;
 include_once("../../estructurabd/rec_banco_candidato.php");
 $rec_banco_candidato=new rec_banco_candidato;
-include_once("../../estructurabd/rec_banco_preguntas.php");
-$rec_banco_preguntas=new rec_banco_preguntas;
+include_once("../../estructurabd/rec_banco_resultados.php");
+$rec_banco_resultados=new rec_banco_resultados;
 
 include_once("../../estructurabd/rec_banco_clever_respuestas.php");
 $rec_banco_clever_respuestas=new rec_banco_clever_respuestas;
@@ -30,7 +30,7 @@ $rec_banco_serie=new rec_banco_serie;
 include_once("../../estructurabd/rec_banco_serie_respuestas.php");
 $rec_banco_serie_respuestas=new rec_banco_serie_respuestas;
 
-$titulo="Ver Respuestas de las Pruebas";
+$titulo="Resultados de las Pruebas";
 $condicion="cedula  LIKE '$cedula'";
 
 $rec_c=$rec_candidato->mostrarTodoRegistro($condicion,0);
@@ -43,10 +43,12 @@ $rec_r=$rec_reclutamiento->mostrarTodoRegistro("cod_empresa='$cod_empresa' and c
 $rec_r=array_shift($rec_r);
 
 $cod_bateria=$rec_r['cod_bateria'];
-$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE' and cod_prueba!='SER' and cod_prueba!='PER'",0);
+$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE'  and cod_prueba!='VAL'",0);
 include_once("../../cabecerahtml.php");
 ?>
-
+<script language="javascript" src="<?php echo $folder?>js/core/plugins/highcharts.js"></script>
+<script language="javascript" src="<?php echo $folder?>js/core/plugins/highcharts-more.js"></script>
+<script language="javascript" src="<?php echo $folder?>js/core/plugins/exporting.js"></script>
 <?php
 //print_r($_SESSION);
 include_once("../../cabecera.php");
@@ -79,10 +81,10 @@ include_once("../../cabecera.php");
 
 		<thead>
         	<tr>
-        		<th colspan="2" width="200">Resultado de la Prueba</th>
+        		<th colspan="5" width="200">Resultado de la Prueba</th>
             </tr>
             <tr class="centrar">
-        		<th colspan="1" width="50"  class="">N</th><th>Prueba</th><th>Total</th><th>Correctas</th><th>Porcentaje Obtenido</th>
+        		<th colspan="1" width="50"  class="">N</th><th width="500">Prueba</th><th width="100">Total</th><th width="100">Correctas</th><th width="100">Porcentaje Obtenido</th>
             </tr>
         </thead>
         <?php
@@ -92,11 +94,11 @@ include_once("../../cabecera.php");
 			$rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='".$cod_prueba."'",0);
 			$rec_p=array_shift($rec_p);
 			
-			$rec_b_p=$rec_banco_preguntas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."'",0);
-			$cantidadTotal=count($rec_b_p);
-			$rec_b_c=$rec_banco_candidato->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."' and cod_prueba='$cod_prueba' and cod_recluta='$cod_recluta' and escorrecta='S' and cedula='$cedula'",0);
-			$correctas=count($rec_b_c);
-			$porcentaje=number_format($correctas*100/$cantidadTotal,2);
+			$rec_b_r=$rec_banco_resultados->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='".$rbp['cod_prueba']."' and cod_recluta='".$cod_recluta."' and cedula='".$cedula."'",0);
+            $rec_b_r=array_shift($rec_b_r);
+			$cantidadTotal=$rec_b_r['total'];
+			$correctas=$rec_b_r['correctas'];
+			$porcentaje=$rec_b_r['porcentaje'];
 			$total+=$porcentaje;
 			?>
             <tr>
@@ -105,7 +107,11 @@ include_once("../../cabecera.php");
                 <td class="centrar" width="100"><?php echo $cantidadTotal?></td>
                 <td class="centrar" width="100"><?php echo $correctas?></td>
                 <td class="der" width="150"><?php echo $porcentaje;?> %</td>
-                <td><a href="ver_respuesta_detalle.php?cedula=<?php echo $cedula?>&cod_recluta=<?php echo $cod_recluta?>&cod_prueba=<?php echo $cod_prueba?>" class="btn btn-xs btn-danger">Ver Detalle de Respuestas</a></td>
+                <td>
+                <?php if($rec_p['cod_tipo']=="EN3"){?>
+                <a href="ver_respuesta_detalle.php?cedula=<?php echo $cedula?>&cod_recluta=<?php echo $cod_recluta?>&cod_prueba=<?php echo $cod_prueba?>" class="btn btn-xs btn-danger">Ver Detalle de Respuestas</a>
+                <?php }?>
+                </td>
             </tr>
             <?php
 		}
@@ -197,27 +203,83 @@ $totalseries=count($rec_b_s);
 $rec_b_s_r=$rec_banco_serie_respuestas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cedula LIKE '$cedula' and escorrecta='S' and cod_recluta='$cod_recluta' and cod_prueba='SER'",0);
 $totalcorrectasseries=count($rec_b_s_r);
 $totalporcentajeseries=number_format($totalcorrectasseries*100/$totalseries,2);
+
+$p1=15.6479452054795;
+$p2=21.0506849315069;
+$p3=17.3534246575342;
+$p4=16.6821917808219;
+$p5=21.2246575342466;
+
+$d1=4.7033423480048;
+$d2=4.44492661852588;
+$d3=6.60888710785178;
+$d4=5.41200571776265;
+$d5=7.19426270463846;
+
+$pd1=12;
+$pd2=21;
+$pd3=13;
+$pd4=24;
+$pd5=20;
+
+$pu1=42;
+$pu2=50;
+$pu3=43;
+$pu4=64;
+$pu5=48;
  ?>
 <table class="table table-bordered table-hover table-striped">
     <thead>
         <tr>
-            <th colspan="2" width="200">Resultado de la Prueba de  Series</th>
+            <th colspan="6" width="200">Resultado de la Prueba de  Valanti</th>
         </tr>
-
+        <tr>
+            <th>Valor</th>
+            <th width="150">Verdad</th>
+            <th width="150">Rectitud</th>
+            <th width="150">Paz</th>
+            <th width="150">Amor</th>
+            <th width="150">No Violencia</th>
+        </tr>
         
     </thead>
     <tr>
-    	<td class="resaltar">Total de Preguntas</td>
-        <td class="centrar"><?php echo $totalseries;?></td>
+    	<td class="resaltar">Promedio Normas nacionales, 1997 (n=730)</td>
+        <td class="centrar"><?php echo $p1;?></td>
+        <td class="centrar"><?php echo $p2;?></td>
+        <td class="centrar"><?php echo $p3;?></td>
+        <td class="centrar"><?php echo $p4;?></td>
+        <td class="centrar"><?php echo $p5;?></td>
     </tr>
     <tr>
-    	<td class="resaltar">Correctas</td>
-        <td class="centrar"><?php echo $totalcorrectasseries;?></td>
+    	<td class="resaltar">Desviación Standar Normas nacionales, 1997 (n=730)</td>
+        <td class="centrar"><?php echo $d1;?></td>
+        <td class="centrar"><?php echo $d2;?></td>
+        <td class="centrar"><?php echo $d3;?></td>
+        <td class="centrar"><?php echo $d4;?></td>
+        <td class="centrar"><?php echo $d5;?></td>
     </tr>
-    <tr class="success resaltar">
-    	<td class="">Total</td>
-        <td class="centrar"><?php echo $totalporcentajeseries;?> %</td>
+    <tr class="resaltar">
+        <td class="resaltar">Puntajes Directos</td>
+        <td class="centrar"><?php echo $pd1;?></td>
+        <td class="centrar"><?php echo $pd2;?></td>
+        <td class="centrar"><?php echo $pd3;?></td>
+        <td class="centrar"><?php echo $pd4;?></td>
+        <td class="centrar"><?php echo $pd5;?></td>
     </tr>
+    <tr class="resaltar">
+        <td class="resaltar">Puntaje Candidato</td>
+        <td class="centrar"><?php echo $pu1;?></td>
+        <td class="centrar"><?php echo $pu2;?></td>
+        <td class="centrar"><?php echo $pu3;?></td>
+        <td class="centrar"><?php echo $pu4;?></td>
+        <td class="centrar"><?php echo $pu5;?></td>
+    </tr>
+    <td colspan="6">
+        <div class="graficovalanti">
+        
+        </div>
+    </td>
 </table>
 
 <?php
@@ -227,27 +289,62 @@ $rec_b_s_r=$rec_banco_serie_respuestas->mostrarTodoRegistro("cod_empresa='$cod_e
 $totalcorrectasseries=count($rec_b_s_r);
 $totalporcentajeseries=number_format($totalcorrectasseries*100/$totalseries,2);
  ?>
-<table class="table table-bordered table-hover table-striped">
-    <thead>
-        <tr>
-            <th colspan="2" width="200">Resultado de la Prueba de  Percepción</th>
-        </tr>
 
-        
-    </thead>
-    <tr>
-    	<td class="resaltar">Total de Preguntas</td>
-        <td class="centrar"><?php echo $totalseries;?></td>
-    </tr>
-    <tr>
-    	<td class="resaltar">Correctas</td>
-        <td class="centrar"><?php echo $totalcorrectasseries;?></td>
-    </tr>
-    <tr class="success resaltar">
-    	<td class="">Total</td>
-        <td class="centrar"><?php echo $totalporcentajeseries;?> %</td>
-    </tr>
-</table>
 <?php include_once("../../pie.php");?>
 <script language="javascript">
+$(function () {
+
+    $('.graficovalanti').highcharts({
+
+        chart: {
+            polar: true,
+            type: 'line'
+        },
+
+        title: {
+            text: 'Valanti',
+            x: -80
+        },
+
+        pane: {
+            size: '80%'
+        },
+
+        xAxis: {
+            categories: ['Verdad', 'Rectitud', 'Paz', 'Amor',
+                    'No Violencia'],
+            tickmarkPlacement: 'on',
+            lineWidth: 0
+        },
+
+        yAxis: {
+            gridLineInterpolation: 'polygon',
+            lineWidth: 0,
+            min: 0
+        },
+
+        tooltip: {
+            shared: true,
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
+        },
+
+        legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            y: 70,
+            layout: 'vertical'
+        },
+
+        series: [{
+            name: 'Equilibrio',
+            data: [50, 50, 50, 50, 50],
+            pointPlacement: 'on'
+        }, {
+            name: '<?php echo $rec_c['paterno']?> <?php echo $rec_c['materno']?> <?php echo $rec_c['nombre']?>',
+            data: [<?php echo $pu1?>, <?php echo $pu2?>, <?php echo $pu3?>, <?php echo $pu4?>, <?php echo $pu5?>],
+            pointPlacement: 'on'
+        }]
+
+    });
+});
 </script>
