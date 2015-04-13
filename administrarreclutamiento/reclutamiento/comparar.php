@@ -16,10 +16,9 @@ $rec_banco_candidato=new rec_banco_candidato;
 
 include_once("../../estructurabd/rec_prueba.php");
 $rec_prueba=new rec_prueba;
-include_once("../../estructurabd/rec_banco_candidato.php");
-$rec_banco_candidato=new rec_banco_candidato;
-include_once("../../estructurabd/rec_banco_preguntas.php");
-$rec_banco_preguntas=new rec_banco_preguntas;
+
+include_once("../../estructurabd/rec_banco_resultados.php");
+$rec_banco_resultados=new rec_banco_resultados;
 
 $titulo="Comparación de Respuestas de las Pruebas";
 foreach($cedulas as $cedula){
@@ -36,7 +35,7 @@ $rec_r=$rec_reclutamiento->mostrarTodoRegistro("cod_empresa='$cod_empresa' and c
 $rec_r=array_shift($rec_r);
 
 $cod_bateria=$rec_r['cod_bateria'];
-$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE' and cod_prueba!='SER'",0);
+$rec_b_p=$rec_bateria_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_bateria='$cod_bateria' and cod_prueba!='CLE' and cod_prueba!='VAL'",0);
 include_once("../../cabecerahtml.php");
 ?>
 
@@ -114,14 +113,15 @@ include_once("../../cabecera.php");
 			$rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='".$cod_prueba."'",0);
 			$rec_p=array_shift($rec_p);
 			
-			$rec_b_p=$rec_banco_preguntas->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."'",0);
+
 			
 			foreach($cedulas as $cedula){
 				$datos[$cedula]['i']=$i;
-				$rec_b_c=$rec_banco_candidato->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_banco='".$rec_p['cod_banco']."' and cod_prueba='$cod_prueba' and cod_recluta='$cod_recluta' and escorrecta='S' and cedula='$cedula'",0);
-				$datos[$cedula]['cantidadTotal']=count($rec_b_p);
-				$datos[$cedula]['correctas']=count($rec_b_c);
-				$datos[$cedula]['porcentaje']=number_format($datos[$cedula]['correctas']*100/$datos[$cedula]['cantidadTotal'],2);
+				$rec_b_r=$rec_banco_resultados->mostrarTodoRegistro("cod_empresa='$cod_empresa' and cod_prueba='".$rbp['cod_prueba']."' and cod_recluta='".$cod_recluta."' and cedula='".$cedula."'",0);
+                $rec_b_r=array_shift($rec_b_r);
+				$datos[$cedula]['cantidadTotal']=$rec_b_r['total'];
+				$datos[$cedula]['correctas']=$rec_b_r['correctas'];
+				$datos[$cedula]['porcentaje']=$rec_b_r['porcentaje'];
 				$datos[$cedula]['total']+=$datos[$cedula]['porcentaje'];
 			}
 			?>
@@ -131,7 +131,11 @@ include_once("../../cabecera.php");
                 <th class="resaltar" colspan="1"><?php echo  $i?> - <?php echo $rec_p['descripcion']?>
                 </th>
                 <?php foreach($cedulas as $cedula){?>
-				<th><a href="ver_respuesta_detalle.php?cedula=<?php echo $cedula?>&cod_recluta=<?php echo $cod_recluta?>&cod_prueba=<?php echo $cod_prueba?>" class="btn btn-xs btn-info">Ver Detalle de Respuestas</a></th>
+				<th>
+                <?php if($rec_p['cod_tipo']=="EN3"){?>
+                <a href="ver_respuesta_detalle.php?cedula=<?php echo $cedula?>&cod_recluta=<?php echo $cod_recluta?>&cod_prueba=<?php echo $cod_prueba?>" class="btn btn-xs btn-info">Ver Detalle de Respuestas</a>
+                <?php }?>
+                </th>
                 <?php }?>
             </tr>
             </thead>
