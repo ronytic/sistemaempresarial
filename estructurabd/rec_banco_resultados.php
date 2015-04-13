@@ -6,7 +6,7 @@ class rec_banco_resultados extends bd{
 		"cod_empresa"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		"cod_recluta"=>array("Tipo"=>"int","Tamano"=>"11"),
 		"cod_prueba"=>array("Tipo"=>"varchar","Tamano"=>"3"),
-		"correstas"=>array("Tipo"=>"double","Tamano"=>""),
+		"correctas"=>array("Tipo"=>"double","Tamano"=>""),
 		"incorrectas"=>array("Tipo"=>"double","Tamano"=>""),
 		"total"=>array("Tipo"=>"double","Tamano"=>""),
         "porcentaje"=>array("Tipo"=>"double","Tamano"=>""),

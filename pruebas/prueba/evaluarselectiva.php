@@ -97,7 +97,7 @@ if(count($r)>0){
     $valor=array("cod_empresa"=>"'$cod_empresa'",
 						"cod_recluta"=>"'$cod_recluta'",
 						"cod_prueba"=>"'$cod_prueba'",
-						"correstas"=>"'$correctos'",
+						"correctas"=>"'$correctos'",
 						"incorrectas"=>"'$incorrectos'",
 						"total"=>"'$total'",
                         "porcentaje"=>"'$porcentaje'",
