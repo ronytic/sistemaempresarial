@@ -90,7 +90,7 @@ $(function(){
 		timeUp : evaluar
 	});
 	function evaluar(){
-		//$("#formulario").submit();
+		$("#formulario").submit();
 	}
 });
 $(document).on("ready",function(){
@@ -140,7 +140,7 @@ function cambiar(){
             <!--<thead><tr class="centrar"><th width="350"></th><th width="50"></th><th width="100"></th><th width="50"></th><th width="350"></th></tr></thead>-->
             	<tr class="centrar"><td width="350"></td><td width="50"></td><td width="100"></td><td width="50"></td><td width="350"></td></tr>
             	<?php 
-				$rec_b=$rec_banco_valanti->getRecords("","nro","",31,10);
+				$rec_b=$rec_banco_valanti->getRecords("","nro","",31,9);
 				/*echo "<pre>";
 				print_r($rec_b);
 				echo "</pre>";*/

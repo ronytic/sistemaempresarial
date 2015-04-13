@@ -90,7 +90,7 @@ $(function(){
 		timeUp : evaluar
 	});
 	function evaluar(){
-		//$("#formulario").submit();
+		$("#formulario").submit();
 	}
 });
 $(document).on("ready",function(){
@@ -136,7 +136,7 @@ function cambiar(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
-            <strong>Marque 0,1,2 o3 en las casilla del centro según LA IMPORTANCIA que Ud. le da a cada frase en su vida personal
+            <strong>Marque 0, 1, 2 o 3 en las casillas del centro según LA IMPORTANCIA que Ud. le da a cada frase en su vida personal
             </strong>
             <table class="table " cellspacing="20">
             <!--<thead><tr class="centrar"><th width="350"></th><th width="50"></th><th width="100"></th><th width="50"></th><th width="350"></th></tr></thead>-->
