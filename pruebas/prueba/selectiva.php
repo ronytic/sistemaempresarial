@@ -57,7 +57,7 @@ include_once("../cabecera.php");
 	width:100px;
 	position:fixed;
 	top:50px;	
-	right:50px;
+	left:50px;
 	z-index:1500;
 }
 .cuadrotiempo:hover{
