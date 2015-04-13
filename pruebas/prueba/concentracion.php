@@ -100,7 +100,7 @@ table tr td{
 <script language="javascript" type="text/javascript">
 $(function(){
 	$("#tiempo").countdowntimer({
-		minutes : <?php echo $rec_p['tiempo']?>,
+		minutes : <?php echo $rec_p['tiempo']?>0,
 		seconds:0,
         size : "lg",
 		timeUp : evaluar
@@ -168,7 +168,7 @@ foreach($rec_b_c as $rbc){$i++;
 	for($j=1;$j<=31;$j++){
 		?>
 		<td for="n_<?php echo $i?>_<?php echo $j;?>" class="cuadro">
-		<input type="checkbox" name="" id="n_<?php echo $i?>_<?php echo $j;?>" class="ocultar">
+		<input type="checkbox" name="r[<?php echo $rbc['cod_concentracion']?>][<?php echo $j?>]" id="n_<?php echo $i?>_<?php echo $j;?>" class="ocultar">
 			<?php echo $rbc['campo'.$j]?>	
 		</td>
 		<?php
