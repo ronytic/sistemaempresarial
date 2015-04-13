@@ -51,7 +51,7 @@ include_once("../cabecera.php");
 
 <?php 
 ?>
-<div class="col-sm-12">
+<div class="col-sm-offset-3 col-sm-6">
 	<div class="widget-box">
     	<div class="widget-header widget-header-flat widget-header-small">
         <h5>Mensaje</h5></div>
