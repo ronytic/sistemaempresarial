@@ -158,7 +158,7 @@ $(function(){
             <table>
 <?php 
 $a="A";
-$rec_b_c=$rec_banco_concentracion->mostrarTodoRegistro("",0);
+$rec_b_c=$rec_banco_concentracion->mostrarTodoRegistro("",0,"rand()");
 $i=0;
 foreach($rec_b_c as $rbc){$i++;
 	?>

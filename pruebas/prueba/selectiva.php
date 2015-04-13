@@ -24,7 +24,7 @@ $rec_c=array_shift($rec_c);
 $rec_p=$rec_prueba->mostrarTodoRegistro("cod_prueba='$cod_prueba'",0);
 $rec_p=array_shift($rec_p);
 $cod_banco=$rec_p['cod_banco'];
-$rec_b=$rec_banco_preguntas->mostrarTodoRegistro("cod_banco='".$cod_banco."'",0,"nro");
+$rec_b=$rec_banco_preguntas->mostrarTodoRegistro("cod_banco='".$cod_banco."'",0,"rand()");
 /*
 echo "<pre>";
 print_r($_SESSION);
