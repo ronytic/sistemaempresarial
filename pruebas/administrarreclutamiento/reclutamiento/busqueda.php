@@ -15,7 +15,7 @@ foreach($rec_c as $rc){$i++;
 $rec_ca=$rec_cargo->mostrarTodoRegistro("cod_cargo='".$rc['cod_cargo']."'",0);
 $rec_ca=array_shift($rec_ca);
 ?>
-<option value="1"><?php echo $rec_ca['descripcion']?></option>
+<option value="<?php echo $rc['cod_recluta']?>"><?php echo $rec_ca['descripcion']?></option>
 <?php
 }
 ?> 
