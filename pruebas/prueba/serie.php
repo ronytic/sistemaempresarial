@@ -110,6 +110,9 @@ $(function(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
+            <strong>
+            Descubre el orden en que estan dispuestas kas series de numeros y completa con la serie
+            </strong>
             <table class="table table-bordered table-hover">
             <thead><tr class="centrar"><th width="350">Serie</th><th width="50">Respuesta</th></tr></thead>
             	<?php 
@@ -124,9 +127,9 @@ $(function(){
                         <td width="10%"><?php echo $rb['pre2']?></td>
                         <td width="10%"><?php echo $rb['pre3']?></td>
                         <td width="10%"><?php echo $rb['pre4']?></td>
-                        <?php if($rb['pre5']!=""){?><td width="10%"><?php echo $rb['pre5']?></td><?php }?>
-                        <?php if($rb['pre6']!=""){?><td width="10%"><?php echo $rb['pre6']?></td><?php }?>
-                        <?php if($rb['pre7']!=""){?><td width="10%"><?php echo $rb['pre7']?></td><?php }?>
+                        <?php if(1==1){?><td width="10%"><?php echo $rb['pre5']?></td><?php }?>
+                        <?php if(1==1){?><td width="10%"><?php echo $rb['pre6']?></td><?php }?>
+                        <?php if(1==1){?><td width="10%"><?php echo $rb['pre7']?></td><?php }?>
                         </tr>
                     </table>
                     </td>

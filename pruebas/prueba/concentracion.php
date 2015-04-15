@@ -155,6 +155,9 @@ $(function(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
+            <strong>
+            En cada línea hay uno o más pares de cifras contiguas, que sumadas dan 10. Búsquelas y selecciónelas
+            </strong>
             <table>
 <?php 
 $a="A";

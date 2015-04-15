@@ -57,7 +57,7 @@ include_once("../cabecera.php");
         <h5>Mensaje</h5></div>
         <div class="widget-body">
         	<div class="widget-main">
-            		<h3><strong>Prueba realizada con Éxito, se le informará de los resultados posteriormente</strong></h3>
+            		<h3><strong>Has terminado de realizar las pruebas satisfactoriamente</strong></h3>
             
 					<a class="btn btn-danger btn-xm" href="../login/logout.php">Terminar</a>
 			

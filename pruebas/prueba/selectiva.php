@@ -107,6 +107,9 @@ $(function(){
         <h5><?php echo $rb['nro']?> - <?php echo $rb['pregunta']?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
+            <strong>
+            Lea cuidadosamente cada pregunta y seleccione la respuesta que considere correcta
+            </strong>
             <table class="table table-bordered">
             	<?php for($i=1;$i<=5;$i++){?>
                 <?php if($rb['opcion'.$i]!=""){?>

@@ -110,6 +110,7 @@ $(function(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
+            <strong>Cada región consta de dos lineas. Si éstas son iguales seleccione “I”. Si entre ellas observa diferencia  seleccione “D”.</strong>
             <table class="table table-bordered table-hover">
             <thead><tr class="centrar"><th width="350"></th><th width="50" colspan="2"></th></tr></thead>
             	<?php 
