@@ -1,6 +1,6 @@
 <?php
 
-$Titulo="Reclutamiento";
+$Titulo="Pruebas Psicotécnicas y de Conocimiento";
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,6 @@
 <?php
 
-$Titulo="Sistema de Gestión de Reclutamiento";
+$Titulo="Reclutamiento y Selección de personal";
 ?>
 <!DOCTYPE html>
 <html lang="en">
