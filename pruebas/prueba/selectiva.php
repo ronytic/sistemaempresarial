@@ -99,17 +99,19 @@ $(function(){
 <form action="evaluarselectiva.php" method="post" id="formulario">
 <input type="hidden" name="cod_prueba" value="<?php echo $cod_prueba?>">
 <input type="hidden" name="cod_banco" value="<?php echo $cod_banco?>">
-
-<?php foreach($rec_b as $rb){?>
+<strong>
+            Lea cuidadosamente cada pregunta y seleccione la respuesta que considere correcta
+            </strong>
+<?php 
+$j=0;
+foreach($rec_b as $rb){$j++?>
 <div class="col-sm-12">
 	<div class="widget-box">
     	<div class="widget-header widget-header-flat widget-header-small">
-        <h5><?php echo $rb['nro']?> - <?php echo $rb['pregunta']?></h5></div>
+        <h5><?php echo $j?> - <?php echo $rb['pregunta']?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
-            <strong>
-            Lea cuidadosamente cada pregunta y seleccione la respuesta que considere correcta
-            </strong>
+            
             <table class="table table-bordered">
             	<?php for($i=1;$i<=5;$i++){?>
                 <?php if($rb['opcion'.$i]!=""){?>

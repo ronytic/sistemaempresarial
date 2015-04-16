@@ -124,11 +124,13 @@ Seleccione la columna 3 a la altura de cada operación de roscado o moldeo desde
 5000 unidades inclusive, programada entre el 10 e Febrero de 1946 y el 15 de Junio de 1947.</p>
             </strong>
             <table class="table table-bordered table-striped table-hover">
-                <thead><tr class="centrar"><th width="350">Cantidad Programada</th><th width="350">Clase de Operación</th><th width="150">Fecha de Programación</th><th width="70">1</th><th width="70">2</th><th width="70">3</th></tr></thead>
+                <thead><tr class="centrar"><th width="80"></th><th width="350">Cantidad Programada</th><th width="350">Clase de Operación</th><th width="150">Fecha de Programación</th><th width="70">1</th><th width="70">2</th><th width="70">3</th></tr></thead>
             	<?php 
 				$rec_b=$rec_banco_inst->mostrarTodoRegistro("cod_empresa='".$cod_empresa."'",0,"rand()");
-				foreach($rec_b as $rb){?>
+                $i=0;
+				foreach($rec_b as $rb){$i++?>
                 <tr>
+                    <td class="der"><?php echo $i?></td>
                 	<td class="  centrar" >
 					<?php echo $rb['Pre1']?>
                     </td>

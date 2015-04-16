@@ -127,11 +127,11 @@ if(count($r)>0){
 
 if(count($_SESSION['pruebas'])>0){
 	$Archivo="index.php";	
-	$TextoBoton="Continuar con la Prueba";
+	$TextoBoton="Continuar";
 }
 else{
 	$Archivo="terminar.php";
-	$TextoBoton="Terminar la Prueba";
+	$TextoBoton="Terminar";
 }
 
 /*

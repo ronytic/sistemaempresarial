@@ -72,6 +72,9 @@ include_once("../cabecera.php");
 .cuadrotiempo h3{
 	margin:0px;	
 }
+table tr td{
+    border:none !important;    
+}
 </style>
 <script language="javascript" type="text/javascript">
 $(function(){
@@ -110,9 +113,9 @@ $(function(){
         <h5><?php ?>  <?php ?></h5></div>
         <div class="widget-body">
         	<div class="widget-main">
-            <strong>
-            Descubre el orden en que estan dispuestas kas series de numeros y completa con la serie
-            </strong>
+            <p><strong>
+            Descubre el orden en que estan dispuestas las series de números y completa con la serie
+            </strong></p>
             <table class="table table-bordered table-hover">
             <thead><tr class="centrar"><th width="350">Serie</th><th width="50">Respuesta</th></tr></thead>
             	<?php 
