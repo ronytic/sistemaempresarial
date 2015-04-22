@@ -7,7 +7,9 @@ $cod_banco=$_SESSION['cod_banco'];
 }
 
 $cod_empresa=$_SESSION['cod_empresa'];
+if(!isset($rec_banco_preguntas)){
 $rec_banco_preguntas=new rec_banco_preguntas;
+}
 $condicion="cod_banco LIKE '$cod_banco' and cod_empresa  LIKE '$cod_empresa' ";
 
 $rec_b=$rec_banco_preguntas->mostrarTodoRegistro($condicion,0,"nro");
