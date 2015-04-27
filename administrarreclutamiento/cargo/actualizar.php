@@ -6,7 +6,7 @@ $cod_empresa=$_SESSION['cod_empresa'];
 $valores=array(
 				"cod_empresa"=>"'$cod_empresa'",
 				"descripcion"=>"'$descripcion'",
-
+                "cod_bateria"=>"'$cod_bateria'",
 				);
 $rec_cargo=new rec_cargo;
 $rec_cargo->actualizarRegistro($valores,"codigo_cargo='$codigo_cargo'");
