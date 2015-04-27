@@ -8,7 +8,7 @@ class rec_cargo extends bd{
 		"cod_cargo"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 		
 		"descripcion"=>array("Tipo"=>"varchar","Tamano"=>"60"),
-		
+		"cod_bateria"=>array("Tipo"=>"varchar","Tamano"=>"3"),
 	);	
 }
 ?>
