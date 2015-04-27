@@ -15,9 +15,7 @@ include_once("../../estructurabd/rec_planta.php");
 $rec_planta=new rec_planta;
 $rec_p=$rec_planta->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."' and cod_planta IN (SELECT cod_planta FROM rec_planta_usuario WHERE login = '$login')",0,"descripcion");
 
-include_once("../../estructurabd/rec_bateria.php");
-$rec_bateria=new rec_bateria;
-$rec_b=$rec_bateria->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']."'",0,"descripcion");
+
 $titulo="Nuevo Reclutamiento";
 include_once("../../cabecerahtml.php");
 ?>
@@ -61,12 +59,7 @@ include_once("../../cabecera.php");
             </select>
             </td></tr>
         <tr><td>Bateria</td><td><select name="cod_bateria" autofocus required>
-            	<option value="">Seleccionar</option>
-            	<?php foreach($rec_b as $rb){
-				?>
-                <option value="<?php echo $rb['cod_bateria']?>"><?php echo $rb['cod_bateria']?> - <?php echo $rb['descripcion']?></option>
-                <?php	
-				}?>
+            	
             </select>
             </td></tr>
         <tr><td>Fecha de Inicio</td><td><input type="date" name="fecha_inicio" required value="<?php echo fecha2Str("",0)?>"></td></tr>
@@ -88,3 +81,11 @@ include_once("../../cabecera.php");
 	
     
 </form>
+<script language="javascript">
+        $(document).on("change","select[name=cod_cargo]",function(){
+            var cod_cargo=$("select[name=cod_cargo]").val();
+            $.post("mostrar_bateria.php",{'cod_cargo':cod_cargo},function(data){
+                $("select[name=cod_bateria]").html(data);
+            });
+        });
+</script>
