@@ -25,7 +25,7 @@ $rec_b=$rec_bateria->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa'
         <tr><td>Bateria</td><td><select name="cod_bateria" class="form-control">
             <option value="">Seleccionar</option>
         <?php foreach($rec_b as $rb){
-            ?><option value="<?php echo $rb['cod_bateria']?>"><?php echo $rb['descripcion']?></option><?php    
+            ?><option value="<?php echo $rb['cod_bateria']?>" <?php echo $rb['cod_bateria']==$rec_c['cod_cargo']?'selected="selected"':''?>><?php echo $rb['descripcion']?></option><?php    
         }?>
         </select></td></tr>
         
