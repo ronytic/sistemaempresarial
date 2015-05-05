@@ -69,4 +69,8 @@ $rec_p=$rec_prueba->mostrarTodoRegistro("cod_empresa='".$_SESSION['cod_empresa']
 		});
 		
 	//});
+    $(document).ajaxSuccess(function(event, XMLHttpRequest, ajaxOptions) {
+        $(".formulario").reset();
+    });
+    
 </script>
