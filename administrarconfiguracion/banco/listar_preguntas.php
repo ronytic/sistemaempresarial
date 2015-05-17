@@ -35,8 +35,8 @@ foreach($rec_b as $rb){$i++;
     <td width="80"><?php echo $rb['opcion5']?></td>
     <td class="centrar"><?php echo $rb['correcta']?></td>
 
-    <!--<td><a href="banco/modificar.php?codigo_banco=<?php echo $rb['codigo_banco']?>" class="btn btn-xs btn-warning cargarajax">M</a>
-<a href="eliminar.php?cod_empresa=<?php echo $se['cod_empresa']?>" class="btn btn-xs btn-primary">E</a></td>--></tr>
+    <td><a href="banco/busqueda_pregunta.php?codigo_banco_preguntas=<?php echo $rb['codigo_banco_preguntas']?>" class="btn btn-xs btn-warning modificar">M</a>
+    <!--<a href="eliminar.php?cod_empresa=<?php echo $se['cod_empresa']?>" class="btn btn-xs btn-primary">E</a></td>--></tr>
 <?php
 }
 ?>

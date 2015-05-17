@@ -1,6 +1,6 @@
 <?php
 include_once("../../login/check.php");
-include_once("../../estructurabd/rec_banco.php");
+include_once("../../estructurabd/rec_banco_preguntas.php");
 extract($_POST);
 $cod_empresa=$_SESSION['cod_empresa'];
 $valores=array("cod_empresa"=>"'$cod_empresa'",
@@ -15,8 +15,8 @@ $valores=array("cod_empresa"=>"'$cod_empresa'",
 				"correcta"=>"'$correcta'",
 
 				);
-$rec_banco=new rec_banco;
-$rec_banco->actualizarRegistro($valores,"codigo_banco='$codigo_banco'");
-
-header("Location:../?c=banco");
+$rec_banco_preguntas=new rec_banco_preguntas;
+$rec_banco_preguntas->actualizarRegistro($valores,"codigo_banco_preguntas='$codigo_banco_preguntas'");
+$_SESSION['cod_banco']=$cod_banco;
+include_once("listar_preguntas.php");
 ?>
